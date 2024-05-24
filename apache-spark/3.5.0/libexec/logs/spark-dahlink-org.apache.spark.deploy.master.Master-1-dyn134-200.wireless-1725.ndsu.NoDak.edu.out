@@ -1,0 +1,21 @@
+Spark Command: /Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home/bin/java -cp /Users/dahlink/Desktop/NDSU/apache-spark/3.5.0/libexec/conf/:/Users/dahlink/Desktop/NDSU/apache-spark/3.5.0/libexec/jars/* -Xmx1g org.apache.spark.deploy.master.Master --host dyn134-200.wireless-1725.ndsu.NoDak.edu --port 7077 --webui-port 8080 --host localhost --port 7077
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+24/05/24 09:48:12 INFO Master: Started daemon with process name: 84778@dyn134-200.wireless-1725.ndsu.NoDak.edu
+24/05/24 09:48:12 INFO SignalUtils: Registering signal handler for TERM
+24/05/24 09:48:12 INFO SignalUtils: Registering signal handler for HUP
+24/05/24 09:48:12 INFO SignalUtils: Registering signal handler for INT
+24/05/24 09:48:13 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/05/24 09:48:14 INFO SecurityManager: Changing view acls to: dahlink
+24/05/24 09:48:14 INFO SecurityManager: Changing modify acls to: dahlink
+24/05/24 09:48:14 INFO SecurityManager: Changing view acls groups to: 
+24/05/24 09:48:14 INFO SecurityManager: Changing modify acls groups to: 
+24/05/24 09:48:14 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: dahlink; groups with view permissions: EMPTY; users with modify permissions: dahlink; groups with modify permissions: EMPTY
+24/05/24 09:48:15 INFO Utils: Successfully started service 'sparkMaster' on port 7077.
+24/05/24 09:48:15 INFO Master: Starting Spark master at spark://localhost:7077
+24/05/24 09:48:15 INFO Master: Running Spark version 3.5.0
+24/05/24 09:48:15 INFO JettyUtils: Start Jetty 0.0.0.0:8080 for MasterUI
+24/05/24 09:48:15 INFO Utils: Successfully started service 'MasterUI' on port 8080.
+24/05/24 09:48:16 INFO MasterWebUI: Bound MasterWebUI to 0.0.0.0, and started at http://dyn134-200.wireless-1725.ndsu.nodak.edu:8080
+24/05/24 09:48:16 INFO Master: I have been elected leader! New state: ALIVE
+24/05/24 09:49:36 INFO Master: Registering worker 172.25.134.200:51453 with 4 cores, 7.0 GiB RAM

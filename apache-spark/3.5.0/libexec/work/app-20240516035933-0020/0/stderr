@@ -1,0 +1,658 @@
+Spark Executor Command: "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java" "-cp" "/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/conf/:/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/jars/*" "-Xmx1024M" "-Dspark.driver.port=49730" "-Djava.net.preferIPv6Addresses=false" "-XX:+IgnoreUnrecognizedVMOptions" "--add-opens=java.base/java.lang=ALL-UNNAMED" "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED" "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED" "--add-opens=java.base/java.io=ALL-UNNAMED" "--add-opens=java.base/java.net=ALL-UNNAMED" "--add-opens=java.base/java.nio=ALL-UNNAMED" "--add-opens=java.base/java.util=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED" "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED" "--add-opens=java.base/sun.nio.cs=ALL-UNNAMED" "--add-opens=java.base/sun.security.action=ALL-UNNAMED" "--add-opens=java.base/sun.util.calendar=ALL-UNNAMED" "--add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED" "-Djdk.reflect.useDirectMethodHandle=false" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@aarons-mbp-2:49730" "--executor-id" "0" "--hostname" "192.168.1.105" "--cores" "8" "--app-id" "app-20240516035933-0020" "--worker-url" "spark://Worker@192.168.1.105:49187" "--resourceProfileId" "0"
+========================================
+
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+24/05/16 03:59:35 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 3388@Aarons-MBP-2
+24/05/16 03:59:35 INFO SignalUtils: Registering signal handler for TERM
+24/05/16 03:59:35 INFO SignalUtils: Registering signal handler for HUP
+24/05/16 03:59:35 INFO SignalUtils: Registering signal handler for INT
+24/05/16 03:59:35 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/05/16 03:59:35 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/05/16 03:59:35 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/05/16 03:59:35 INFO SecurityManager: Changing view acls groups to: 
+24/05/16 03:59:35 INFO SecurityManager: Changing modify acls groups to: 
+24/05/16 03:59:35 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/05/16 03:59:36 INFO TransportClientFactory: Successfully created connection to Aarons-MBP-2/192.168.1.105:49730 after 93 ms (0 ms spent in bootstraps)
+24/05/16 03:59:36 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/05/16 03:59:36 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/05/16 03:59:36 INFO SecurityManager: Changing view acls groups to: 
+24/05/16 03:59:36 INFO SecurityManager: Changing modify acls groups to: 
+24/05/16 03:59:36 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/05/16 03:59:36 INFO TransportClientFactory: Successfully created connection to Aarons-MBP-2/192.168.1.105:49730 after 4 ms (0 ms spent in bootstraps)
+24/05/16 03:59:36 INFO DiskBlockManager: Created local directory at /private/var/folders/rh/d6ltsplj4f94dtzy8y9sz6lr0000gn/T/spark-676a89f7-fd34-4663-bc85-eef08191020a/executor-2be7dae6-cf34-487f-95ab-c76da1854efb/blockmgr-6e4964f9-c8af-4ebe-8fb9-24f40c023fec
+24/05/16 03:59:36 INFO MemoryStore: MemoryStore started with capacity 366.3 MiB
+24/05/16 03:59:36 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@aarons-mbp-2:49730
+24/05/16 03:59:36 INFO WorkerWatcher: Connecting to worker spark://Worker@192.168.1.105:49187
+24/05/16 03:59:36 INFO TransportClientFactory: Successfully created connection to /192.168.1.105:49187 after 6 ms (0 ms spent in bootstraps)
+24/05/16 03:59:36 INFO ResourceUtils: ==============================================================
+24/05/16 03:59:36 INFO WorkerWatcher: Successfully connected to spark://Worker@192.168.1.105:49187
+24/05/16 03:59:36 INFO ResourceUtils: No custom resources configured for spark.executor.
+24/05/16 03:59:36 INFO ResourceUtils: ==============================================================
+24/05/16 03:59:36 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+24/05/16 03:59:37 INFO Executor: Starting executor ID 0 on host 192.168.1.105
+24/05/16 03:59:37 INFO Executor: OS info Mac OS X, 14.4.1, x86_64
+24/05/16 03:59:37 INFO Executor: Java version 1.8.0_401
+24/05/16 03:59:37 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 49738.
+24/05/16 03:59:37 INFO NettyBlockTransferService: Server created on 192.168.1.105:49738
+24/05/16 03:59:37 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+24/05/16 03:59:37 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(0, 192.168.1.105, 49738, None)
+24/05/16 03:59:37 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(0, 192.168.1.105, 49738, None)
+24/05/16 03:59:37 INFO BlockManager: Initialized BlockManager: BlockManagerId(0, 192.168.1.105, 49738, None)
+24/05/16 03:59:37 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+24/05/16 03:59:37 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@5e0bd689 for default.
+24/05/16 03:59:39 INFO CoarseGrainedExecutorBackend: Got assigned task 0
+24/05/16 03:59:39 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+24/05/16 03:59:39 INFO TorrentBroadcast: Started reading broadcast variable 1 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:39 INFO TransportClientFactory: Successfully created connection to Aarons-MBP-2/192.168.1.105:49733 after 5 ms (0 ms spent in bootstraps)
+24/05/16 03:59:40 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 6.4 KiB, free 366.3 MiB)
+24/05/16 03:59:40 INFO TorrentBroadcast: Reading broadcast variable 1 took 169 ms
+24/05/16 03:59:40 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 13.5 KiB, free 366.3 MiB)
+24/05/16 03:59:41 INFO CodeGenerator: Code generated in 328.110375 ms
+24/05/16 03:59:41 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/4Cluster2Ddataset.csv, range: 0-19230, partition values: [empty row]
+24/05/16 03:59:41 INFO CodeGenerator: Code generated in 29.426834 ms
+24/05/16 03:59:41 INFO TorrentBroadcast: Started reading broadcast variable 0 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:41 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 34.3 KiB, free 366.2 MiB)
+24/05/16 03:59:41 INFO TorrentBroadcast: Reading broadcast variable 0 took 31 ms
+24/05/16 03:59:41 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 519.0 KiB, free 365.7 MiB)
+24/05/16 03:59:41 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1671 bytes result sent to driver
+24/05/16 03:59:42 INFO CoarseGrainedExecutorBackend: Got assigned task 1
+24/05/16 03:59:42 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+24/05/16 03:59:42 INFO TorrentBroadcast: Started reading broadcast variable 3 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:42 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 12.6 KiB, free 365.7 MiB)
+24/05/16 03:59:42 INFO TorrentBroadcast: Reading broadcast variable 3 took 39 ms
+24/05/16 03:59:42 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 27.4 KiB, free 365.7 MiB)
+24/05/16 03:59:43 INFO CodeGenerator: Code generated in 35.012208 ms
+24/05/16 03:59:43 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/4Cluster2Ddataset.csv, range: 0-19230, partition values: [empty row]
+24/05/16 03:59:43 INFO TorrentBroadcast: Started reading broadcast variable 2 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:43 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 34.3 KiB, free 365.7 MiB)
+24/05/16 03:59:43 INFO TorrentBroadcast: Reading broadcast variable 2 took 25 ms
+24/05/16 03:59:43 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 519.0 KiB, free 365.2 MiB)
+24/05/16 03:59:44 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 1658 bytes result sent to driver
+24/05/16 03:59:44 INFO CoarseGrainedExecutorBackend: Got assigned task 2
+24/05/16 03:59:44 INFO Executor: Running task 0.0 in stage 2.0 (TID 2)
+24/05/16 03:59:44 INFO TorrentBroadcast: Started reading broadcast variable 5 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:44 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 7.8 KiB, free 365.2 MiB)
+24/05/16 03:59:44 INFO TorrentBroadcast: Reading broadcast variable 5 took 36 ms
+24/05/16 03:59:44 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 16.1 KiB, free 365.1 MiB)
+24/05/16 03:59:44 INFO CodeGenerator: Code generated in 35.682084 ms
+24/05/16 03:59:44 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/4Cluster2Ddataset.csv, range: 0-19230, partition values: [empty row]
+24/05/16 03:59:44 INFO CodeGenerator: Code generated in 34.558584 ms
+24/05/16 03:59:44 INFO TorrentBroadcast: Started reading broadcast variable 4 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:44 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 34.3 KiB, free 365.1 MiB)
+24/05/16 03:59:44 INFO TorrentBroadcast: Reading broadcast variable 4 took 22 ms
+24/05/16 03:59:44 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 519.0 KiB, free 364.6 MiB)
+24/05/16 03:59:44 INFO CodeGenerator: Code generated in 14.379375 ms
+24/05/16 03:59:44 INFO Executor: Finished task 0.0 in stage 2.0 (TID 2). 3817 bytes result sent to driver
+24/05/16 03:59:45 INFO CoarseGrainedExecutorBackend: Got assigned task 3
+24/05/16 03:59:45 INFO CoarseGrainedExecutorBackend: Got assigned task 4
+24/05/16 03:59:45 INFO Executor: Running task 0.0 in stage 3.0 (TID 3)
+24/05/16 03:59:45 INFO CoarseGrainedExecutorBackend: Got assigned task 5
+24/05/16 03:59:45 INFO CoarseGrainedExecutorBackend: Got assigned task 6
+24/05/16 03:59:45 INFO Executor: Running task 1.0 in stage 3.0 (TID 4)
+24/05/16 03:59:45 INFO Executor: Running task 2.0 in stage 3.0 (TID 5)
+24/05/16 03:59:45 INFO CoarseGrainedExecutorBackend: Got assigned task 7
+24/05/16 03:59:45 INFO Executor: Running task 3.0 in stage 3.0 (TID 6)
+24/05/16 03:59:45 INFO CoarseGrainedExecutorBackend: Got assigned task 8
+24/05/16 03:59:45 INFO Executor: Running task 4.0 in stage 3.0 (TID 7)
+24/05/16 03:59:45 INFO CoarseGrainedExecutorBackend: Got assigned task 9
+24/05/16 03:59:45 INFO Executor: Running task 5.0 in stage 3.0 (TID 8)
+24/05/16 03:59:45 INFO Executor: Running task 6.0 in stage 3.0 (TID 9)
+24/05/16 03:59:45 INFO CoarseGrainedExecutorBackend: Got assigned task 10
+24/05/16 03:59:45 INFO Executor: Running task 7.0 in stage 3.0 (TID 10)
+24/05/16 03:59:45 INFO TorrentBroadcast: Started reading broadcast variable 6 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:45 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 3.9 KiB, free 364.6 MiB)
+24/05/16 03:59:45 INFO TorrentBroadcast: Reading broadcast variable 6 took 28 ms
+24/05/16 03:59:45 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 5.9 KiB, free 364.6 MiB)
+24/05/16 03:59:45 INFO PythonRunner: Times: total = 695, boot = 463, init = 232, finish = 0
+24/05/16 03:59:45 INFO PythonRunner: Times: total = 689, boot = 483, init = 206, finish = 0
+24/05/16 03:59:45 INFO PythonRunner: Times: total = 656, boot = 477, init = 179, finish = 0
+24/05/16 03:59:45 INFO PythonRunner: Times: total = 686, boot = 504, init = 182, finish = 0
+24/05/16 03:59:45 INFO PythonRunner: Times: total = 655, boot = 488, init = 166, finish = 1
+24/05/16 03:59:45 INFO PythonRunner: Times: total = 695, boot = 480, init = 214, finish = 1
+24/05/16 03:59:45 INFO PythonRunner: Times: total = 678, boot = 468, init = 208, finish = 2
+24/05/16 03:59:45 INFO PythonRunner: Times: total = 677, boot = 497, init = 178, finish = 2
+24/05/16 03:59:45 INFO Executor: Finished task 0.0 in stage 3.0 (TID 3). 1441 bytes result sent to driver
+24/05/16 03:59:45 INFO Executor: Finished task 2.0 in stage 3.0 (TID 5). 1441 bytes result sent to driver
+24/05/16 03:59:45 INFO Executor: Finished task 4.0 in stage 3.0 (TID 7). 1441 bytes result sent to driver
+24/05/16 03:59:45 INFO Executor: Finished task 5.0 in stage 3.0 (TID 8). 1441 bytes result sent to driver
+24/05/16 03:59:45 INFO Executor: Finished task 6.0 in stage 3.0 (TID 9). 1441 bytes result sent to driver
+24/05/16 03:59:45 INFO Executor: Finished task 3.0 in stage 3.0 (TID 6). 1519 bytes result sent to driver
+24/05/16 03:59:45 INFO Executor: Finished task 1.0 in stage 3.0 (TID 4). 1441 bytes result sent to driver
+24/05/16 03:59:45 INFO Executor: Finished task 7.0 in stage 3.0 (TID 10). 1519 bytes result sent to driver
+24/05/16 03:59:46 INFO CoarseGrainedExecutorBackend: Got assigned task 11
+24/05/16 03:59:46 INFO CoarseGrainedExecutorBackend: Got assigned task 12
+24/05/16 03:59:46 INFO CoarseGrainedExecutorBackend: Got assigned task 13
+24/05/16 03:59:46 INFO Executor: Running task 0.0 in stage 4.0 (TID 11)
+24/05/16 03:59:46 INFO Executor: Running task 1.0 in stage 4.0 (TID 12)
+24/05/16 03:59:46 INFO Executor: Running task 2.0 in stage 4.0 (TID 13)
+24/05/16 03:59:46 INFO CoarseGrainedExecutorBackend: Got assigned task 14
+24/05/16 03:59:46 INFO Executor: Running task 3.0 in stage 4.0 (TID 14)
+24/05/16 03:59:46 INFO CoarseGrainedExecutorBackend: Got assigned task 15
+24/05/16 03:59:46 INFO Executor: Running task 4.0 in stage 4.0 (TID 15)
+24/05/16 03:59:46 INFO CoarseGrainedExecutorBackend: Got assigned task 16
+24/05/16 03:59:46 INFO Executor: Running task 5.0 in stage 4.0 (TID 16)
+24/05/16 03:59:46 INFO CoarseGrainedExecutorBackend: Got assigned task 17
+24/05/16 03:59:46 INFO Executor: Running task 6.0 in stage 4.0 (TID 17)
+24/05/16 03:59:46 INFO CoarseGrainedExecutorBackend: Got assigned task 18
+24/05/16 03:59:46 INFO Executor: Running task 7.0 in stage 4.0 (TID 18)
+24/05/16 03:59:46 INFO TorrentBroadcast: Started reading broadcast variable 7 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:46 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 1759.0 B, free 364.6 MiB)
+24/05/16 03:59:46 INFO TorrentBroadcast: Reading broadcast variable 7 took 41 ms
+24/05/16 03:59:46 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 2.9 KiB, free 364.6 MiB)
+24/05/16 03:59:46 INFO Executor: Finished task 0.0 in stage 4.0 (TID 11). 1028 bytes result sent to driver
+24/05/16 03:59:46 INFO Executor: Finished task 7.0 in stage 4.0 (TID 18). 1170 bytes result sent to driver
+24/05/16 03:59:46 INFO Executor: Finished task 3.0 in stage 4.0 (TID 14). 1170 bytes result sent to driver
+24/05/16 03:59:46 INFO Executor: Finished task 5.0 in stage 4.0 (TID 16). 1028 bytes result sent to driver
+24/05/16 03:59:46 INFO Executor: Finished task 6.0 in stage 4.0 (TID 17). 1028 bytes result sent to driver
+24/05/16 03:59:46 INFO Executor: Finished task 1.0 in stage 4.0 (TID 12). 1028 bytes result sent to driver
+24/05/16 03:59:46 INFO Executor: Finished task 2.0 in stage 4.0 (TID 13). 1028 bytes result sent to driver
+24/05/16 03:59:46 INFO Executor: Finished task 4.0 in stage 4.0 (TID 15). 1028 bytes result sent to driver
+24/05/16 03:59:46 INFO CoarseGrainedExecutorBackend: Got assigned task 19
+24/05/16 03:59:46 INFO Executor: Running task 0.0 in stage 5.0 (TID 19)
+24/05/16 03:59:46 INFO TorrentBroadcast: Started reading broadcast variable 9 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:46 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 7.8 KiB, free 364.6 MiB)
+24/05/16 03:59:46 INFO TorrentBroadcast: Reading broadcast variable 9 took 20 ms
+24/05/16 03:59:46 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 16.1 KiB, free 364.6 MiB)
+24/05/16 03:59:46 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/4Cluster2Ddataset.csv, range: 0-19230, partition values: [empty row]
+24/05/16 03:59:46 INFO TorrentBroadcast: Started reading broadcast variable 8 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:46 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 34.3 KiB, free 364.5 MiB)
+24/05/16 03:59:46 INFO TorrentBroadcast: Reading broadcast variable 8 took 23 ms
+24/05/16 03:59:46 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 519.0 KiB, free 364.0 MiB)
+24/05/16 03:59:46 INFO Executor: Finished task 0.0 in stage 5.0 (TID 19). 4224 bytes result sent to driver
+24/05/16 03:59:46 INFO CoarseGrainedExecutorBackend: Got assigned task 20
+24/05/16 03:59:46 INFO CoarseGrainedExecutorBackend: Got assigned task 21
+24/05/16 03:59:46 INFO Executor: Running task 0.0 in stage 6.0 (TID 20)
+24/05/16 03:59:46 INFO CoarseGrainedExecutorBackend: Got assigned task 22
+24/05/16 03:59:46 INFO Executor: Running task 1.0 in stage 6.0 (TID 21)
+24/05/16 03:59:46 INFO CoarseGrainedExecutorBackend: Got assigned task 23
+24/05/16 03:59:46 INFO Executor: Running task 2.0 in stage 6.0 (TID 22)
+24/05/16 03:59:46 INFO CoarseGrainedExecutorBackend: Got assigned task 24
+24/05/16 03:59:46 INFO CoarseGrainedExecutorBackend: Got assigned task 25
+24/05/16 03:59:46 INFO Executor: Running task 4.0 in stage 6.0 (TID 24)
+24/05/16 03:59:46 INFO CoarseGrainedExecutorBackend: Got assigned task 26
+24/05/16 03:59:46 INFO Executor: Running task 5.0 in stage 6.0 (TID 25)
+24/05/16 03:59:46 INFO CoarseGrainedExecutorBackend: Got assigned task 27
+24/05/16 03:59:46 INFO Executor: Running task 3.0 in stage 6.0 (TID 23)
+24/05/16 03:59:46 INFO Executor: Running task 7.0 in stage 6.0 (TID 27)
+24/05/16 03:59:46 INFO Executor: Running task 6.0 in stage 6.0 (TID 26)
+24/05/16 03:59:46 INFO TorrentBroadcast: Started reading broadcast variable 10 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:46 INFO MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 3.9 KiB, free 364.0 MiB)
+24/05/16 03:59:46 INFO TorrentBroadcast: Reading broadcast variable 10 took 59 ms
+24/05/16 03:59:46 INFO MemoryStore: Block broadcast_10 stored as values in memory (estimated size 5.9 KiB, free 364.0 MiB)
+24/05/16 03:59:47 INFO PythonRunner: Times: total = 66, boot = -1097, init = 1163, finish = 0
+24/05/16 03:59:47 INFO PythonRunner: Times: total = 86, boot = -1069, init = 1155, finish = 0
+24/05/16 03:59:47 INFO PythonRunner: Times: total = 88, boot = -1065, init = 1153, finish = 0
+24/05/16 03:59:47 INFO PythonRunner: Times: total = 90, boot = -1053, init = 1142, finish = 1
+24/05/16 03:59:47 INFO PythonRunner: Times: total = 91, boot = -1066, init = 1157, finish = 0
+24/05/16 03:59:47 INFO PythonRunner: Times: total = 90, boot = -1097, init = 1187, finish = 0
+24/05/16 03:59:47 INFO Executor: Finished task 5.0 in stage 6.0 (TID 25). 1398 bytes result sent to driver
+24/05/16 03:59:47 INFO Executor: Finished task 0.0 in stage 6.0 (TID 20). 1441 bytes result sent to driver
+24/05/16 03:59:47 INFO Executor: Finished task 7.0 in stage 6.0 (TID 27). 1519 bytes result sent to driver
+24/05/16 03:59:47 INFO Executor: Finished task 2.0 in stage 6.0 (TID 22). 1398 bytes result sent to driver
+24/05/16 03:59:47 INFO Executor: Finished task 1.0 in stage 6.0 (TID 21). 1398 bytes result sent to driver
+24/05/16 03:59:47 INFO Executor: Finished task 6.0 in stage 6.0 (TID 26). 1398 bytes result sent to driver
+24/05/16 03:59:47 INFO PythonRunner: Times: total = 97, boot = -1085, init = 1182, finish = 0
+24/05/16 03:59:47 INFO Executor: Finished task 3.0 in stage 6.0 (TID 23). 1476 bytes result sent to driver
+24/05/16 03:59:47 INFO PythonRunner: Times: total = 79, boot = -1116, init = 1195, finish = 0
+24/05/16 03:59:47 INFO Executor: Finished task 4.0 in stage 6.0 (TID 24). 1398 bytes result sent to driver
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 28
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 29
+24/05/16 03:59:47 INFO Executor: Running task 0.0 in stage 7.0 (TID 28)
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 30
+24/05/16 03:59:47 INFO Executor: Running task 1.0 in stage 7.0 (TID 29)
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 31
+24/05/16 03:59:47 INFO Executor: Running task 2.0 in stage 7.0 (TID 30)
+24/05/16 03:59:47 INFO Executor: Running task 3.0 in stage 7.0 (TID 31)
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 32
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 33
+24/05/16 03:59:47 INFO Executor: Running task 4.0 in stage 7.0 (TID 32)
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 34
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 35
+24/05/16 03:59:47 INFO Executor: Running task 7.0 in stage 7.0 (TID 35)
+24/05/16 03:59:47 INFO Executor: Running task 6.0 in stage 7.0 (TID 34)
+24/05/16 03:59:47 INFO Executor: Running task 5.0 in stage 7.0 (TID 33)
+24/05/16 03:59:47 INFO TorrentBroadcast: Started reading broadcast variable 11 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:47 INFO MemoryStore: Block broadcast_11_piece0 stored as bytes in memory (estimated size 1759.0 B, free 364.0 MiB)
+24/05/16 03:59:47 INFO TorrentBroadcast: Reading broadcast variable 11 took 23 ms
+24/05/16 03:59:47 INFO MemoryStore: Block broadcast_11 stored as values in memory (estimated size 2.9 KiB, free 364.0 MiB)
+24/05/16 03:59:47 INFO Executor: Finished task 1.0 in stage 7.0 (TID 29). 1028 bytes result sent to driver
+24/05/16 03:59:47 INFO Executor: Finished task 7.0 in stage 7.0 (TID 35). 1170 bytes result sent to driver
+24/05/16 03:59:47 INFO Executor: Finished task 5.0 in stage 7.0 (TID 33). 985 bytes result sent to driver
+24/05/16 03:59:47 INFO Executor: Finished task 3.0 in stage 7.0 (TID 31). 1127 bytes result sent to driver
+24/05/16 03:59:47 INFO Executor: Finished task 0.0 in stage 7.0 (TID 28). 1028 bytes result sent to driver
+24/05/16 03:59:47 INFO Executor: Finished task 4.0 in stage 7.0 (TID 32). 1028 bytes result sent to driver
+24/05/16 03:59:47 INFO Executor: Finished task 2.0 in stage 7.0 (TID 30). 1028 bytes result sent to driver
+24/05/16 03:59:47 INFO Executor: Finished task 6.0 in stage 7.0 (TID 34). 942 bytes result sent to driver
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 36
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 37
+24/05/16 03:59:47 INFO Executor: Running task 0.0 in stage 8.0 (TID 36)
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 38
+24/05/16 03:59:47 INFO Executor: Running task 1.0 in stage 8.0 (TID 37)
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 39
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 40
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 41
+24/05/16 03:59:47 INFO Executor: Running task 3.0 in stage 8.0 (TID 39)
+24/05/16 03:59:47 INFO Executor: Running task 2.0 in stage 8.0 (TID 38)
+24/05/16 03:59:47 INFO Executor: Running task 4.0 in stage 8.0 (TID 40)
+24/05/16 03:59:47 INFO Executor: Running task 5.0 in stage 8.0 (TID 41)
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 42
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 43
+24/05/16 03:59:47 INFO Executor: Running task 6.0 in stage 8.0 (TID 42)
+24/05/16 03:59:47 INFO Executor: Running task 7.0 in stage 8.0 (TID 43)
+24/05/16 03:59:47 INFO TorrentBroadcast: Started reading broadcast variable 12 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:47 INFO MemoryStore: Block broadcast_12_piece0 stored as bytes in memory (estimated size 1759.0 B, free 364.0 MiB)
+24/05/16 03:59:47 INFO TorrentBroadcast: Reading broadcast variable 12 took 22 ms
+24/05/16 03:59:47 INFO MemoryStore: Block broadcast_12 stored as values in memory (estimated size 2.9 KiB, free 364.0 MiB)
+24/05/16 03:59:47 INFO Executor: Finished task 3.0 in stage 8.0 (TID 39). 1170 bytes result sent to driver
+24/05/16 03:59:47 INFO Executor: Finished task 1.0 in stage 8.0 (TID 37). 1028 bytes result sent to driver
+24/05/16 03:59:47 INFO Executor: Finished task 4.0 in stage 8.0 (TID 40). 1028 bytes result sent to driver
+24/05/16 03:59:47 INFO Executor: Finished task 2.0 in stage 8.0 (TID 38). 1028 bytes result sent to driver
+24/05/16 03:59:47 INFO Executor: Finished task 5.0 in stage 8.0 (TID 41). 1028 bytes result sent to driver
+24/05/16 03:59:47 INFO Executor: Finished task 0.0 in stage 8.0 (TID 36). 1028 bytes result sent to driver
+24/05/16 03:59:47 INFO Executor: Finished task 6.0 in stage 8.0 (TID 42). 1028 bytes result sent to driver
+24/05/16 03:59:47 INFO Executor: Finished task 7.0 in stage 8.0 (TID 43). 1127 bytes result sent to driver
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 44
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 45
+24/05/16 03:59:47 INFO Executor: Running task 0.0 in stage 9.0 (TID 44)
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 46
+24/05/16 03:59:47 INFO Executor: Running task 1.0 in stage 9.0 (TID 45)
+24/05/16 03:59:47 INFO Executor: Running task 2.0 in stage 9.0 (TID 46)
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 47
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 48
+24/05/16 03:59:47 INFO Executor: Running task 3.0 in stage 9.0 (TID 47)
+24/05/16 03:59:47 INFO Executor: Running task 4.0 in stage 9.0 (TID 48)
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 49
+24/05/16 03:59:47 INFO TorrentBroadcast: Started reading broadcast variable 13 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 50
+24/05/16 03:59:47 INFO Executor: Running task 5.0 in stage 9.0 (TID 49)
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 51
+24/05/16 03:59:47 INFO Executor: Running task 6.0 in stage 9.0 (TID 50)
+24/05/16 03:59:47 INFO Executor: Running task 7.0 in stage 9.0 (TID 51)
+24/05/16 03:59:47 INFO MemoryStore: Block broadcast_13_piece0 stored as bytes in memory (estimated size 1759.0 B, free 364.0 MiB)
+24/05/16 03:59:47 INFO TorrentBroadcast: Reading broadcast variable 13 took 45 ms
+24/05/16 03:59:47 INFO MemoryStore: Block broadcast_13 stored as values in memory (estimated size 2.9 KiB, free 364.0 MiB)
+24/05/16 03:59:47 INFO Executor: Finished task 3.0 in stage 9.0 (TID 47). 1170 bytes result sent to driver
+24/05/16 03:59:47 INFO Executor: Finished task 4.0 in stage 9.0 (TID 48). 1028 bytes result sent to driver
+24/05/16 03:59:47 INFO Executor: Finished task 2.0 in stage 9.0 (TID 46). 1028 bytes result sent to driver
+24/05/16 03:59:47 INFO Executor: Finished task 1.0 in stage 9.0 (TID 45). 1028 bytes result sent to driver
+24/05/16 03:59:47 INFO Executor: Finished task 0.0 in stage 9.0 (TID 44). 1028 bytes result sent to driver
+24/05/16 03:59:47 INFO Executor: Finished task 6.0 in stage 9.0 (TID 50). 1028 bytes result sent to driver
+24/05/16 03:59:47 INFO Executor: Finished task 5.0 in stage 9.0 (TID 49). 1028 bytes result sent to driver
+24/05/16 03:59:47 INFO Executor: Finished task 7.0 in stage 9.0 (TID 51). 1170 bytes result sent to driver
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 52
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 53
+24/05/16 03:59:47 INFO Executor: Running task 0.0 in stage 10.0 (TID 52)
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 54
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 55
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 56
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 57
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 58
+24/05/16 03:59:47 INFO CoarseGrainedExecutorBackend: Got assigned task 59
+24/05/16 03:59:47 INFO Executor: Running task 6.0 in stage 10.0 (TID 58)
+24/05/16 03:59:47 INFO Executor: Running task 7.0 in stage 10.0 (TID 59)
+24/05/16 03:59:47 INFO Executor: Running task 2.0 in stage 10.0 (TID 54)
+24/05/16 03:59:47 INFO Executor: Running task 4.0 in stage 10.0 (TID 56)
+24/05/16 03:59:47 INFO Executor: Running task 5.0 in stage 10.0 (TID 57)
+24/05/16 03:59:47 INFO Executor: Running task 3.0 in stage 10.0 (TID 55)
+24/05/16 03:59:47 INFO Executor: Running task 1.0 in stage 10.0 (TID 53)
+24/05/16 03:59:47 INFO TorrentBroadcast: Started reading broadcast variable 14 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:47 INFO MemoryStore: Block broadcast_14_piece0 stored as bytes in memory (estimated size 1759.0 B, free 364.0 MiB)
+24/05/16 03:59:47 INFO TorrentBroadcast: Reading broadcast variable 14 took 114 ms
+24/05/16 03:59:47 INFO MemoryStore: Block broadcast_14 stored as values in memory (estimated size 2.9 KiB, free 364.0 MiB)
+24/05/16 03:59:48 INFO Executor: Finished task 7.0 in stage 10.0 (TID 59). 1170 bytes result sent to driver
+24/05/16 03:59:48 INFO Executor: Finished task 6.0 in stage 10.0 (TID 58). 1028 bytes result sent to driver
+24/05/16 03:59:48 INFO Executor: Finished task 5.0 in stage 10.0 (TID 57). 1028 bytes result sent to driver
+24/05/16 03:59:48 INFO Executor: Finished task 3.0 in stage 10.0 (TID 55). 1170 bytes result sent to driver
+24/05/16 03:59:48 INFO Executor: Finished task 1.0 in stage 10.0 (TID 53). 1028 bytes result sent to driver
+24/05/16 03:59:48 INFO Executor: Finished task 4.0 in stage 10.0 (TID 56). 1028 bytes result sent to driver
+24/05/16 03:59:48 INFO Executor: Finished task 0.0 in stage 10.0 (TID 52). 1028 bytes result sent to driver
+24/05/16 03:59:48 INFO Executor: Finished task 2.0 in stage 10.0 (TID 54). 1028 bytes result sent to driver
+24/05/16 03:59:48 INFO CoarseGrainedExecutorBackend: Got assigned task 60
+24/05/16 03:59:48 INFO CoarseGrainedExecutorBackend: Got assigned task 61
+24/05/16 03:59:48 INFO Executor: Running task 0.0 in stage 11.0 (TID 60)
+24/05/16 03:59:48 INFO Executor: Running task 1.0 in stage 11.0 (TID 61)
+24/05/16 03:59:48 INFO CoarseGrainedExecutorBackend: Got assigned task 62
+24/05/16 03:59:48 INFO CoarseGrainedExecutorBackend: Got assigned task 63
+24/05/16 03:59:48 INFO CoarseGrainedExecutorBackend: Got assigned task 64
+24/05/16 03:59:48 INFO Executor: Running task 2.0 in stage 11.0 (TID 62)
+24/05/16 03:59:48 INFO CoarseGrainedExecutorBackend: Got assigned task 65
+24/05/16 03:59:48 INFO Executor: Running task 3.0 in stage 11.0 (TID 63)
+24/05/16 03:59:48 INFO CoarseGrainedExecutorBackend: Got assigned task 66
+24/05/16 03:59:48 INFO CoarseGrainedExecutorBackend: Got assigned task 67
+24/05/16 03:59:48 INFO Executor: Running task 5.0 in stage 11.0 (TID 65)
+24/05/16 03:59:48 INFO Executor: Running task 4.0 in stage 11.0 (TID 64)
+24/05/16 03:59:48 INFO Executor: Running task 6.0 in stage 11.0 (TID 66)
+24/05/16 03:59:48 INFO Executor: Running task 7.0 in stage 11.0 (TID 67)
+24/05/16 03:59:48 INFO TorrentBroadcast: Started reading broadcast variable 15 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:48 INFO MemoryStore: Block broadcast_15_piece0 stored as bytes in memory (estimated size 1759.0 B, free 364.1 MiB)
+24/05/16 03:59:48 INFO TorrentBroadcast: Reading broadcast variable 15 took 35 ms
+24/05/16 03:59:48 INFO MemoryStore: Block broadcast_15 stored as values in memory (estimated size 2.9 KiB, free 364.1 MiB)
+24/05/16 03:59:48 INFO Executor: Finished task 2.0 in stage 11.0 (TID 62). 1028 bytes result sent to driver
+24/05/16 03:59:48 INFO Executor: Finished task 6.0 in stage 11.0 (TID 66). 1028 bytes result sent to driver
+24/05/16 03:59:48 INFO Executor: Finished task 3.0 in stage 11.0 (TID 63). 1170 bytes result sent to driver
+24/05/16 03:59:48 INFO Executor: Finished task 7.0 in stage 11.0 (TID 67). 1127 bytes result sent to driver
+24/05/16 03:59:48 INFO Executor: Finished task 4.0 in stage 11.0 (TID 64). 1028 bytes result sent to driver
+24/05/16 03:59:48 INFO Executor: Finished task 1.0 in stage 11.0 (TID 61). 985 bytes result sent to driver
+24/05/16 03:59:48 INFO Executor: Finished task 5.0 in stage 11.0 (TID 65). 1028 bytes result sent to driver
+24/05/16 03:59:48 INFO Executor: Finished task 0.0 in stage 11.0 (TID 60). 1028 bytes result sent to driver
+24/05/16 03:59:48 INFO CoarseGrainedExecutorBackend: Got assigned task 68
+24/05/16 03:59:48 INFO CoarseGrainedExecutorBackend: Got assigned task 69
+24/05/16 03:59:48 INFO Executor: Running task 0.0 in stage 12.0 (TID 68)
+24/05/16 03:59:48 INFO Executor: Running task 1.0 in stage 12.0 (TID 69)
+24/05/16 03:59:48 INFO CoarseGrainedExecutorBackend: Got assigned task 70
+24/05/16 03:59:48 INFO CoarseGrainedExecutorBackend: Got assigned task 71
+24/05/16 03:59:48 INFO Executor: Running task 2.0 in stage 12.0 (TID 70)
+24/05/16 03:59:48 INFO CoarseGrainedExecutorBackend: Got assigned task 72
+24/05/16 03:59:48 INFO Executor: Running task 3.0 in stage 12.0 (TID 71)
+24/05/16 03:59:48 INFO Executor: Running task 4.0 in stage 12.0 (TID 72)
+24/05/16 03:59:48 INFO CoarseGrainedExecutorBackend: Got assigned task 73
+24/05/16 03:59:48 INFO Executor: Running task 5.0 in stage 12.0 (TID 73)
+24/05/16 03:59:48 INFO CoarseGrainedExecutorBackend: Got assigned task 74
+24/05/16 03:59:48 INFO Executor: Running task 6.0 in stage 12.0 (TID 74)
+24/05/16 03:59:48 INFO CoarseGrainedExecutorBackend: Got assigned task 75
+24/05/16 03:59:48 INFO Executor: Running task 7.0 in stage 12.0 (TID 75)
+24/05/16 03:59:48 INFO TorrentBroadcast: Started reading broadcast variable 16 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:48 INFO MemoryStore: Block broadcast_16_piece0 stored as bytes in memory (estimated size 1759.0 B, free 364.1 MiB)
+24/05/16 03:59:48 INFO TorrentBroadcast: Reading broadcast variable 16 took 20 ms
+24/05/16 03:59:48 INFO MemoryStore: Block broadcast_16 stored as values in memory (estimated size 2.9 KiB, free 364.1 MiB)
+24/05/16 03:59:48 INFO Executor: Finished task 2.0 in stage 12.0 (TID 70). 1028 bytes result sent to driver
+24/05/16 03:59:48 INFO Executor: Finished task 3.0 in stage 12.0 (TID 71). 1127 bytes result sent to driver
+24/05/16 03:59:48 INFO Executor: Finished task 0.0 in stage 12.0 (TID 68). 985 bytes result sent to driver
+24/05/16 03:59:48 INFO Executor: Finished task 4.0 in stage 12.0 (TID 72). 985 bytes result sent to driver
+24/05/16 03:59:48 INFO Executor: Finished task 5.0 in stage 12.0 (TID 73). 985 bytes result sent to driver
+24/05/16 03:59:48 INFO Executor: Finished task 7.0 in stage 12.0 (TID 75). 1127 bytes result sent to driver
+24/05/16 03:59:48 INFO Executor: Finished task 1.0 in stage 12.0 (TID 69). 1028 bytes result sent to driver
+24/05/16 03:59:48 INFO Executor: Finished task 6.0 in stage 12.0 (TID 74). 985 bytes result sent to driver
+24/05/16 03:59:48 INFO CoarseGrainedExecutorBackend: Got assigned task 76
+24/05/16 03:59:48 INFO Executor: Running task 0.0 in stage 13.0 (TID 76)
+24/05/16 03:59:48 INFO TorrentBroadcast: Started reading broadcast variable 18 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:48 INFO MemoryStore: Block broadcast_18_piece0 stored as bytes in memory (estimated size 7.8 KiB, free 364.1 MiB)
+24/05/16 03:59:48 INFO TorrentBroadcast: Reading broadcast variable 18 took 14 ms
+24/05/16 03:59:48 INFO MemoryStore: Block broadcast_18 stored as values in memory (estimated size 16.1 KiB, free 364.1 MiB)
+24/05/16 03:59:48 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/4Cluster2Ddataset.csv, range: 0-19230, partition values: [empty row]
+24/05/16 03:59:48 INFO TorrentBroadcast: Started reading broadcast variable 17 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:48 INFO MemoryStore: Block broadcast_17_piece0 stored as bytes in memory (estimated size 34.3 KiB, free 364.1 MiB)
+24/05/16 03:59:48 INFO TorrentBroadcast: Reading broadcast variable 17 took 11 ms
+24/05/16 03:59:48 INFO MemoryStore: Block broadcast_17 stored as values in memory (estimated size 519.0 KiB, free 363.6 MiB)
+24/05/16 03:59:48 INFO Executor: Finished task 0.0 in stage 13.0 (TID 76). 3908 bytes result sent to driver
+24/05/16 03:59:48 INFO CoarseGrainedExecutorBackend: Got assigned task 77
+24/05/16 03:59:48 INFO CoarseGrainedExecutorBackend: Got assigned task 78
+24/05/16 03:59:48 INFO CoarseGrainedExecutorBackend: Got assigned task 79
+24/05/16 03:59:48 INFO CoarseGrainedExecutorBackend: Got assigned task 80
+24/05/16 03:59:48 INFO CoarseGrainedExecutorBackend: Got assigned task 81
+24/05/16 03:59:48 INFO CoarseGrainedExecutorBackend: Got assigned task 82
+24/05/16 03:59:48 INFO Executor: Running task 4.0 in stage 14.0 (TID 81)
+24/05/16 03:59:48 INFO CoarseGrainedExecutorBackend: Got assigned task 83
+24/05/16 03:59:48 INFO Executor: Running task 1.0 in stage 14.0 (TID 78)
+24/05/16 03:59:48 INFO CoarseGrainedExecutorBackend: Got assigned task 84
+24/05/16 03:59:48 INFO Executor: Running task 5.0 in stage 14.0 (TID 82)
+24/05/16 03:59:48 INFO Executor: Running task 6.0 in stage 14.0 (TID 83)
+24/05/16 03:59:48 INFO Executor: Running task 7.0 in stage 14.0 (TID 84)
+24/05/16 03:59:48 INFO Executor: Running task 3.0 in stage 14.0 (TID 80)
+24/05/16 03:59:48 INFO Executor: Running task 2.0 in stage 14.0 (TID 79)
+24/05/16 03:59:48 INFO Executor: Running task 0.0 in stage 14.0 (TID 77)
+24/05/16 03:59:48 INFO TorrentBroadcast: Started reading broadcast variable 19 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:48 INFO MemoryStore: Block broadcast_19_piece0 stored as bytes in memory (estimated size 3.9 KiB, free 363.6 MiB)
+24/05/16 03:59:48 INFO TorrentBroadcast: Reading broadcast variable 19 took 53 ms
+24/05/16 03:59:48 INFO MemoryStore: Block broadcast_19 stored as values in memory (estimated size 5.9 KiB, free 363.6 MiB)
+24/05/16 03:59:48 INFO PythonRunner: Times: total = 66, boot = -1806, init = 1872, finish = 0
+24/05/16 03:59:48 INFO PythonRunner: Times: total = 62, boot = -1823, init = 1884, finish = 1
+24/05/16 03:59:48 INFO PythonRunner: Times: total = 72, boot = -1816, init = 1888, finish = 0
+24/05/16 03:59:48 INFO PythonRunner: Times: total = 88, boot = -1798, init = 1885, finish = 1
+24/05/16 03:59:48 INFO Executor: Finished task 3.0 in stage 14.0 (TID 80). 1476 bytes result sent to driver
+24/05/16 03:59:48 INFO Executor: Finished task 1.0 in stage 14.0 (TID 78). 1441 bytes result sent to driver
+24/05/16 03:59:48 INFO Executor: Finished task 0.0 in stage 14.0 (TID 77). 1441 bytes result sent to driver
+24/05/16 03:59:48 INFO Executor: Finished task 2.0 in stage 14.0 (TID 79). 1398 bytes result sent to driver
+24/05/16 03:59:48 INFO PythonRunner: Times: total = 91, boot = -1816, init = 1907, finish = 0
+24/05/16 03:59:48 INFO PythonRunner: Times: total = 92, boot = -1783, init = 1875, finish = 0
+24/05/16 03:59:48 INFO PythonRunner: Times: total = 89, boot = -1791, init = 1880, finish = 0
+24/05/16 03:59:48 INFO PythonRunner: Times: total = 107, boot = -1795, init = 1902, finish = 0
+24/05/16 03:59:48 INFO Executor: Finished task 5.0 in stage 14.0 (TID 82). 1441 bytes result sent to driver
+24/05/16 03:59:48 INFO Executor: Finished task 6.0 in stage 14.0 (TID 83). 1441 bytes result sent to driver
+24/05/16 03:59:48 INFO Executor: Finished task 4.0 in stage 14.0 (TID 81). 1441 bytes result sent to driver
+24/05/16 03:59:48 INFO Executor: Finished task 7.0 in stage 14.0 (TID 84). 1519 bytes result sent to driver
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 85
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 86
+24/05/16 03:59:49 INFO Executor: Running task 0.0 in stage 15.0 (TID 85)
+24/05/16 03:59:49 INFO Executor: Running task 1.0 in stage 15.0 (TID 86)
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 87
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 88
+24/05/16 03:59:49 INFO Executor: Running task 2.0 in stage 15.0 (TID 87)
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 89
+24/05/16 03:59:49 INFO Executor: Running task 3.0 in stage 15.0 (TID 88)
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 90
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 91
+24/05/16 03:59:49 INFO Executor: Running task 4.0 in stage 15.0 (TID 89)
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 92
+24/05/16 03:59:49 INFO Executor: Running task 6.0 in stage 15.0 (TID 91)
+24/05/16 03:59:49 INFO Executor: Running task 7.0 in stage 15.0 (TID 92)
+24/05/16 03:59:49 INFO Executor: Running task 5.0 in stage 15.0 (TID 90)
+24/05/16 03:59:49 INFO TorrentBroadcast: Started reading broadcast variable 20 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:49 INFO MemoryStore: Block broadcast_20_piece0 stored as bytes in memory (estimated size 1759.0 B, free 363.6 MiB)
+24/05/16 03:59:49 INFO TorrentBroadcast: Reading broadcast variable 20 took 20 ms
+24/05/16 03:59:49 INFO MemoryStore: Block broadcast_20 stored as values in memory (estimated size 2.9 KiB, free 363.5 MiB)
+24/05/16 03:59:49 INFO Executor: Finished task 6.0 in stage 15.0 (TID 91). 985 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 0.0 in stage 15.0 (TID 85). 1028 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 5.0 in stage 15.0 (TID 90). 985 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 2.0 in stage 15.0 (TID 87). 985 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 7.0 in stage 15.0 (TID 92). 1170 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 4.0 in stage 15.0 (TID 89). 1028 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 1.0 in stage 15.0 (TID 86). 1028 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 3.0 in stage 15.0 (TID 88). 1127 bytes result sent to driver
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 93
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 94
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 95
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 96
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 97
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 98
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 99
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 100
+24/05/16 03:59:49 INFO Executor: Running task 1.0 in stage 16.0 (TID 94)
+24/05/16 03:59:49 INFO Executor: Running task 2.0 in stage 16.0 (TID 95)
+24/05/16 03:59:49 INFO Executor: Running task 0.0 in stage 16.0 (TID 93)
+24/05/16 03:59:49 INFO Executor: Running task 3.0 in stage 16.0 (TID 96)
+24/05/16 03:59:49 INFO Executor: Running task 7.0 in stage 16.0 (TID 100)
+24/05/16 03:59:49 INFO Executor: Running task 5.0 in stage 16.0 (TID 98)
+24/05/16 03:59:49 INFO Executor: Running task 4.0 in stage 16.0 (TID 97)
+24/05/16 03:59:49 INFO Executor: Running task 6.0 in stage 16.0 (TID 99)
+24/05/16 03:59:49 INFO TorrentBroadcast: Started reading broadcast variable 21 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:49 INFO MemoryStore: Block broadcast_21_piece0 stored as bytes in memory (estimated size 1759.0 B, free 363.5 MiB)
+24/05/16 03:59:49 INFO TorrentBroadcast: Reading broadcast variable 21 took 27 ms
+24/05/16 03:59:49 INFO MemoryStore: Block broadcast_21 stored as values in memory (estimated size 2.9 KiB, free 363.5 MiB)
+24/05/16 03:59:49 INFO Executor: Finished task 1.0 in stage 16.0 (TID 94). 1028 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 0.0 in stage 16.0 (TID 93). 1028 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 4.0 in stage 16.0 (TID 97). 1028 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 2.0 in stage 16.0 (TID 95). 1028 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 6.0 in stage 16.0 (TID 99). 1028 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 5.0 in stage 16.0 (TID 98). 1028 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 3.0 in stage 16.0 (TID 96). 1170 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 7.0 in stage 16.0 (TID 100). 1170 bytes result sent to driver
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 101
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 102
+24/05/16 03:59:49 INFO Executor: Running task 0.0 in stage 17.0 (TID 101)
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 103
+24/05/16 03:59:49 INFO Executor: Running task 1.0 in stage 17.0 (TID 102)
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 104
+24/05/16 03:59:49 INFO Executor: Running task 2.0 in stage 17.0 (TID 103)
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 105
+24/05/16 03:59:49 INFO Executor: Running task 3.0 in stage 17.0 (TID 104)
+24/05/16 03:59:49 INFO Executor: Running task 4.0 in stage 17.0 (TID 105)
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 106
+24/05/16 03:59:49 INFO Executor: Running task 5.0 in stage 17.0 (TID 106)
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 107
+24/05/16 03:59:49 INFO Executor: Running task 6.0 in stage 17.0 (TID 107)
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 108
+24/05/16 03:59:49 INFO Executor: Running task 7.0 in stage 17.0 (TID 108)
+24/05/16 03:59:49 INFO TorrentBroadcast: Started reading broadcast variable 22 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:49 INFO MemoryStore: Block broadcast_22_piece0 stored as bytes in memory (estimated size 1759.0 B, free 363.5 MiB)
+24/05/16 03:59:49 INFO TorrentBroadcast: Reading broadcast variable 22 took 11 ms
+24/05/16 03:59:49 INFO MemoryStore: Block broadcast_22 stored as values in memory (estimated size 2.9 KiB, free 363.5 MiB)
+24/05/16 03:59:49 INFO Executor: Finished task 3.0 in stage 17.0 (TID 104). 1170 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 2.0 in stage 17.0 (TID 103). 1028 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 6.0 in stage 17.0 (TID 107). 985 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 4.0 in stage 17.0 (TID 105). 985 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 5.0 in stage 17.0 (TID 106). 1028 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 1.0 in stage 17.0 (TID 102). 1028 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 0.0 in stage 17.0 (TID 101). 1028 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 7.0 in stage 17.0 (TID 108). 1127 bytes result sent to driver
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 109
+24/05/16 03:59:49 INFO Executor: Running task 0.0 in stage 18.0 (TID 109)
+24/05/16 03:59:49 INFO TorrentBroadcast: Started reading broadcast variable 24 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:49 INFO MemoryStore: Block broadcast_24_piece0 stored as bytes in memory (estimated size 7.8 KiB, free 363.5 MiB)
+24/05/16 03:59:49 INFO TorrentBroadcast: Reading broadcast variable 24 took 33 ms
+24/05/16 03:59:49 INFO MemoryStore: Block broadcast_24 stored as values in memory (estimated size 16.1 KiB, free 363.5 MiB)
+24/05/16 03:59:49 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/4Cluster2Ddataset.csv, range: 0-19230, partition values: [empty row]
+24/05/16 03:59:49 INFO TorrentBroadcast: Started reading broadcast variable 23 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:49 INFO MemoryStore: Block broadcast_23_piece0 stored as bytes in memory (estimated size 34.3 KiB, free 363.5 MiB)
+24/05/16 03:59:49 INFO TorrentBroadcast: Reading broadcast variable 23 took 18 ms
+24/05/16 03:59:49 INFO MemoryStore: Block broadcast_23 stored as values in memory (estimated size 519.0 KiB, free 363.0 MiB)
+24/05/16 03:59:49 INFO Executor: Finished task 0.0 in stage 18.0 (TID 109). 3951 bytes result sent to driver
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 110
+24/05/16 03:59:49 INFO Executor: Running task 0.0 in stage 19.0 (TID 110)
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 111
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 112
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 113
+24/05/16 03:59:49 INFO Executor: Running task 1.0 in stage 19.0 (TID 111)
+24/05/16 03:59:49 INFO Executor: Running task 3.0 in stage 19.0 (TID 113)
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 114
+24/05/16 03:59:49 INFO Executor: Running task 2.0 in stage 19.0 (TID 112)
+24/05/16 03:59:49 INFO Executor: Running task 4.0 in stage 19.0 (TID 114)
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 115
+24/05/16 03:59:49 INFO Executor: Running task 5.0 in stage 19.0 (TID 115)
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 116
+24/05/16 03:59:49 INFO TorrentBroadcast: Started reading broadcast variable 25 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:49 INFO Executor: Running task 6.0 in stage 19.0 (TID 116)
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 117
+24/05/16 03:59:49 INFO Executor: Running task 7.0 in stage 19.0 (TID 117)
+24/05/16 03:59:49 INFO MemoryStore: Block broadcast_25_piece0 stored as bytes in memory (estimated size 3.9 KiB, free 363.0 MiB)
+24/05/16 03:59:49 INFO TorrentBroadcast: Reading broadcast variable 25 took 13 ms
+24/05/16 03:59:49 INFO MemoryStore: Block broadcast_25 stored as values in memory (estimated size 5.9 KiB, free 363.0 MiB)
+24/05/16 03:59:49 INFO PythonRunner: Times: total = 46, boot = -853, init = 899, finish = 0
+24/05/16 03:59:49 INFO PythonRunner: Times: total = 76, boot = -844, init = 920, finish = 0
+24/05/16 03:59:49 INFO PythonRunner: Times: total = 69, boot = -880, init = 949, finish = 0
+24/05/16 03:59:49 INFO PythonRunner: Times: total = 59, boot = -842, init = 901, finish = 0
+24/05/16 03:59:49 INFO PythonRunner: Times: total = 65, boot = -841, init = 906, finish = 0
+24/05/16 03:59:49 INFO PythonRunner: Times: total = 52, boot = -842, init = 894, finish = 0
+24/05/16 03:59:49 INFO PythonRunner: Times: total = 71, boot = -865, init = 936, finish = 0
+24/05/16 03:59:49 INFO PythonRunner: Times: total = 61, boot = -866, init = 927, finish = 0
+24/05/16 03:59:49 INFO Executor: Finished task 2.0 in stage 19.0 (TID 112). 1441 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 3.0 in stage 19.0 (TID 113). 1519 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 0.0 in stage 19.0 (TID 110). 1441 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 4.0 in stage 19.0 (TID 114). 1441 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 1.0 in stage 19.0 (TID 111). 1441 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 7.0 in stage 19.0 (TID 117). 1519 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 5.0 in stage 19.0 (TID 115). 1441 bytes result sent to driver
+24/05/16 03:59:49 INFO Executor: Finished task 6.0 in stage 19.0 (TID 116). 1441 bytes result sent to driver
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 118
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 119
+24/05/16 03:59:49 INFO Executor: Running task 0.0 in stage 20.0 (TID 118)
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 120
+24/05/16 03:59:49 INFO Executor: Running task 1.0 in stage 20.0 (TID 119)
+24/05/16 03:59:49 INFO Executor: Running task 2.0 in stage 20.0 (TID 120)
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 121
+24/05/16 03:59:49 INFO TorrentBroadcast: Started reading broadcast variable 26 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:49 INFO Executor: Running task 3.0 in stage 20.0 (TID 121)
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 122
+24/05/16 03:59:49 INFO Executor: Running task 4.0 in stage 20.0 (TID 122)
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 123
+24/05/16 03:59:49 INFO Executor: Running task 5.0 in stage 20.0 (TID 123)
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 124
+24/05/16 03:59:49 INFO CoarseGrainedExecutorBackend: Got assigned task 125
+24/05/16 03:59:49 INFO Executor: Running task 6.0 in stage 20.0 (TID 124)
+24/05/16 03:59:49 INFO Executor: Running task 7.0 in stage 20.0 (TID 125)
+24/05/16 03:59:50 INFO MemoryStore: Block broadcast_26_piece0 stored as bytes in memory (estimated size 1759.0 B, free 363.0 MiB)
+24/05/16 03:59:50 INFO TorrentBroadcast: Reading broadcast variable 26 took 37 ms
+24/05/16 03:59:50 INFO MemoryStore: Block broadcast_26 stored as values in memory (estimated size 2.9 KiB, free 363.0 MiB)
+24/05/16 03:59:50 INFO Executor: Finished task 0.0 in stage 20.0 (TID 118). 1028 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 3.0 in stage 20.0 (TID 121). 1170 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 1.0 in stage 20.0 (TID 119). 1028 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 2.0 in stage 20.0 (TID 120). 1028 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 6.0 in stage 20.0 (TID 124). 1028 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 4.0 in stage 20.0 (TID 122). 1028 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 7.0 in stage 20.0 (TID 125). 1170 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 5.0 in stage 20.0 (TID 123). 985 bytes result sent to driver
+24/05/16 03:59:50 INFO CoarseGrainedExecutorBackend: Got assigned task 126
+24/05/16 03:59:50 INFO CoarseGrainedExecutorBackend: Got assigned task 127
+24/05/16 03:59:50 INFO Executor: Running task 0.0 in stage 21.0 (TID 126)
+24/05/16 03:59:50 INFO CoarseGrainedExecutorBackend: Got assigned task 128
+24/05/16 03:59:50 INFO Executor: Running task 1.0 in stage 21.0 (TID 127)
+24/05/16 03:59:50 INFO Executor: Running task 2.0 in stage 21.0 (TID 128)
+24/05/16 03:59:50 INFO CoarseGrainedExecutorBackend: Got assigned task 129
+24/05/16 03:59:50 INFO Executor: Running task 3.0 in stage 21.0 (TID 129)
+24/05/16 03:59:50 INFO CoarseGrainedExecutorBackend: Got assigned task 130
+24/05/16 03:59:50 INFO CoarseGrainedExecutorBackend: Got assigned task 131
+24/05/16 03:59:50 INFO CoarseGrainedExecutorBackend: Got assigned task 132
+24/05/16 03:59:50 INFO CoarseGrainedExecutorBackend: Got assigned task 133
+24/05/16 03:59:50 INFO Executor: Running task 4.0 in stage 21.0 (TID 130)
+24/05/16 03:59:50 INFO Executor: Running task 5.0 in stage 21.0 (TID 131)
+24/05/16 03:59:50 INFO Executor: Running task 7.0 in stage 21.0 (TID 133)
+24/05/16 03:59:50 INFO Executor: Running task 6.0 in stage 21.0 (TID 132)
+24/05/16 03:59:50 INFO TorrentBroadcast: Started reading broadcast variable 27 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:50 INFO MemoryStore: Block broadcast_27_piece0 stored as bytes in memory (estimated size 1759.0 B, free 363.0 MiB)
+24/05/16 03:59:50 INFO TorrentBroadcast: Reading broadcast variable 27 took 19 ms
+24/05/16 03:59:50 INFO MemoryStore: Block broadcast_27 stored as values in memory (estimated size 2.9 KiB, free 363.0 MiB)
+24/05/16 03:59:50 INFO Executor: Finished task 3.0 in stage 21.0 (TID 129). 1170 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 4.0 in stage 21.0 (TID 130). 1028 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 2.0 in stage 21.0 (TID 128). 1028 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 1.0 in stage 21.0 (TID 127). 1028 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 5.0 in stage 21.0 (TID 131). 1028 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 0.0 in stage 21.0 (TID 126). 985 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 6.0 in stage 21.0 (TID 132). 1028 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 7.0 in stage 21.0 (TID 133). 1127 bytes result sent to driver
+24/05/16 03:59:50 INFO CoarseGrainedExecutorBackend: Got assigned task 134
+24/05/16 03:59:50 INFO Executor: Running task 0.0 in stage 22.0 (TID 134)
+24/05/16 03:59:50 INFO CoarseGrainedExecutorBackend: Got assigned task 135
+24/05/16 03:59:50 INFO Executor: Running task 1.0 in stage 22.0 (TID 135)
+24/05/16 03:59:50 INFO CoarseGrainedExecutorBackend: Got assigned task 136
+24/05/16 03:59:50 INFO Executor: Running task 2.0 in stage 22.0 (TID 136)
+24/05/16 03:59:50 INFO CoarseGrainedExecutorBackend: Got assigned task 137
+24/05/16 03:59:50 INFO Executor: Running task 3.0 in stage 22.0 (TID 137)
+24/05/16 03:59:50 INFO CoarseGrainedExecutorBackend: Got assigned task 138
+24/05/16 03:59:50 INFO CoarseGrainedExecutorBackend: Got assigned task 139
+24/05/16 03:59:50 INFO Executor: Running task 4.0 in stage 22.0 (TID 138)
+24/05/16 03:59:50 INFO Executor: Running task 5.0 in stage 22.0 (TID 139)
+24/05/16 03:59:50 INFO CoarseGrainedExecutorBackend: Got assigned task 140
+24/05/16 03:59:50 INFO CoarseGrainedExecutorBackend: Got assigned task 141
+24/05/16 03:59:50 INFO Executor: Running task 6.0 in stage 22.0 (TID 140)
+24/05/16 03:59:50 INFO Executor: Running task 7.0 in stage 22.0 (TID 141)
+24/05/16 03:59:50 INFO TorrentBroadcast: Started reading broadcast variable 28 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:50 INFO MemoryStore: Block broadcast_28_piece0 stored as bytes in memory (estimated size 1759.0 B, free 363.0 MiB)
+24/05/16 03:59:50 INFO TorrentBroadcast: Reading broadcast variable 28 took 12 ms
+24/05/16 03:59:50 INFO MemoryStore: Block broadcast_28 stored as values in memory (estimated size 2.9 KiB, free 363.0 MiB)
+24/05/16 03:59:50 INFO Executor: Finished task 4.0 in stage 22.0 (TID 138). 942 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 6.0 in stage 22.0 (TID 140). 942 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 2.0 in stage 22.0 (TID 136). 942 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 7.0 in stage 22.0 (TID 141). 1084 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 1.0 in stage 22.0 (TID 135). 942 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 3.0 in stage 22.0 (TID 137). 1127 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 0.0 in stage 22.0 (TID 134). 942 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 5.0 in stage 22.0 (TID 139). 942 bytes result sent to driver
+24/05/16 03:59:50 INFO CoarseGrainedExecutorBackend: Got assigned task 142
+24/05/16 03:59:50 INFO CoarseGrainedExecutorBackend: Got assigned task 143
+24/05/16 03:59:50 INFO CoarseGrainedExecutorBackend: Got assigned task 144
+24/05/16 03:59:50 INFO Executor: Running task 0.0 in stage 23.0 (TID 142)
+24/05/16 03:59:50 INFO Executor: Running task 1.0 in stage 23.0 (TID 143)
+24/05/16 03:59:50 INFO Executor: Running task 2.0 in stage 23.0 (TID 144)
+24/05/16 03:59:50 INFO CoarseGrainedExecutorBackend: Got assigned task 145
+24/05/16 03:59:50 INFO CoarseGrainedExecutorBackend: Got assigned task 146
+24/05/16 03:59:50 INFO Executor: Running task 3.0 in stage 23.0 (TID 145)
+24/05/16 03:59:50 INFO CoarseGrainedExecutorBackend: Got assigned task 147
+24/05/16 03:59:50 INFO CoarseGrainedExecutorBackend: Got assigned task 148
+24/05/16 03:59:50 INFO CoarseGrainedExecutorBackend: Got assigned task 149
+24/05/16 03:59:50 INFO Executor: Running task 4.0 in stage 23.0 (TID 146)
+24/05/16 03:59:50 INFO Executor: Running task 6.0 in stage 23.0 (TID 148)
+24/05/16 03:59:50 INFO Executor: Running task 5.0 in stage 23.0 (TID 147)
+24/05/16 03:59:50 INFO Executor: Running task 7.0 in stage 23.0 (TID 149)
+24/05/16 03:59:50 INFO TorrentBroadcast: Started reading broadcast variable 29 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:59:50 INFO MemoryStore: Block broadcast_29_piece0 stored as bytes in memory (estimated size 1759.0 B, free 363.0 MiB)
+24/05/16 03:59:50 INFO TorrentBroadcast: Reading broadcast variable 29 took 13 ms
+24/05/16 03:59:50 INFO MemoryStore: Block broadcast_29 stored as values in memory (estimated size 2.9 KiB, free 362.9 MiB)
+24/05/16 03:59:50 INFO Executor: Finished task 4.0 in stage 23.0 (TID 146). 1028 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 7.0 in stage 23.0 (TID 149). 1170 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 5.0 in stage 23.0 (TID 147). 942 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 1.0 in stage 23.0 (TID 143). 985 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 3.0 in stage 23.0 (TID 145). 1127 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 2.0 in stage 23.0 (TID 144). 1028 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 6.0 in stage 23.0 (TID 148). 1028 bytes result sent to driver
+24/05/16 03:59:50 INFO Executor: Finished task 0.0 in stage 23.0 (TID 142). 1028 bytes result sent to driver
+24/05/16 03:59:50 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown

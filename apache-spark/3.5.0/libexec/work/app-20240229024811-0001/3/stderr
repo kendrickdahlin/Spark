@@ -1,0 +1,58 @@
+Spark Executor Command: "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java" "-cp" "/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/conf/:/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/jars/*" "-Xmx1024M" "-Dspark.driver.port=50844" "-Djava.net.preferIPv6Addresses=false" "-XX:+IgnoreUnrecognizedVMOptions" "--add-opens=java.base/java.lang=ALL-UNNAMED" "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED" "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED" "--add-opens=java.base/java.io=ALL-UNNAMED" "--add-opens=java.base/java.net=ALL-UNNAMED" "--add-opens=java.base/java.nio=ALL-UNNAMED" "--add-opens=java.base/java.util=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED" "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED" "--add-opens=java.base/sun.nio.cs=ALL-UNNAMED" "--add-opens=java.base/sun.security.action=ALL-UNNAMED" "--add-opens=java.base/sun.util.calendar=ALL-UNNAMED" "--add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED" "-Djdk.reflect.useDirectMethodHandle=false" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@aarons-mbp:50844" "--executor-id" "3" "--hostname" "192.168.1.105" "--cores" "8" "--app-id" "app-20240229024811-0001" "--worker-url" "spark://Worker@192.168.1.105:50741" "--resourceProfileId" "0"
+========================================
+
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+24/02/29 02:48:15 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 8242@Aarons-MBP
+24/02/29 02:48:15 INFO SignalUtils: Registering signal handler for TERM
+24/02/29 02:48:15 INFO SignalUtils: Registering signal handler for HUP
+24/02/29 02:48:15 INFO SignalUtils: Registering signal handler for INT
+24/02/29 02:48:17 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/02/29 02:48:17 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/02/29 02:48:17 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/02/29 02:48:17 INFO SecurityManager: Changing view acls groups to: 
+24/02/29 02:48:17 INFO SecurityManager: Changing modify acls groups to: 
+24/02/29 02:48:17 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/02/29 02:48:18 INFO TransportClientFactory: Successfully created connection to Aarons-MBP/192.168.1.105:50844 after 326 ms (0 ms spent in bootstraps)
+24/02/29 02:48:19 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/02/29 02:48:19 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/02/29 02:48:19 INFO SecurityManager: Changing view acls groups to: 
+24/02/29 02:48:19 INFO SecurityManager: Changing modify acls groups to: 
+24/02/29 02:48:19 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/02/29 02:48:19 INFO TransportClientFactory: Successfully created connection to Aarons-MBP/192.168.1.105:50844 after 15 ms (0 ms spent in bootstraps)
+24/02/29 02:48:19 INFO DiskBlockManager: Created local directory at /private/var/folders/rh/d6ltsplj4f94dtzy8y9sz6lr0000gn/T/spark-097f0481-a61d-47bd-af33-026853178bcd/executor-95b6dc09-00c8-4476-8dd3-02f57305e33c/blockmgr-bcea5cc8-eed6-4fc4-a851-492a26989b9d
+24/02/29 02:48:20 INFO MemoryStore: MemoryStore started with capacity 366.3 MiB
+24/02/29 02:48:21 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@aarons-mbp:50844
+24/02/29 02:48:21 INFO ResourceUtils: ==============================================================
+24/02/29 02:48:21 INFO ResourceUtils: No custom resources configured for spark.executor.
+24/02/29 02:48:21 INFO WorkerWatcher: Connecting to worker spark://Worker@192.168.1.105:50741
+24/02/29 02:48:21 INFO ResourceUtils: ==============================================================
+24/02/29 02:48:21 INFO TransportClientFactory: Successfully created connection to /192.168.1.105:50741 after 105 ms (0 ms spent in bootstraps)
+24/02/29 02:48:21 INFO WorkerWatcher: Successfully connected to spark://Worker@192.168.1.105:50741
+24/02/29 02:48:22 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+24/02/29 02:48:22 INFO Executor: Starting executor ID 3 on host 192.168.1.105
+24/02/29 02:48:22 INFO Executor: OS info Mac OS X, 14.3.1, x86_64
+24/02/29 02:48:22 INFO Executor: Java version 1.8.0_401
+24/02/29 02:48:22 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 50869.
+24/02/29 02:48:22 INFO NettyBlockTransferService: Server created on 192.168.1.105:50869
+24/02/29 02:48:22 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+24/02/29 02:48:22 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(3, 192.168.1.105, 50869, None)
+24/02/29 02:48:22 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(3, 192.168.1.105, 50869, None)
+24/02/29 02:48:22 INFO BlockManager: Initialized BlockManager: BlockManagerId(3, 192.168.1.105, 50869, None)
+24/02/29 02:48:22 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+24/02/29 02:48:22 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@46580c8a for default.
+24/02/29 02:48:24 INFO CoarseGrainedExecutorBackend: Got assigned task 0
+24/02/29 02:48:24 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+24/02/29 02:48:24 INFO TorrentBroadcast: Started reading broadcast variable 1 with 1 pieces (estimated total size 4.0 MiB)
+24/02/29 02:48:24 INFO TransportClientFactory: Successfully created connection to Aarons-MBP/192.168.1.105:50847 after 5 ms (0 ms spent in bootstraps)
+24/02/29 02:48:24 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 6.1 KiB, free 366.3 MiB)
+24/02/29 02:48:24 INFO TorrentBroadcast: Reading broadcast variable 1 took 121 ms
+24/02/29 02:48:24 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 12.8 KiB, free 366.3 MiB)
+24/02/29 02:48:25 INFO CodeGenerator: Code generated in 301.146709 ms
+24/02/29 02:48:25 INFO FileScanRDD: Reading File path: file:///Users/aaronmackenzie/Desktop/a.txt, range: 0-1023385, partition values: [empty row]
+24/02/29 02:48:26 INFO CodeGenerator: Code generated in 21.618666 ms
+24/02/29 02:48:26 INFO TorrentBroadcast: Started reading broadcast variable 0 with 1 pieces (estimated total size 4.0 MiB)
+24/02/29 02:48:26 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 34.2 KiB, free 366.2 MiB)
+24/02/29 02:48:26 INFO TorrentBroadcast: Reading broadcast variable 0 took 53 ms
+24/02/29 02:48:26 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 519.0 KiB, free 365.7 MiB)
+24/02/29 02:48:26 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 5643 bytes result sent to driver
+24/02/29 02:48:28 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown

@@ -1,0 +1,31 @@
+Spark Command: /Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java -cp /opt/homebrew/Cellar/apache-spark/3.5.0/libexec/conf/:/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/jars/* -Xmx1g org.apache.spark.deploy.master.Master --host Aarons-MBP --port 7077 --webui-port 8080
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+24/02/28 22:25:41 INFO Master: Started daemon with process name: 4347@Aarons-MBP
+24/02/28 22:25:41 INFO SignalUtils: Registering signal handler for TERM
+24/02/28 22:25:41 INFO SignalUtils: Registering signal handler for HUP
+24/02/28 22:25:41 INFO SignalUtils: Registering signal handler for INT
+24/02/28 22:25:41 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/02/28 22:25:41 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/02/28 22:25:41 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/02/28 22:25:41 INFO SecurityManager: Changing view acls groups to: 
+24/02/28 22:25:41 INFO SecurityManager: Changing modify acls groups to: 
+24/02/28 22:25:41 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/02/28 22:25:42 INFO Utils: Successfully started service 'sparkMaster' on port 7077.
+24/02/28 22:25:42 INFO Master: Starting Spark master at spark://Aarons-MBP:7077
+24/02/28 22:25:42 INFO Master: Running Spark version 3.5.0
+24/02/28 22:25:42 INFO JettyUtils: Start Jetty 0.0.0.0:8080 for MasterUI
+24/02/28 22:25:42 INFO Utils: Successfully started service 'MasterUI' on port 8080.
+24/02/28 22:25:42 INFO MasterWebUI: Bound MasterWebUI to 0.0.0.0, and started at http://aarons-mbp:8080
+24/02/28 22:25:42 INFO Master: I have been elected leader! New state: ALIVE
+24/02/28 22:26:32 INFO Master: Registering worker 192.168.1.100:53737 with 8 cores, 7.0 GiB RAM
+24/02/28 22:33:42 WARN Master: Removing worker-20240228222631-192.168.1.100-53737 because we got no heartbeat in 60 seconds
+24/02/28 22:33:42 INFO Master: Removing worker worker-20240228222631-192.168.1.100-53737 on 192.168.1.100:53737
+24/02/28 22:33:42 INFO Master: Telling app of lost worker: worker-20240228222631-192.168.1.100-53737
+24/02/28 22:42:22 WARN Master: Got heartbeat from unregistered worker worker-20240228222631-192.168.1.100-53737. Asking it to re-register.
+24/02/28 22:42:22 INFO Master: Registering worker 192.168.1.100:53737 with 8 cores, 7.0 GiB RAM
+24/02/28 22:42:31 INFO Master: 192.168.1.100:53738 got disassociated, removing it.
+24/02/28 22:42:31 INFO Master: 192.168.1.100:53737 got disassociated, removing it.
+24/02/28 22:42:31 INFO Master: Removing worker worker-20240228222631-192.168.1.100-53737 on 192.168.1.100:53737
+24/02/28 22:42:31 INFO Master: Telling app of lost worker: worker-20240228222631-192.168.1.100-53737
+24/02/28 22:50:45 ERROR Master: RECEIVED SIGNAL TERM

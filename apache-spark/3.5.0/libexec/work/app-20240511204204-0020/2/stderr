@@ -1,0 +1,305 @@
+Spark Executor Command: "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java" "-cp" "/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/conf/:/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/jars/*" "-Xmx1024M" "-Dspark.driver.port=63281" "-Djava.net.preferIPv6Addresses=false" "-XX:+IgnoreUnrecognizedVMOptions" "--add-opens=java.base/java.lang=ALL-UNNAMED" "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED" "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED" "--add-opens=java.base/java.io=ALL-UNNAMED" "--add-opens=java.base/java.net=ALL-UNNAMED" "--add-opens=java.base/java.nio=ALL-UNNAMED" "--add-opens=java.base/java.util=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED" "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED" "--add-opens=java.base/sun.nio.cs=ALL-UNNAMED" "--add-opens=java.base/sun.security.action=ALL-UNNAMED" "--add-opens=java.base/sun.util.calendar=ALL-UNNAMED" "--add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED" "-Djdk.reflect.useDirectMethodHandle=false" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@dyn230-001.wireless-1725.ndsu.nodak.edu:63281" "--executor-id" "2" "--hostname" "172.25.230.1" "--cores" "8" "--app-id" "app-20240511204204-0020" "--worker-url" "spark://Worker@172.25.230.1:50901" "--resourceProfileId" "0"
+========================================
+
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+24/05/11 21:02:58 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 85408@Aarons-MacBook-Pro-2.local
+24/05/11 21:02:58 INFO SignalUtils: Registering signal handler for TERM
+24/05/11 21:02:58 INFO SignalUtils: Registering signal handler for HUP
+24/05/11 21:02:58 INFO SignalUtils: Registering signal handler for INT
+24/05/11 21:02:58 WARN Utils: Your hostname, Aarons-MacBook-Pro-2.local resolves to a loopback address: 127.0.0.1; using 172.25.230.1 instead (on interface en0)
+24/05/11 21:02:58 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+24/05/11 21:02:59 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/05/11 21:02:59 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/05/11 21:02:59 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/05/11 21:02:59 INFO SecurityManager: Changing view acls groups to: 
+24/05/11 21:02:59 INFO SecurityManager: Changing modify acls groups to: 
+24/05/11 21:02:59 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/05/11 21:02:59 INFO TransportClientFactory: Successfully created connection to dyn230-001.wireless-1725.ndsu.nodak.edu/172.25.230.1:63281 after 78 ms (0 ms spent in bootstraps)
+24/05/11 21:02:59 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/05/11 21:02:59 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/05/11 21:02:59 INFO SecurityManager: Changing view acls groups to: 
+24/05/11 21:02:59 INFO SecurityManager: Changing modify acls groups to: 
+24/05/11 21:02:59 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/05/11 21:02:59 INFO TransportClientFactory: Successfully created connection to dyn230-001.wireless-1725.ndsu.nodak.edu/172.25.230.1:63281 after 2 ms (0 ms spent in bootstraps)
+24/05/11 21:02:59 INFO DiskBlockManager: Created local directory at /private/var/folders/rh/d6ltsplj4f94dtzy8y9sz6lr0000gn/T/spark-a650efa9-c97f-462c-aa15-8b9d5ca02f7f/executor-6a868077-836d-4f08-85f0-8e89105020a9/blockmgr-3db39fd2-82e5-4733-88be-f3f2b284052d
+24/05/11 21:02:59 INFO MemoryStore: MemoryStore started with capacity 366.3 MiB
+24/05/11 21:03:00 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@dyn230-001.wireless-1725.ndsu.nodak.edu:63281
+24/05/11 21:03:00 INFO WorkerWatcher: Connecting to worker spark://Worker@172.25.230.1:50901
+24/05/11 21:03:00 INFO TransportClientFactory: Successfully created connection to /172.25.230.1:50901 after 14 ms (0 ms spent in bootstraps)
+24/05/11 21:03:00 INFO WorkerWatcher: Successfully connected to spark://Worker@172.25.230.1:50901
+24/05/11 21:03:00 INFO ResourceUtils: ==============================================================
+24/05/11 21:03:00 INFO ResourceUtils: No custom resources configured for spark.executor.
+24/05/11 21:03:00 INFO ResourceUtils: ==============================================================
+24/05/11 21:03:00 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+24/05/11 21:03:00 INFO Executor: Starting executor ID 2 on host 172.25.230.1
+24/05/11 21:03:00 INFO Executor: OS info Mac OS X, 14.4.1, x86_64
+24/05/11 21:03:00 INFO Executor: Java version 1.8.0_401
+24/05/11 21:03:00 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 63490.
+24/05/11 21:03:00 INFO NettyBlockTransferService: Server created on 172.25.230.1:63490
+24/05/11 21:03:00 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+24/05/11 21:03:00 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(2, 172.25.230.1, 63490, None)
+24/05/11 21:03:00 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(2, 172.25.230.1, 63490, None)
+24/05/11 21:03:00 INFO BlockManager: Initialized BlockManager: BlockManagerId(2, 172.25.230.1, 63490, None)
+24/05/11 21:03:00 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+24/05/11 21:03:00 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@f4c47e5 for default.
+24/05/11 21:03:00 INFO Executor: Fetching spark://dyn230-001.wireless-1725.ndsu.nodak.edu:63281/files/ShareGbest.py with timestamp 1715478123092
+24/05/11 21:03:00 INFO TransportClientFactory: Successfully created connection to dyn230-001.wireless-1725.ndsu.nodak.edu/172.25.230.1:63281 after 2 ms (0 ms spent in bootstraps)
+24/05/11 21:03:00 INFO Utils: Fetching spark://dyn230-001.wireless-1725.ndsu.nodak.edu:63281/files/ShareGbest.py to /private/var/folders/rh/d6ltsplj4f94dtzy8y9sz6lr0000gn/T/spark-a650efa9-c97f-462c-aa15-8b9d5ca02f7f/executor-6a868077-836d-4f08-85f0-8e89105020a9/spark-deb9366c-8dba-49ea-b3a0-bf753dfe1ba6/fetchFileTemp4046280803850879225.tmp
+24/05/11 21:03:00 INFO Utils: Copying /private/var/folders/rh/d6ltsplj4f94dtzy8y9sz6lr0000gn/T/spark-a650efa9-c97f-462c-aa15-8b9d5ca02f7f/executor-6a868077-836d-4f08-85f0-8e89105020a9/spark-deb9366c-8dba-49ea-b3a0-bf753dfe1ba6/18114131241715478123092_cache to /opt/homebrew/Cellar/apache-spark/3.5.0/libexec/work/app-20240511204204-0020/2/./ShareGbest.py
+24/05/11 21:03:00 INFO CoarseGrainedExecutorBackend: Got assigned task 35
+24/05/11 21:03:00 INFO CoarseGrainedExecutorBackend: Got assigned task 36
+24/05/11 21:03:00 INFO CoarseGrainedExecutorBackend: Got assigned task 37
+24/05/11 21:03:00 INFO CoarseGrainedExecutorBackend: Got assigned task 38
+24/05/11 21:03:00 INFO CoarseGrainedExecutorBackend: Got assigned task 39
+24/05/11 21:03:00 INFO CoarseGrainedExecutorBackend: Got assigned task 40
+24/05/11 21:03:00 INFO CoarseGrainedExecutorBackend: Got assigned task 41
+24/05/11 21:03:00 INFO CoarseGrainedExecutorBackend: Got assigned task 42
+24/05/11 21:03:00 INFO Executor: Running task 4.1 in stage 6.0 (TID 40)
+24/05/11 21:03:00 INFO Executor: Running task 2.1 in stage 6.0 (TID 41)
+24/05/11 21:03:00 INFO Executor: Running task 7.1 in stage 6.0 (TID 39)
+24/05/11 21:03:00 INFO Executor: Running task 6.1 in stage 6.0 (TID 35)
+24/05/11 21:03:00 INFO Executor: Running task 3.1 in stage 6.0 (TID 36)
+24/05/11 21:03:00 INFO Executor: Running task 0.1 in stage 6.0 (TID 37)
+24/05/11 21:03:00 INFO Executor: Running task 5.1 in stage 6.0 (TID 42)
+24/05/11 21:03:00 INFO Executor: Running task 1.1 in stage 6.0 (TID 38)
+24/05/11 21:03:01 INFO TorrentBroadcast: Started reading broadcast variable 9 with 1 pieces (estimated total size 4.0 MiB)
+24/05/11 21:03:01 INFO TransportClientFactory: Successfully created connection to dyn230-001.wireless-1725.ndsu.nodak.edu/172.25.230.1:63284 after 3 ms (0 ms spent in bootstraps)
+24/05/11 21:03:01 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 6.7 KiB, free 366.3 MiB)
+24/05/11 21:03:01 INFO TorrentBroadcast: Reading broadcast variable 9 took 117 ms
+24/05/11 21:03:01 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 11.1 KiB, free 366.3 MiB)
+Iteration 0, Core ID 85422: gbest_position: [32.72486356299811, 74.06829173470936]
+Iteration 0, Core ID 85428: gbest_position: [22.30626404953369, 66.0024874391476]
+Iteration 0, Core ID 85425: gbest_position: [33.983377391829755, 73.75367869134566]
+Iteration 0, Core ID 85427: gbest_position: [28.70387544561119, 71.98653079742309]
+Iteration 0, Core ID 85424: gbest_position: [26.678814497399372, 69.67408434288474]
+Iteration 0, Core ID 85423: gbest_position: [31.79094082410312, 74.52004894718826]
+Iteration 0, Core ID 85426: gbest_position: [30.084916243026132, 73.96317342495645]
+Iteration 0, Core ID 85429: gbest_position: [29.69503850508108, 72.2252897513139]
+Iteration 1, Core ID 85427: gbest_position: [30.665075532360685, 72.57879431707677]Iteration 1, Core ID 85428: gbest_position: [29.69503850508108, 72.2252897513139]
+
+Iteration 1, Core ID 85422: gbest_position: [29.69503850508108, 72.2252897513139]
+Iteration 1, Core ID 85426: gbest_position: [29.69503850508108, 72.2252897513139]
+Iteration 1, Core ID 85425: gbest_position: [36.68077120739278, 71.46720455537893]
+Iteration 1, Core ID 85423: gbest_position: [30.023024512449254, 74.62484709058889]
+Iteration 1, Core ID 85424: gbest_position: [27.554532335971185, 64.84011705191712]
+Iteration 1, Core ID 85429: gbest_position: [22.49848607840393, 68.86624796885121]
+Iteration 2, Core ID 85423: gbest_position: [22.49848607840393, 68.86624796885121]
+Iteration 2, Core ID 85427: gbest_position: [24.52212224964586, 69.51682520450939]
+Iteration 2, Core ID 85428: gbest_position: [22.49848607840393, 68.86624796885121]
+Iteration 2, Core ID 85425: gbest_position: [34.07623744336449, 69.57718963370358]
+Iteration 2, Core ID 85424: gbest_position: [22.49848607840393, 68.86624796885121]
+Iteration 2, Core ID 85426: gbest_position: [26.75957095527143, 68.0614637176505]
+Iteration 2, Core ID 85422: gbest_position: [22.49848607840393, 68.86624796885121]
+Iteration 2, Core ID 85429: gbest_position: [22.49848607840393, 68.86624796885121]
+Iteration 3, Core ID 85423: gbest_position: [23.453761844838198, 78.58695227726633]
+Iteration 3, Core ID 85427: gbest_position: [22.49848607840393, 68.86624796885121]
+Iteration 3, Core ID 85425: gbest_position: [42.21269632217691, 78.92892957200132]
+Iteration 3, Core ID 85422: gbest_position: [22.49848607840393, 68.86624796885121]
+Iteration 3, Core ID 85428: gbest_position: [22.49848607840393, 68.86624796885121]
+Iteration 3, Core ID 85424: gbest_position: [22.49848607840393, 68.86624796885121]
+Iteration 3, Core ID 85426: gbest_position: [22.49848607840393, 68.86624796885121]
+Iteration 3, Core ID 85429: gbest_position: [22.49848607840393, 68.86624796885121]
+24/05/11 21:07:19 WARN Executor: Issue communicating with driver in heartbeater
+org.apache.spark.rpc.RpcTimeoutException: Futures timed out after [10000 milliseconds]. This timeout is controlled by spark.executor.heartbeatInterval
+	at org.apache.spark.rpc.RpcTimeout.org$apache$spark$rpc$RpcTimeout$$createRpcTimeoutException(RpcTimeout.scala:47)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:62)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:58)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:76)
+	at org.apache.spark.rpc.RpcEndpointRef.askSync(RpcEndpointRef.scala:101)
+	at org.apache.spark.executor.Executor.reportHeartBeat(Executor.scala:1219)
+	at org.apache.spark.executor.Executor.$anonfun$heartbeater$1(Executor.scala:295)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1928)
+	at org.apache.spark.Heartbeater$$anon$1.run(Heartbeater.scala:46)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.util.concurrent.TimeoutException: Futures timed out after [10000 milliseconds]
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:259)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:263)
+	at org.apache.spark.util.SparkThreadUtils$.awaitResult(SparkThreadUtils.scala:48)
+	at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:310)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	... 13 more
+Iteration 4, Core ID 85427: gbest_position: [36.057507128286304, 75.7210526808471]
+Iteration 4, Core ID 85429: gbest_position: [22.49848607840393, 68.86624796885121]
+Iteration 4, Core ID 85426: gbest_position: [22.49848607840393, 68.86624796885121]
+Iteration 4, Core ID 85425: gbest_position: [40.73267558574643, 65.6792499924412]
+Iteration 4, Core ID 85424: gbest_position: [27.5767655410371, 71.83171405535715]
+Iteration 4, Core ID 85423: gbest_position: [22.49848607840393, 68.86624796885121]
+Iteration 4, Core ID 85428: gbest_position: [23.619518702686552, 70.99659285868867]
+Iteration 4, Core ID 85422: gbest_position: [25.977617085083462, 70.82177029572989]
+24/05/11 21:08:57 WARN Executor: Issue communicating with driver in heartbeater
+org.apache.spark.rpc.RpcTimeoutException: Futures timed out after [10000 milliseconds]. This timeout is controlled by spark.executor.heartbeatInterval
+	at org.apache.spark.rpc.RpcTimeout.org$apache$spark$rpc$RpcTimeout$$createRpcTimeoutException(RpcTimeout.scala:47)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:62)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:58)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:76)
+	at org.apache.spark.rpc.RpcEndpointRef.askSync(RpcEndpointRef.scala:101)
+	at org.apache.spark.executor.Executor.reportHeartBeat(Executor.scala:1219)
+	at org.apache.spark.executor.Executor.$anonfun$heartbeater$1(Executor.scala:295)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1928)
+	at org.apache.spark.Heartbeater$$anon$1.run(Heartbeater.scala:46)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.util.concurrent.TimeoutException: Futures timed out after [10000 milliseconds]
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:259)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:263)
+	at org.apache.spark.util.SparkThreadUtils$.awaitResult(SparkThreadUtils.scala:48)
+	at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:310)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	... 13 more
+24/05/11 21:08:57 WARN TransportResponseHandler: Ignoring response for RPC 5980674016145529623 from dyn230-001.wireless-1725.ndsu.nodak.edu/172.25.230.1:63281 (81 bytes) since it is not outstanding
+24/05/11 21:08:57 WARN TransportResponseHandler: Ignoring response for RPC 4653278118393118334 from dyn230-001.wireless-1725.ndsu.nodak.edu/172.25.230.1:63281 (81 bytes) since it is not outstanding
+Iteration 5, Core ID 85429: gbest_position: [25.977617085083462, 70.82177029572989]
+Iteration 5, Core ID 85425: gbest_position: [28.88085508154711, 73.28069811650579]
+Iteration 5, Core ID 85428: gbest_position: [25.977617085083462, 70.82177029572989]
+Iteration 5, Core ID 85422: gbest_position: [25.977617085083462, 70.82177029572989]
+Iteration 5, Core ID 85424: gbest_position: [25.977617085083462, 70.82177029572989]
+Iteration 5, Core ID 85427: gbest_position: [28.910569524058527, 72.624485317347]
+Iteration 5, Core ID 85426: gbest_position: [25.977617085083462, 70.82177029572989]
+Iteration 5, Core ID 85423: gbest_position: [29.429277414154896, 76.23521540899426]
+24/05/11 21:09:17 WARN Executor: Issue communicating with driver in heartbeater
+org.apache.spark.rpc.RpcTimeoutException: Futures timed out after [10000 milliseconds]. This timeout is controlled by spark.executor.heartbeatInterval
+	at org.apache.spark.rpc.RpcTimeout.org$apache$spark$rpc$RpcTimeout$$createRpcTimeoutException(RpcTimeout.scala:47)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:62)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:58)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:76)
+	at org.apache.spark.rpc.RpcEndpointRef.askSync(RpcEndpointRef.scala:101)
+	at org.apache.spark.executor.Executor.reportHeartBeat(Executor.scala:1219)
+	at org.apache.spark.executor.Executor.$anonfun$heartbeater$1(Executor.scala:295)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1928)
+	at org.apache.spark.Heartbeater$$anon$1.run(Heartbeater.scala:46)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.util.concurrent.TimeoutException: Futures timed out after [10000 milliseconds]
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:259)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:263)
+	at org.apache.spark.util.SparkThreadUtils$.awaitResult(SparkThreadUtils.scala:48)
+	at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:310)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	... 13 more
+24/05/11 21:09:27 WARN Executor: Issue communicating with driver in heartbeater
+org.apache.spark.rpc.RpcTimeoutException: Futures timed out after [10000 milliseconds]. This timeout is controlled by spark.executor.heartbeatInterval
+	at org.apache.spark.rpc.RpcTimeout.org$apache$spark$rpc$RpcTimeout$$createRpcTimeoutException(RpcTimeout.scala:47)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:62)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:58)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:76)
+	at org.apache.spark.rpc.RpcEndpointRef.askSync(RpcEndpointRef.scala:101)
+	at org.apache.spark.executor.Executor.reportHeartBeat(Executor.scala:1219)
+	at org.apache.spark.executor.Executor.$anonfun$heartbeater$1(Executor.scala:295)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1928)
+	at org.apache.spark.Heartbeater$$anon$1.run(Heartbeater.scala:46)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.util.concurrent.TimeoutException: Futures timed out after [10000 milliseconds]
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:259)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:263)
+	at org.apache.spark.util.SparkThreadUtils$.awaitResult(SparkThreadUtils.scala:48)
+	at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:310)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	... 13 more
+Iteration 6, Core ID 85425: gbest_position: [29.429277414154896, 76.23521540899426]
+Iteration 6, Core ID 85427: gbest_position: [29.429277414154896, 76.23521540899426]
+Iteration 6, Core ID 85429: gbest_position: [24.390280099882467, 65.09044888417016]
+Iteration 6, Core ID 85428: gbest_position: [29.429277414154896, 76.23521540899426]
+Iteration 6, Core ID 85424: gbest_position: [23.645836404199, 58.14173914934994]
+Iteration 6, Core ID 85422: gbest_position: [29.429277414154896, 76.23521540899426]
+Iteration 6, Core ID 85426: gbest_position: [29.429277414154896, 76.23521540899426]
+Iteration 6, Core ID 85423: gbest_position: [29.429277414154896, 76.23521540899426]
+24/05/11 21:40:04 WARN TransportChannelHandler: Exception in connection from dyn230-001.wireless-1725.ndsu.nodak.edu/172.25.230.1:63281
+java.io.IOException: Operation timed out
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:378)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:254)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:750)
+24/05/11 21:40:04 ERROR TransportResponseHandler: Still have 1 requests outstanding when connection from dyn230-001.wireless-1725.ndsu.nodak.edu/172.25.230.1:63281 is closed
+24/05/11 21:40:04 WARN Executor: Issue communicating with driver in heartbeater
+org.apache.spark.SparkException: Exception thrown in awaitResult: 
+	at org.apache.spark.util.SparkThreadUtils$.awaitResult(SparkThreadUtils.scala:56)
+	at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:310)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	at org.apache.spark.rpc.RpcEndpointRef.askSync(RpcEndpointRef.scala:101)
+	at org.apache.spark.executor.Executor.reportHeartBeat(Executor.scala:1219)
+	at org.apache.spark.executor.Executor.$anonfun$heartbeater$1(Executor.scala:295)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1928)
+	at org.apache.spark.Heartbeater$$anon$1.run(Heartbeater.scala:46)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.io.IOException: Operation timed out
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:378)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:254)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	... 1 more
+24/05/11 21:40:04 ERROR CoarseGrainedExecutorBackend: Executor self-exiting due to : Driver dyn230-001.wireless-1725.ndsu.nodak.edu:63281 disassociated! Shutting down.
+24/05/11 21:40:04 INFO CoarseGrainedExecutorBackend: Driver from dyn230-001.wireless-1725.ndsu.nodak.edu:63281 disconnected during shutdown
+24/05/11 21:40:04 ERROR Executor: Exception in task 7.1 in stage 6.0 (TID 39): Python worker exited unexpectedly (crashed)
+24/05/11 21:40:04 ERROR Executor: Exception in task 1.1 in stage 6.0 (TID 38): Python worker exited unexpectedly (crashed)
+24/05/11 21:40:04 ERROR Executor: Exception in task 5.1 in stage 6.0 (TID 42): Python worker exited unexpectedly (crashed)
+24/05/11 21:40:04 ERROR Executor: Exception in task 0.1 in stage 6.0 (TID 37): Python worker exited unexpectedly (crashed)
+24/05/11 21:40:04 ERROR Executor: Exception in task 2.1 in stage 6.0 (TID 41): Python worker exited unexpectedly (crashed)
+24/05/11 21:40:04 ERROR Executor: Exception in task 4.1 in stage 6.0 (TID 40): Python worker exited unexpectedly (crashed)
+24/05/11 21:40:04 ERROR Executor: Exception in task 6.1 in stage 6.0 (TID 35): Python worker exited unexpectedly (crashed)
+24/05/11 21:40:04 ERROR Executor: Exception in task 3.1 in stage 6.0 (TID 36): Python worker exited unexpectedly (crashed)
+24/05/11 21:40:04 INFO MemoryStore: MemoryStore cleared
+24/05/11 21:40:04 INFO BlockManager: BlockManager stopped
+24/05/11 21:40:04 INFO ShutdownHookManager: Shutdown hook called
+24/05/11 21:40:04 INFO ShutdownHookManager: Deleting directory /private/var/folders/rh/d6ltsplj4f94dtzy8y9sz6lr0000gn/T/spark-a650efa9-c97f-462c-aa15-8b9d5ca02f7f/executor-6a868077-836d-4f08-85f0-8e89105020a9/spark-deb9366c-8dba-49ea-b3a0-bf753dfe1ba6

@@ -1,0 +1,209 @@
+Spark Executor Command: "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java" "-cp" "/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/conf/:/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/jars/*" "-Xmx1024M" "-Dspark.driver.port=63048" "-Djava.net.preferIPv6Addresses=false" "-XX:+IgnoreUnrecognizedVMOptions" "--add-opens=java.base/java.lang=ALL-UNNAMED" "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED" "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED" "--add-opens=java.base/java.io=ALL-UNNAMED" "--add-opens=java.base/java.net=ALL-UNNAMED" "--add-opens=java.base/java.nio=ALL-UNNAMED" "--add-opens=java.base/java.util=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED" "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED" "--add-opens=java.base/sun.nio.cs=ALL-UNNAMED" "--add-opens=java.base/sun.security.action=ALL-UNNAMED" "--add-opens=java.base/sun.util.calendar=ALL-UNNAMED" "--add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED" "-Djdk.reflect.useDirectMethodHandle=false" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@aarons-mbp-2:63048" "--executor-id" "1" "--hostname" "192.168.1.105" "--cores" "8" "--app-id" "app-20240508204511-0000" "--worker-url" "spark://Worker@192.168.1.105:63027" "--resourceProfileId" "0"
+========================================
+
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+24/05/08 20:45:15 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 31135@Aarons-MBP-2
+24/05/08 20:45:15 INFO SignalUtils: Registering signal handler for TERM
+24/05/08 20:45:15 INFO SignalUtils: Registering signal handler for HUP
+24/05/08 20:45:15 INFO SignalUtils: Registering signal handler for INT
+24/05/08 20:45:17 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/05/08 20:45:17 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/05/08 20:45:17 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/05/08 20:45:17 INFO SecurityManager: Changing view acls groups to: 
+24/05/08 20:45:17 INFO SecurityManager: Changing modify acls groups to: 
+24/05/08 20:45:17 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/05/08 20:45:18 INFO TransportClientFactory: Successfully created connection to Aarons-MBP-2/192.168.1.105:63048 after 267 ms (0 ms spent in bootstraps)
+24/05/08 20:45:18 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/05/08 20:45:18 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/05/08 20:45:18 INFO SecurityManager: Changing view acls groups to: 
+24/05/08 20:45:18 INFO SecurityManager: Changing modify acls groups to: 
+24/05/08 20:45:18 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/05/08 20:45:18 INFO TransportClientFactory: Successfully created connection to Aarons-MBP-2/192.168.1.105:63048 after 40 ms (0 ms spent in bootstraps)
+24/05/08 20:45:18 INFO DiskBlockManager: Created local directory at /private/var/folders/rh/d6ltsplj4f94dtzy8y9sz6lr0000gn/T/spark-77f315b3-c33a-44f3-a6c7-26cdd429054a/executor-8d7608b7-1b93-4255-8f32-11c912be876e/blockmgr-c5778a8b-0db6-4357-af5c-442554be2152
+24/05/08 20:45:19 INFO MemoryStore: MemoryStore started with capacity 366.3 MiB
+24/05/08 20:45:19 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@aarons-mbp-2:63048
+24/05/08 20:45:19 INFO WorkerWatcher: Connecting to worker spark://Worker@192.168.1.105:63027
+24/05/08 20:45:19 INFO TransportClientFactory: Successfully created connection to /192.168.1.105:63027 after 65 ms (0 ms spent in bootstraps)
+24/05/08 20:45:19 INFO WorkerWatcher: Successfully connected to spark://Worker@192.168.1.105:63027
+24/05/08 20:45:19 INFO ResourceUtils: ==============================================================
+24/05/08 20:45:19 INFO ResourceUtils: No custom resources configured for spark.executor.
+24/05/08 20:45:19 INFO ResourceUtils: ==============================================================
+24/05/08 20:45:20 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+24/05/08 20:45:20 INFO Executor: Starting executor ID 1 on host 192.168.1.105
+24/05/08 20:45:20 INFO Executor: OS info Mac OS X, 14.4.1, x86_64
+24/05/08 20:45:20 INFO Executor: Java version 1.8.0_401
+24/05/08 20:45:20 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 63066.
+24/05/08 20:45:20 INFO NettyBlockTransferService: Server created on 192.168.1.105:63066
+24/05/08 20:45:20 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+24/05/08 20:45:20 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(1, 192.168.1.105, 63066, None)
+24/05/08 20:45:20 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(1, 192.168.1.105, 63066, None)
+24/05/08 20:45:20 INFO BlockManager: Initialized BlockManager: BlockManagerId(1, 192.168.1.105, 63066, None)
+24/05/08 20:45:20 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+24/05/08 20:45:20 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@45a0ab31 for default.
+24/05/08 20:45:25 INFO CoarseGrainedExecutorBackend: Got assigned task 0
+24/05/08 20:45:25 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+24/05/08 20:45:26 INFO TorrentBroadcast: Started reading broadcast variable 1 with 1 pieces (estimated total size 4.0 MiB)
+24/05/08 20:45:26 INFO TransportClientFactory: Successfully created connection to Aarons-MBP-2/192.168.1.105:63051 after 4 ms (0 ms spent in bootstraps)
+24/05/08 20:45:26 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 6.4 KiB, free 366.3 MiB)
+24/05/08 20:45:26 INFO TorrentBroadcast: Reading broadcast variable 1 took 148 ms
+24/05/08 20:45:26 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 13.5 KiB, free 366.3 MiB)
+24/05/08 20:45:27 INFO CodeGenerator: Code generated in 321.777167 ms
+24/05/08 20:45:27 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/4Cluster2Ddataset.csv, range: 0-19230, partition values: [empty row]
+24/05/08 20:45:27 INFO CodeGenerator: Code generated in 27.167667 ms
+24/05/08 20:45:27 INFO TorrentBroadcast: Started reading broadcast variable 0 with 1 pieces (estimated total size 4.0 MiB)
+24/05/08 20:45:27 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 34.3 KiB, free 366.2 MiB)
+24/05/08 20:45:27 INFO TorrentBroadcast: Reading broadcast variable 0 took 42 ms
+24/05/08 20:45:27 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 519.0 KiB, free 365.7 MiB)
+24/05/08 20:45:28 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1671 bytes result sent to driver
+24/05/08 20:45:35 INFO CoarseGrainedExecutorBackend: Got assigned task 3
+24/05/08 20:45:35 INFO CoarseGrainedExecutorBackend: Got assigned task 9
+24/05/08 20:45:35 INFO Executor: Running task 0.0 in stage 3.0 (TID 3)
+24/05/08 20:45:35 INFO CoarseGrainedExecutorBackend: Got assigned task 15
+24/05/08 20:45:35 INFO Executor: Running task 6.0 in stage 3.0 (TID 9)
+24/05/08 20:45:35 INFO CoarseGrainedExecutorBackend: Got assigned task 21
+24/05/08 20:45:35 INFO Executor: Running task 12.0 in stage 3.0 (TID 15)
+24/05/08 20:45:35 INFO Executor: Running task 18.0 in stage 3.0 (TID 21)
+24/05/08 20:45:35 INFO CoarseGrainedExecutorBackend: Got assigned task 27
+24/05/08 20:45:35 INFO CoarseGrainedExecutorBackend: Got assigned task 33
+24/05/08 20:45:35 INFO Executor: Running task 30.0 in stage 3.0 (TID 33)
+24/05/08 20:45:35 INFO Executor: Running task 24.0 in stage 3.0 (TID 27)
+24/05/08 20:45:35 INFO CoarseGrainedExecutorBackend: Got assigned task 39
+24/05/08 20:45:35 INFO Executor: Running task 36.0 in stage 3.0 (TID 39)
+24/05/08 20:45:35 INFO CoarseGrainedExecutorBackend: Got assigned task 45
+24/05/08 20:45:35 INFO Executor: Running task 42.0 in stage 3.0 (TID 45)
+24/05/08 20:45:35 INFO TorrentBroadcast: Started reading broadcast variable 6 with 1 pieces (estimated total size 4.0 MiB)
+24/05/08 20:45:35 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 7.2 KiB, free 365.7 MiB)
+24/05/08 20:45:35 INFO TorrentBroadcast: Reading broadcast variable 6 took 207 ms
+24/05/08 20:45:35 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 11.8 KiB, free 365.7 MiB)
+0 [69.07031803850097, 56.87674015613925]
+0 [47.6099185458556, 27.00413859439844]
+0 [49.47517874995611, 34.2939006556425]
+0 [87.8963274098119, 24.437714341004096]
+0 [59.017593938386895, 60.15946182040986]
+0 [42.19619811414227, 22.34259665457408]
+0 [52.19237192485336, 42.39144496990431]
+0 [93.44057792329033, 58.4109272493161]
+1 [68.46133854336561, 45.036604035188276]
+1 [53.153441440331825, 23.9900184040482]
+1 [55.19351941559418, 36.01037277245311]
+1 [58.77135482323275, 28.255382650961113]
+1 [67.77352365631845, 21.285874689522878]
+1 [71.76498836202433, 30.497707880140304]
+1 [86.05344490706884, 45.09926722885915]
+1 [63.20637884954919, 29.883704118194224]
+2 [68.00121104217192, 22.518311470643646]
+2 [66.61686825210315, 26.06788488576298]
+2 [50.274054337401665, 22.097575795215764]
+2 [66.16690046063356, 25.649644117428814]
+2 [68.00121104217192, 22.518311470643646]
+2 [68.00121104217192, 22.518311470643646]
+2 [69.58582946363724, 32.32755254981572]
+2 [52.07394843400093, 11.167931655320068]
+3 [68.00121104217192, 22.518311470643646]
+3 [68.00121104217192, 22.518311470643646]
+3 [46.021554660113296, 17.95142778032539]
+3 [55.98092111823186, 39.18122318347862]
+3 [68.00121104217192, 22.518311470643646]
+3 [68.00121104217192, 22.518311470643646]
+3 [68.00121104217192, 22.518311470643646]
+3 [80.02400487387094, 31.798326354218887]
+4 [68.00121104217192, 22.518311470643646]
+4 [68.2994726858474, 28.702932135505158]
+4 4 [65.2920464403629, 36.89165313063427]
+[59.58841399875425, 27.95975553287201]
+4 [68.00121104217192, 22.518311470643646]
+4 [66.79341185054848, 25.79128778663376]
+4 [68.00121104217192, 22.518311470643646]
+4 [67.76915998695051, 35.2305533878544]
+5 [58.353433785996614, 34.816626014547225]
+5 [68.00121104217192, 22.518311470643646]
+5 [63.4815735908837, 21.98600271686682]
+5 [49.79303658264704, 40.50717047878481]
+5 [68.00121104217192, 22.518311470643646]
+5 [68.00121104217192, 22.518311470643646]
+5 [68.00121104217192, 22.518311470643646]
+5 [69.46562339161773, 35.88852741126536]
+6 [40.631764366685246, 23.905255936341078]
+6 [87.12495965155699, 22.28516249324094]
+6 [62.628440768904746, 27.73930304363509]
+6 [65.2161813926811, 15.774656261339839]
+6 [78.95916930182736, 37.4118477444925]
+6 [64.24023466933252, 26.002260626644734]
+6 [77.84368858370414, 37.733694148773395]
+6 [65.2161813926811, 15.774656261339839]
+7 7[66.49300321661852, 26.77213545887472]
+ [59.87495799795353, 30.15119399918733]
+7 [64.7988341106899, 16.366077524486812]
+7 7[57.99112792628871, 26.94620877471266]
+ [73.4519771778266, 41.1210786822063]
+7 [64.7988341106899, 16.366077524486812]
+7 [75.6628808108187, 39.612011159256085]
+7 [69.25618883108355, 34.19900016008715]
+8 [63.88597503573816, 15.212447941647149]
+8 [60.14221611649734, 17.494382546342734]
+8 [74.35463564308145, 18.805145957949144]
+8 [74.96149788021378, 48.93587665112583]
+8 [67.96416978889272, 29.022642730097395]
+8 [65.21283906221751, 21.144547074631234]
+8 [70.8247919718677, 36.08871446839309]
+8 [63.88597503573816, 15.212447941647149]
+9 [65.07621446894842, 20.48735836380171]
+Centroid found by core for label A: [65.07621446894842, 20.48735836380171]
+9 [65.07621446894842, 20.48735836380171]
+Centroid found by core for label A: [65.07621446894842, 20.48735836380171]
+9 [58.507619740359196, 26.874046197650515]
+Centroid found by core for label A: [58.507619740359196, 26.874046197650515]
+9 [65.07621446894842, 20.48735836380171]
+Centroid found by core for label A: [65.07621446894842, 20.48735836380171]
+9 [64.16677548119333, 41.68193291259668]
+Centroid found by core for label A: [64.16677548119333, 41.68193291259668]
+9 [67.03517285200077, 27.653345106561765]
+Centroid found by core for label A: [67.03517285200077, 27.653345106561765]
+9 [79.4508718867315, 33.99082573703674]
+Centroid found by core for label A: [79.4508718867315, 33.99082573703674]
+9 [65.07621446894842, 20.48735836380171]
+Centroid found by core for label A: [65.07621446894842, 20.48735836380171]
+24/05/08 20:49:18 INFO PythonRunner: Times: total = 221539, boot = 831, init = 262, finish = 220446
+24/05/08 20:49:18 INFO PythonRunner: Times: total = 221540, boot = 749, init = 353, finish = 220438
+24/05/08 20:49:18 INFO PythonRunner: Times: total = 221540, boot = 805, init = 338, finish = 220397
+24/05/08 20:49:18 INFO PythonRunner: Times: total = 221595, boot = 834, init = 369, finish = 220392
+24/05/08 20:49:18 INFO PythonRunner: Times: total = 221540, boot = 765, init = 337, finish = 220438
+24/05/08 20:49:18 INFO PythonRunner: Times: total = 221595, boot = 786, init = 412, finish = 220397
+24/05/08 20:49:18 INFO PythonRunner: Times: total = 221542, boot = 777, init = 293, finish = 220472
+24/05/08 20:49:18 INFO PythonRunner: Times: total = 221543, boot = 773, init = 377, finish = 220393
+24/05/08 20:49:18 INFO Executor: Finished task 42.0 in stage 3.0 (TID 45). 1429 bytes result sent to driver
+24/05/08 20:49:18 INFO Executor: Finished task 12.0 in stage 3.0 (TID 15). 1429 bytes result sent to driver
+24/05/08 20:49:18 INFO Executor: Finished task 30.0 in stage 3.0 (TID 33). 1429 bytes result sent to driver
+24/05/08 20:49:18 INFO Executor: Finished task 0.0 in stage 3.0 (TID 3). 1429 bytes result sent to driver
+24/05/08 20:49:18 INFO Executor: Finished task 6.0 in stage 3.0 (TID 9). 1429 bytes result sent to driver
+24/05/08 20:49:18 INFO Executor: Finished task 36.0 in stage 3.0 (TID 39). 1429 bytes result sent to driver
+24/05/08 20:49:18 INFO Executor: Finished task 24.0 in stage 3.0 (TID 27). 1429 bytes result sent to driver
+24/05/08 20:49:18 INFO Executor: Finished task 18.0 in stage 3.0 (TID 21). 1429 bytes result sent to driver
+24/05/08 20:49:22 INFO CoarseGrainedExecutorBackend: Got assigned task 53
+24/05/08 20:49:22 INFO Executor: Running task 2.0 in stage 4.0 (TID 53)
+24/05/08 20:49:22 INFO CoarseGrainedExecutorBackend: Got assigned task 59
+24/05/08 20:49:22 INFO CoarseGrainedExecutorBackend: Got assigned task 65
+24/05/08 20:49:22 INFO CoarseGrainedExecutorBackend: Got assigned task 71
+24/05/08 20:49:22 INFO Executor: Running task 8.0 in stage 4.0 (TID 59)
+24/05/08 20:49:22 INFO CoarseGrainedExecutorBackend: Got assigned task 77
+24/05/08 20:49:22 INFO CoarseGrainedExecutorBackend: Got assigned task 83
+24/05/08 20:49:22 INFO Executor: Running task 14.0 in stage 4.0 (TID 65)
+24/05/08 20:49:22 INFO CoarseGrainedExecutorBackend: Got assigned task 89
+24/05/08 20:49:22 INFO CoarseGrainedExecutorBackend: Got assigned task 95
+24/05/08 20:49:22 INFO Executor: Running task 20.0 in stage 4.0 (TID 71)
+24/05/08 20:49:22 INFO Executor: Running task 26.0 in stage 4.0 (TID 77)
+24/05/08 20:49:22 INFO Executor: Running task 32.0 in stage 4.0 (TID 83)
+24/05/08 20:49:22 INFO Executor: Running task 38.0 in stage 4.0 (TID 89)
+24/05/08 20:49:22 INFO Executor: Running task 44.0 in stage 4.0 (TID 95)
+24/05/08 20:49:22 INFO TorrentBroadcast: Started reading broadcast variable 7 with 1 pieces (estimated total size 4.0 MiB)
+24/05/08 20:49:22 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 7.2 KiB, free 365.7 MiB)
+24/05/08 20:49:22 INFO TorrentBroadcast: Reading broadcast variable 7 took 142 ms
+24/05/08 20:49:22 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 11.8 KiB, free 365.7 MiB)
+0 [90.66930485117051, 61.963434712066686]
+0 [67.19216692484206, 52.71126103183188]
+0 0 [79.72773327364516, 63.680248068951556]
+[81.43983369097307, 62.61753959859747]
+0 [80.42979046086779, 61.97710949299584]
+0 [68.44033858555123, 58.17663111283495]
+0 [61.9660092662084, 74.6622804299223]
+0 [43.877071959370824, 54.10554079146177]

@@ -1,0 +1,31 @@
+Spark Command: /Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java -cp /opt/homebrew/Cellar/apache-spark/3.5.0/libexec/conf/:/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/jars/* -Xmx1g org.apache.spark.deploy.master.Master --host dyn230-001.wireless-1725.ndsu.NoDak.edu --port 7077 --webui-port 8080 --host localhost --port 7077
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+24/05/23 11:32:52 INFO Master: Started daemon with process name: 87036@dyn230-001.wireless-1725.ndsu.NoDak.edu
+24/05/23 11:32:52 INFO SignalUtils: Registering signal handler for TERM
+24/05/23 11:32:52 INFO SignalUtils: Registering signal handler for HUP
+24/05/23 11:32:52 INFO SignalUtils: Registering signal handler for INT
+24/05/23 11:32:52 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/05/23 11:32:53 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/05/23 11:32:53 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/05/23 11:32:53 INFO SecurityManager: Changing view acls groups to: 
+24/05/23 11:32:53 INFO SecurityManager: Changing modify acls groups to: 
+24/05/23 11:32:53 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/05/23 11:32:53 INFO Utils: Successfully started service 'sparkMaster' on port 7077.
+24/05/23 11:32:53 INFO Master: Starting Spark master at spark://localhost:7077
+24/05/23 11:32:53 INFO Master: Running Spark version 3.5.0
+24/05/23 11:32:53 INFO JettyUtils: Start Jetty 0.0.0.0:8080 for MasterUI
+24/05/23 11:32:53 INFO Utils: Successfully started service 'MasterUI' on port 8080.
+24/05/23 11:32:53 INFO MasterWebUI: Bound MasterWebUI to 0.0.0.0, and started at http://dyn230-001.wireless-1725.ndsu.nodak.edu:8080
+24/05/23 11:32:53 INFO Master: I have been elected leader! New state: ALIVE
+24/05/23 11:33:23 INFO Master: Registering worker 172.25.230.1:56372 with 8 cores, 7.0 GiB RAM
+24/05/23 11:33:44 INFO Master: 127.0.0.1:56373 got disassociated, removing it.
+24/05/23 11:33:44 INFO Master: 172.25.230.1:56372 got disassociated, removing it.
+24/05/23 11:33:44 INFO Master: Removing worker worker-20240523113322-172.25.230.1-56372 on 172.25.230.1:56372
+24/05/23 11:33:44 INFO Master: Telling app of lost worker: worker-20240523113322-172.25.230.1-56372
+24/05/23 11:34:14 INFO Master: Registering worker 172.25.230.1:56375 with 8 cores, 7.0 GiB RAM
+24/05/23 11:34:16 INFO Master: Registering worker 172.25.230.1:56377 with 8 cores, 7.0 GiB RAM
+24/05/23 11:34:19 INFO Master: Registering worker 172.25.230.1:56379 with 8 cores, 7.0 GiB RAM
+24/05/23 11:34:21 INFO Master: Registering worker 172.25.230.1:56381 with 8 cores, 7.0 GiB RAM
+24/05/23 11:34:24 INFO Master: Registering worker 172.25.230.1:56383 with 8 cores, 7.0 GiB RAM
+24/05/23 11:34:27 INFO Master: Registering worker 172.25.230.1:56385 with 8 cores, 7.0 GiB RAM

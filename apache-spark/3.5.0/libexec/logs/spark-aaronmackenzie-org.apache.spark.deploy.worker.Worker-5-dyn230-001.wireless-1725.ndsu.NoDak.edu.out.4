@@ -1,0 +1,52 @@
+Spark Command: /Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java -cp /opt/homebrew/Cellar/apache-spark/3.5.0/libexec/conf/:/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/jars/* -Xmx1g org.apache.spark.deploy.worker.Worker --webui-port 8085 spark://dyn230-001.wireless-1725.ndsu.NoDak.edu:7077 --port 8084
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+24/03/01 11:37:01 INFO Worker: Started daemon with process name: 13097@dyn230-001.wireless-1725.ndsu.NoDak.edu
+24/03/01 11:37:01 INFO SignalUtils: Registering signal handler for TERM
+24/03/01 11:37:01 INFO SignalUtils: Registering signal handler for HUP
+24/03/01 11:37:01 INFO SignalUtils: Registering signal handler for INT
+24/03/01 11:37:01 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/03/01 11:37:01 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/03/01 11:37:01 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/03/01 11:37:01 INFO SecurityManager: Changing view acls groups to: 
+24/03/01 11:37:01 INFO SecurityManager: Changing modify acls groups to: 
+24/03/01 11:37:01 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/03/01 11:37:02 WARN Utils: Service 'sparkWorker' could not bind on port 8084. Attempting port 8085.
+24/03/01 11:37:02 WARN Utils: Service 'sparkWorker' could not bind on port 8085. Attempting port 8086.
+24/03/01 11:37:02 WARN Utils: Service 'sparkWorker' could not bind on port 8086. Attempting port 8087.
+24/03/01 11:37:02 WARN Utils: Service 'sparkWorker' could not bind on port 8087. Attempting port 8088.
+24/03/01 11:37:02 INFO Utils: Successfully started service 'sparkWorker' on port 8088.
+24/03/01 11:37:02 INFO Worker: Worker decommissioning not enabled.
+24/03/01 11:37:02 INFO Worker: Starting Spark worker 172.25.230.1:8088 with 8 cores, 7.0 GiB RAM
+24/03/01 11:37:02 INFO Worker: Running Spark version 3.5.0
+24/03/01 11:37:02 INFO Worker: Spark home: /opt/homebrew/Cellar/apache-spark/3.5.0/libexec
+24/03/01 11:37:02 INFO ResourceUtils: ==============================================================
+24/03/01 11:37:02 INFO ResourceUtils: No custom resources configured for spark.worker.
+24/03/01 11:37:02 INFO ResourceUtils: ==============================================================
+24/03/01 11:37:02 INFO JettyUtils: Start Jetty 0.0.0.0:8085 for WorkerUI
+24/03/01 11:37:02 INFO Utils: Successfully started service 'WorkerUI' on port 8085.
+24/03/01 11:37:02 INFO WorkerWebUI: Bound WorkerWebUI to 0.0.0.0, and started at http://dyn230-001.wireless-1725.ndsu.nodak.edu:8085
+24/03/01 11:37:02 INFO Worker: Connecting to master dyn230-001.wireless-1725.ndsu.NoDak.edu:7077...
+24/03/01 11:37:02 INFO TransportClientFactory: Successfully created connection to dyn230-001.wireless-1725.ndsu.NoDak.edu/172.25.230.1:7077 after 59 ms (0 ms spent in bootstraps)
+24/03/01 11:37:03 INFO Worker: Successfully registered with master spark://dyn230-001.wireless-1725.ndsu.NoDak.edu:7077
+24/03/01 11:38:25 INFO Worker: Asked to launch executor app-20240301113825-0000/0 for ReadAndPrint
+24/03/01 11:38:25 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/03/01 11:38:25 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/03/01 11:38:25 INFO SecurityManager: Changing view acls groups to: 
+24/03/01 11:38:25 INFO SecurityManager: Changing modify acls groups to: 
+24/03/01 11:38:25 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/03/01 11:38:25 INFO ExecutorRunner: Launch command: "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java" "-cp" "/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/conf/:/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/jars/*" "-Xmx1024M" "-Dspark.driver.port=51346" "-Djava.net.preferIPv6Addresses=false" "-XX:+IgnoreUnrecognizedVMOptions" "--add-opens=java.base/java.lang=ALL-UNNAMED" "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED" "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED" "--add-opens=java.base/java.io=ALL-UNNAMED" "--add-opens=java.base/java.net=ALL-UNNAMED" "--add-opens=java.base/java.nio=ALL-UNNAMED" "--add-opens=java.base/java.util=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED" "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED" "--add-opens=java.base/sun.nio.cs=ALL-UNNAMED" "--add-opens=java.base/sun.security.action=ALL-UNNAMED" "--add-opens=java.base/sun.util.calendar=ALL-UNNAMED" "--add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED" "-Djdk.reflect.useDirectMethodHandle=false" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@dyn230-001.wireless-1725.ndsu.nodak.edu:51346" "--executor-id" "0" "--hostname" "172.25.230.1" "--cores" "8" "--app-id" "app-20240301113825-0000" "--worker-url" "spark://Worker@172.25.230.1:8088" "--resourceProfileId" "0"
+24/03/01 11:38:42 INFO Worker: Asked to kill executor app-20240301113825-0000/0
+24/03/01 11:38:42 INFO ExecutorRunner: Runner thread for executor app-20240301113825-0000/0 interrupted
+24/03/01 11:38:42 INFO ExecutorRunner: Killing process!
+24/03/01 11:38:43 INFO Worker: Executor app-20240301113825-0000/0 finished with state KILLED exitStatus 143
+24/03/01 11:38:43 INFO ExternalShuffleBlockResolver: Clean up non-shuffle and non-RDD files associated with the finished executor 0
+24/03/01 11:38:43 INFO ExternalShuffleBlockResolver: Executor is not registered (appId=app-20240301113825-0000, execId=0)
+24/03/01 11:38:43 INFO Worker: Cleaning up local directories for application app-20240301113825-0000
+24/03/01 11:38:43 INFO ExternalShuffleBlockResolver: Application app-20240301113825-0000 removed, cleanupLocalDirs = true
+24/03/01 11:52:13 INFO Worker: Master with url spark://dyn230-001.wireless-1725.ndsu.NoDak.edu:7077 requested this worker to reconnect.
+24/03/01 11:52:13 INFO Worker: Connecting to master dyn230-001.wireless-1725.ndsu.NoDak.edu:7077...
+24/03/01 11:52:13 INFO Worker: Successfully registered with master spark://dyn230-001.wireless-1725.ndsu.NoDak.edu:7077
+24/03/01 11:54:49 ERROR Worker: RECEIVED SIGNAL TERM
+24/03/01 11:54:49 INFO ShutdownHookManager: Shutdown hook called
+24/03/01 11:54:49 INFO ShutdownHookManager: Deleting directory /private/var/folders/rh/d6ltsplj4f94dtzy8y9sz6lr0000gn/T/spark-dd9d9084-3911-44e9-a39f-b20c2385d46d

@@ -1,0 +1,130 @@
+Spark Executor Command: "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java" "-cp" "/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/conf/:/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/jars/*" "-Xmx1024M" "-Dspark.driver.port=49612" "-Djava.net.preferIPv6Addresses=false" "-XX:+IgnoreUnrecognizedVMOptions" "--add-opens=java.base/java.lang=ALL-UNNAMED" "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED" "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED" "--add-opens=java.base/java.io=ALL-UNNAMED" "--add-opens=java.base/java.net=ALL-UNNAMED" "--add-opens=java.base/java.nio=ALL-UNNAMED" "--add-opens=java.base/java.util=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED" "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED" "--add-opens=java.base/sun.nio.cs=ALL-UNNAMED" "--add-opens=java.base/sun.security.action=ALL-UNNAMED" "--add-opens=java.base/sun.util.calendar=ALL-UNNAMED" "--add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED" "-Djdk.reflect.useDirectMethodHandle=false" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@aarons-mbp-2:49612" "--executor-id" "0" "--hostname" "192.168.1.105" "--cores" "8" "--app-id" "app-20240516032022-0015" "--worker-url" "spark://Worker@192.168.1.105:49187" "--resourceProfileId" "0"
+========================================
+
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+24/05/16 03:20:24 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 3008@Aarons-MBP-2
+24/05/16 03:20:24 INFO SignalUtils: Registering signal handler for TERM
+24/05/16 03:20:24 INFO SignalUtils: Registering signal handler for HUP
+24/05/16 03:20:24 INFO SignalUtils: Registering signal handler for INT
+24/05/16 03:20:24 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/05/16 03:20:24 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/05/16 03:20:24 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/05/16 03:20:24 INFO SecurityManager: Changing view acls groups to: 
+24/05/16 03:20:24 INFO SecurityManager: Changing modify acls groups to: 
+24/05/16 03:20:24 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/05/16 03:20:25 INFO TransportClientFactory: Successfully created connection to Aarons-MBP-2/192.168.1.105:49612 after 78 ms (0 ms spent in bootstraps)
+24/05/16 03:20:25 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/05/16 03:20:25 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/05/16 03:20:25 INFO SecurityManager: Changing view acls groups to: 
+24/05/16 03:20:25 INFO SecurityManager: Changing modify acls groups to: 
+24/05/16 03:20:25 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/05/16 03:20:25 INFO TransportClientFactory: Successfully created connection to Aarons-MBP-2/192.168.1.105:49612 after 1 ms (0 ms spent in bootstraps)
+24/05/16 03:20:25 INFO DiskBlockManager: Created local directory at /private/var/folders/rh/d6ltsplj4f94dtzy8y9sz6lr0000gn/T/spark-676a89f7-fd34-4663-bc85-eef08191020a/executor-bf5473f7-9d20-458b-9cf6-a137d71b0457/blockmgr-2a595435-0dff-43a5-9f97-3da95f55da13
+24/05/16 03:20:25 INFO MemoryStore: MemoryStore started with capacity 366.3 MiB
+24/05/16 03:20:25 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@aarons-mbp-2:49612
+24/05/16 03:20:25 INFO WorkerWatcher: Connecting to worker spark://Worker@192.168.1.105:49187
+24/05/16 03:20:25 INFO TransportClientFactory: Successfully created connection to /192.168.1.105:49187 after 8 ms (0 ms spent in bootstraps)
+24/05/16 03:20:25 INFO WorkerWatcher: Successfully connected to spark://Worker@192.168.1.105:49187
+24/05/16 03:20:25 INFO ResourceUtils: ==============================================================
+24/05/16 03:20:25 INFO ResourceUtils: No custom resources configured for spark.executor.
+24/05/16 03:20:25 INFO ResourceUtils: ==============================================================
+24/05/16 03:20:26 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+24/05/16 03:20:26 INFO Executor: Starting executor ID 0 on host 192.168.1.105
+24/05/16 03:20:26 INFO Executor: OS info Mac OS X, 14.4.1, x86_64
+24/05/16 03:20:26 INFO Executor: Java version 1.8.0_401
+24/05/16 03:20:26 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 49620.
+24/05/16 03:20:26 INFO NettyBlockTransferService: Server created on 192.168.1.105:49620
+24/05/16 03:20:26 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+24/05/16 03:20:26 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(0, 192.168.1.105, 49620, None)
+24/05/16 03:20:26 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(0, 192.168.1.105, 49620, None)
+24/05/16 03:20:26 INFO BlockManager: Initialized BlockManager: BlockManagerId(0, 192.168.1.105, 49620, None)
+24/05/16 03:20:26 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+24/05/16 03:20:26 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@7f2f9001 for default.
+24/05/16 03:20:28 INFO CoarseGrainedExecutorBackend: Got assigned task 0
+24/05/16 03:20:28 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+24/05/16 03:20:29 INFO TorrentBroadcast: Started reading broadcast variable 1 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:20:29 INFO TransportClientFactory: Successfully created connection to Aarons-MBP-2/192.168.1.105:49615 after 3 ms (0 ms spent in bootstraps)
+24/05/16 03:20:29 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 6.4 KiB, free 366.3 MiB)
+24/05/16 03:20:29 INFO TorrentBroadcast: Reading broadcast variable 1 took 161 ms
+24/05/16 03:20:29 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 13.5 KiB, free 366.3 MiB)
+24/05/16 03:20:30 INFO CodeGenerator: Code generated in 308.381042 ms
+24/05/16 03:20:30 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/4Cluster2Ddataset.csv, range: 0-19230, partition values: [empty row]
+24/05/16 03:20:30 INFO CodeGenerator: Code generated in 49.824583 ms
+24/05/16 03:20:30 INFO TorrentBroadcast: Started reading broadcast variable 0 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:20:30 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 34.3 KiB, free 366.2 MiB)
+24/05/16 03:20:30 INFO TorrentBroadcast: Reading broadcast variable 0 took 44 ms
+24/05/16 03:20:30 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 519.0 KiB, free 365.7 MiB)
+24/05/16 03:20:31 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1671 bytes result sent to driver
+24/05/16 03:20:31 INFO CoarseGrainedExecutorBackend: Got assigned task 1
+24/05/16 03:20:31 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+24/05/16 03:20:31 INFO TorrentBroadcast: Started reading broadcast variable 3 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:20:31 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 12.6 KiB, free 365.7 MiB)
+24/05/16 03:20:31 INFO TorrentBroadcast: Reading broadcast variable 3 took 45 ms
+24/05/16 03:20:31 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 27.4 KiB, free 365.7 MiB)
+24/05/16 03:20:32 INFO CodeGenerator: Code generated in 31.593666 ms
+24/05/16 03:20:32 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/4Cluster2Ddataset.csv, range: 0-19230, partition values: [empty row]
+24/05/16 03:20:32 INFO TorrentBroadcast: Started reading broadcast variable 2 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:20:33 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 34.3 KiB, free 365.7 MiB)
+24/05/16 03:20:33 INFO TorrentBroadcast: Reading broadcast variable 2 took 25 ms
+24/05/16 03:20:33 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 519.0 KiB, free 365.2 MiB)
+24/05/16 03:20:33 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 1658 bytes result sent to driver
+24/05/16 03:20:33 INFO CoarseGrainedExecutorBackend: Got assigned task 2
+24/05/16 03:20:33 INFO Executor: Running task 0.0 in stage 2.0 (TID 2)
+24/05/16 03:20:33 INFO TorrentBroadcast: Started reading broadcast variable 5 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:20:33 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 13.0 KiB, free 365.1 MiB)
+24/05/16 03:20:33 INFO TorrentBroadcast: Reading broadcast variable 5 took 23 ms
+24/05/16 03:20:33 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 26.1 KiB, free 365.1 MiB)
+24/05/16 03:20:33 INFO CodeGenerator: Code generated in 51.732458 ms
+24/05/16 03:20:34 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/4Cluster2Ddataset.csv, range: 0-19230, partition values: [empty row]
+24/05/16 03:20:34 INFO CodeGenerator: Code generated in 62.36375 ms
+24/05/16 03:20:34 INFO TorrentBroadcast: Started reading broadcast variable 4 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:20:34 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 34.3 KiB, free 365.1 MiB)
+24/05/16 03:20:34 INFO TorrentBroadcast: Reading broadcast variable 4 took 23 ms
+24/05/16 03:20:34 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 519.0 KiB, free 364.6 MiB)
+24/05/16 03:20:34 INFO CodeGenerator: Code generated in 21.852625 ms
+Centroid found by core 0 for label A: [50.79847254689993, 17.80566000162719]
+24/05/16 03:20:34 INFO PythonRunner: Times: total = 790, boot = 375, init = 414, finish = 1
+24/05/16 03:20:34 INFO Executor: Finished task 0.0 in stage 2.0 (TID 2). 1850 bytes result sent to driver
+24/05/16 03:20:34 INFO CoarseGrainedExecutorBackend: Got assigned task 3
+24/05/16 03:20:34 INFO Executor: Running task 0.0 in stage 3.0 (TID 3)
+24/05/16 03:20:34 INFO TorrentBroadcast: Started reading broadcast variable 7 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:20:34 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 13.0 KiB, free 364.6 MiB)
+24/05/16 03:20:34 INFO TorrentBroadcast: Reading broadcast variable 7 took 34 ms
+24/05/16 03:20:34 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 26.1 KiB, free 364.5 MiB)
+24/05/16 03:20:34 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/4Cluster2Ddataset.csv, range: 0-19230, partition values: [empty row]
+24/05/16 03:20:34 INFO TorrentBroadcast: Started reading broadcast variable 6 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:20:34 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 34.3 KiB, free 364.5 MiB)
+24/05/16 03:20:34 INFO TorrentBroadcast: Reading broadcast variable 6 took 48 ms
+24/05/16 03:20:34 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 519.0 KiB, free 364.0 MiB)
+Centroid found by core 0 for label B: [50.79847254689993, 17.80566000162719]
+24/05/16 03:20:35 INFO PythonRunner: Times: total = 156, boot = -256, init = 411, finish = 1
+24/05/16 03:20:35 INFO Executor: Finished task 0.0 in stage 3.0 (TID 3). 1807 bytes result sent to driver
+24/05/16 03:20:35 INFO CoarseGrainedExecutorBackend: Got assigned task 4
+24/05/16 03:20:35 INFO Executor: Running task 0.0 in stage 4.0 (TID 4)
+24/05/16 03:20:35 INFO TorrentBroadcast: Started reading broadcast variable 9 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:20:35 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 13.0 KiB, free 364.0 MiB)
+24/05/16 03:20:35 INFO TorrentBroadcast: Reading broadcast variable 9 took 26 ms
+24/05/16 03:20:35 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 26.1 KiB, free 364.0 MiB)
+24/05/16 03:20:35 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/4Cluster2Ddataset.csv, range: 0-19230, partition values: [empty row]
+24/05/16 03:20:35 INFO TorrentBroadcast: Started reading broadcast variable 8 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:20:35 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 34.3 KiB, free 363.9 MiB)
+24/05/16 03:20:35 INFO TorrentBroadcast: Reading broadcast variable 8 took 20 ms
+24/05/16 03:20:35 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 519.0 KiB, free 363.4 MiB)
+Centroid found by core 0 for label C: [50.79847254689993, 17.80566000162719]
+24/05/16 03:20:35 INFO PythonRunner: Times: total = 140, boot = -269, init = 409, finish = 0
+24/05/16 03:20:35 INFO Executor: Finished task 0.0 in stage 4.0 (TID 4). 1850 bytes result sent to driver
+24/05/16 03:20:35 INFO CoarseGrainedExecutorBackend: Got assigned task 5
+24/05/16 03:20:35 INFO Executor: Running task 0.0 in stage 5.0 (TID 5)
+24/05/16 03:20:35 INFO TorrentBroadcast: Started reading broadcast variable 11 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:20:35 INFO MemoryStore: Block broadcast_11_piece0 stored as bytes in memory (estimated size 13.0 KiB, free 363.4 MiB)
+24/05/16 03:20:35 INFO TorrentBroadcast: Reading broadcast variable 11 took 33 ms
+24/05/16 03:20:35 INFO MemoryStore: Block broadcast_11 stored as values in memory (estimated size 26.1 KiB, free 363.4 MiB)
+24/05/16 03:20:35 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/4Cluster2Ddataset.csv, range: 0-19230, partition values: [empty row]
+24/05/16 03:20:35 INFO TorrentBroadcast: Started reading broadcast variable 10 with 1 pieces (estimated total size 4.0 MiB)
+24/05/16 03:20:35 INFO MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 34.3 KiB, free 363.4 MiB)
+24/05/16 03:20:35 INFO TorrentBroadcast: Reading broadcast variable 10 took 41 ms
+24/05/16 03:20:35 INFO MemoryStore: Block broadcast_10 stored as values in memory (estimated size 519.0 KiB, free 362.8 MiB)
+Centroid found by core 0 for label D: [50.79847254689993, 17.80566000162719]
+24/05/16 03:20:35 INFO PythonRunner: Times: total = 121, boot = -235, init = 355, finish = 1
+24/05/16 03:20:35 INFO Executor: Finished task 0.0 in stage 5.0 (TID 5). 1850 bytes result sent to driver
+24/05/16 03:20:35 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown

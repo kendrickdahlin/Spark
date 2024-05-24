@@ -1,0 +1,166 @@
+Spark Command: /Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home/bin/java -cp /Users/dahlink/Desktop/NDSU/apache-spark/3.5.0/libexec/conf/:/Users/dahlink/Desktop/NDSU/apache-spark/3.5.0/libexec/jars/* -Xmx1g org.apache.spark.deploy.master.Master --host dyn134-200.wireless-1725.ndsu.NoDak.edu --port 7077 --webui-port 8080 --host localhost --port 7077
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+24/05/23 15:12:10 INFO Master: Started daemon with process name: 74096@dyn134-200.wireless-1725.ndsu.NoDak.edu
+24/05/23 15:12:10 INFO SignalUtils: Registering signal handler for TERM
+24/05/23 15:12:11 INFO SignalUtils: Registering signal handler for HUP
+24/05/23 15:12:11 INFO SignalUtils: Registering signal handler for INT
+24/05/23 15:12:13 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/05/23 15:12:14 INFO SecurityManager: Changing view acls to: dahlink
+24/05/23 15:12:14 INFO SecurityManager: Changing modify acls to: dahlink
+24/05/23 15:12:14 INFO SecurityManager: Changing view acls groups to: 
+24/05/23 15:12:14 INFO SecurityManager: Changing modify acls groups to: 
+24/05/23 15:12:14 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: dahlink; groups with view permissions: EMPTY; users with modify permissions: dahlink; groups with modify permissions: EMPTY
+24/05/23 15:12:15 INFO Utils: Successfully started service 'sparkMaster' on port 7077.
+24/05/23 15:12:15 INFO Master: Starting Spark master at spark://localhost:7077
+24/05/23 15:12:15 INFO Master: Running Spark version 3.5.0
+24/05/23 15:12:15 INFO JettyUtils: Start Jetty 0.0.0.0:8080 for MasterUI
+24/05/23 15:12:16 INFO Utils: Successfully started service 'MasterUI' on port 8080.
+24/05/23 15:12:16 INFO MasterWebUI: Bound MasterWebUI to 0.0.0.0, and started at http://dyn134-200.wireless-1725.ndsu.nodak.edu:8080
+24/05/23 15:12:17 INFO Master: I have been elected leader! New state: ALIVE
+24/05/23 15:12:36 INFO Master: Registering worker 172.25.134.200:62413 with 4 cores, 7.0 GiB RAM
+24/05/23 15:15:15 INFO Master: Registering app MergeSort
+24/05/23 15:15:15 INFO Master: Registered app MergeSort with ID app-20240523151515-0000
+24/05/23 15:15:15 INFO Master: Start scheduling for app app-20240523151515-0000 with rpId: 0
+24/05/23 15:15:15 INFO Master: Launching executor app-20240523151515-0000/0 on worker worker-20240523151234-172.25.134.200-62413
+24/05/23 15:15:16 INFO Master: Start scheduling for app app-20240523151515-0000 with rpId: 0
+24/05/23 15:15:32 INFO Master: Received unregister request from application app-20240523151515-0000
+24/05/23 15:15:32 INFO Master: Removing app app-20240523151515-0000
+24/05/23 15:15:33 INFO Master: 127.0.0.1:62450 got disassociated, removing it.
+24/05/23 15:15:33 INFO Master: dyn134-200.wireless-1725.ndsu.nodak.edu:62449 got disassociated, removing it.
+24/05/23 15:15:33 WARN Master: Got status update for unknown executor app-20240523151515-0000/0
+24/05/23 15:17:42 INFO Master: Registering app MergeSort
+24/05/23 15:17:42 INFO Master: Registered app MergeSort with ID app-20240523151742-0001
+24/05/23 15:17:42 INFO Master: Start scheduling for app app-20240523151742-0001 with rpId: 0
+24/05/23 15:17:42 INFO Master: Launching executor app-20240523151742-0001/0 on worker worker-20240523151234-172.25.134.200-62413
+24/05/23 15:17:42 INFO Master: Start scheduling for app app-20240523151742-0001 with rpId: 0
+24/05/23 15:17:56 INFO Master: Received unregister request from application app-20240523151742-0001
+24/05/23 15:17:56 INFO Master: Removing app app-20240523151742-0001
+24/05/23 15:17:56 INFO Master: 127.0.0.1:62506 got disassociated, removing it.
+24/05/23 15:17:56 INFO Master: dyn134-200.wireless-1725.ndsu.nodak.edu:62505 got disassociated, removing it.
+24/05/23 15:17:56 WARN Master: Got status update for unknown executor app-20240523151742-0001/0
+24/05/23 15:28:26 INFO Master: Registering app MergeSort
+24/05/23 15:28:26 INFO Master: Registered app MergeSort with ID app-20240523152826-0002
+24/05/23 15:28:26 INFO Master: Start scheduling for app app-20240523152826-0002 with rpId: 0
+24/05/23 15:28:26 INFO Master: Launching executor app-20240523152826-0002/0 on worker worker-20240523151234-172.25.134.200-62413
+24/05/23 15:28:26 INFO Master: Start scheduling for app app-20240523152826-0002 with rpId: 0
+24/05/23 15:28:31 INFO Master: Received unregister request from application app-20240523152826-0002
+24/05/23 15:28:31 INFO Master: Removing app app-20240523152826-0002
+24/05/23 15:28:31 WARN Master: Got status update for unknown executor app-20240523152826-0002/0
+24/05/23 15:28:31 INFO Master: 127.0.0.1:62569 got disassociated, removing it.
+24/05/23 15:28:31 INFO Master: dyn134-200.wireless-1725.ndsu.nodak.edu:62568 got disassociated, removing it.
+24/05/23 15:29:45 INFO Master: Registering app MergeSort
+24/05/23 15:29:45 INFO Master: Registered app MergeSort with ID app-20240523152945-0003
+24/05/23 15:29:45 INFO Master: Start scheduling for app app-20240523152945-0003 with rpId: 0
+24/05/23 15:29:45 INFO Master: Launching executor app-20240523152945-0003/0 on worker worker-20240523151234-172.25.134.200-62413
+24/05/23 15:29:45 INFO Master: Start scheduling for app app-20240523152945-0003 with rpId: 0
+24/05/23 15:29:58 INFO Master: Received unregister request from application app-20240523152945-0003
+24/05/23 15:29:58 INFO Master: Removing app app-20240523152945-0003
+24/05/23 15:29:58 INFO Master: 127.0.0.1:62580 got disassociated, removing it.
+24/05/23 15:29:58 INFO Master: dyn134-200.wireless-1725.ndsu.nodak.edu:62579 got disassociated, removing it.
+24/05/23 15:29:59 WARN Master: Got status update for unknown executor app-20240523152945-0003/0
+24/05/23 15:31:57 INFO Master: Registering app MergeSort
+24/05/23 15:31:57 INFO Master: Registered app MergeSort with ID app-20240523153157-0004
+24/05/23 15:31:57 INFO Master: Start scheduling for app app-20240523153157-0004 with rpId: 0
+24/05/23 15:31:57 INFO Master: Launching executor app-20240523153157-0004/0 on worker worker-20240523151234-172.25.134.200-62413
+24/05/23 15:31:57 INFO Master: Start scheduling for app app-20240523153157-0004 with rpId: 0
+24/05/23 15:32:09 INFO Master: Received unregister request from application app-20240523153157-0004
+24/05/23 15:32:09 INFO Master: Removing app app-20240523153157-0004
+24/05/23 15:32:09 INFO Master: 127.0.0.1:62609 got disassociated, removing it.
+24/05/23 15:32:09 INFO Master: dyn134-200.wireless-1725.ndsu.nodak.edu:62608 got disassociated, removing it.
+24/05/23 15:32:10 WARN Master: Got status update for unknown executor app-20240523153157-0004/0
+24/05/23 15:34:08 INFO Master: Registering app MergeSort
+24/05/23 15:34:08 INFO Master: Registered app MergeSort with ID app-20240523153408-0005
+24/05/23 15:34:08 INFO Master: Start scheduling for app app-20240523153408-0005 with rpId: 0
+24/05/23 15:34:08 INFO Master: Launching executor app-20240523153408-0005/0 on worker worker-20240523151234-172.25.134.200-62413
+24/05/23 15:34:08 INFO Master: Start scheduling for app app-20240523153408-0005 with rpId: 0
+24/05/23 15:34:26 INFO Master: Received unregister request from application app-20240523153408-0005
+24/05/23 15:34:26 INFO Master: Removing app app-20240523153408-0005
+24/05/23 15:34:26 INFO Master: 127.0.0.1:62641 got disassociated, removing it.
+24/05/23 15:34:26 INFO Master: dyn134-200.wireless-1725.ndsu.nodak.edu:62640 got disassociated, removing it.
+24/05/23 15:34:26 WARN Master: Got status update for unknown executor app-20240523153408-0005/0
+24/05/23 15:35:52 INFO Master: Registering app MergeSort
+24/05/23 15:35:52 INFO Master: Registered app MergeSort with ID app-20240523153552-0006
+24/05/23 15:35:52 INFO Master: Start scheduling for app app-20240523153552-0006 with rpId: 0
+24/05/23 15:35:52 INFO Master: Launching executor app-20240523153552-0006/0 on worker worker-20240523151234-172.25.134.200-62413
+24/05/23 15:35:52 INFO Master: Start scheduling for app app-20240523153552-0006 with rpId: 0
+24/05/23 15:36:05 INFO Master: Received unregister request from application app-20240523153552-0006
+24/05/23 15:36:05 INFO Master: Removing app app-20240523153552-0006
+24/05/23 15:36:05 INFO Master: 127.0.0.1:62679 got disassociated, removing it.
+24/05/23 15:36:05 INFO Master: dyn134-200.wireless-1725.ndsu.nodak.edu:62678 got disassociated, removing it.
+24/05/23 15:36:06 WARN Master: Got status update for unknown executor app-20240523153552-0006/0
+24/05/23 15:36:57 INFO Master: Registering app ArrayArrange
+24/05/23 15:36:57 INFO Master: Registered app ArrayArrange with ID app-20240523153657-0007
+24/05/23 15:36:57 INFO Master: Start scheduling for app app-20240523153657-0007 with rpId: 0
+24/05/23 15:36:57 INFO Master: Launching executor app-20240523153657-0007/0 on worker worker-20240523151234-172.25.134.200-62413
+24/05/23 15:36:57 INFO Master: Start scheduling for app app-20240523153657-0007 with rpId: 0
+24/05/23 15:37:13 INFO Master: Received unregister request from application app-20240523153657-0007
+24/05/23 15:37:13 INFO Master: Removing app app-20240523153657-0007
+24/05/23 15:37:13 INFO Master: 127.0.0.1:62703 got disassociated, removing it.
+24/05/23 15:37:13 INFO Master: dyn134-200.wireless-1725.ndsu.nodak.edu:62702 got disassociated, removing it.
+24/05/23 15:37:13 WARN Master: Got status update for unknown executor app-20240523153657-0007/0
+24/05/23 15:40:34 INFO Master: Registering app MergeSort
+24/05/23 15:40:34 INFO Master: Registered app MergeSort with ID app-20240523154034-0008
+24/05/23 15:40:34 INFO Master: Start scheduling for app app-20240523154034-0008 with rpId: 0
+24/05/23 15:40:34 INFO Master: Launching executor app-20240523154034-0008/0 on worker worker-20240523151234-172.25.134.200-62413
+24/05/23 15:40:34 INFO Master: Start scheduling for app app-20240523154034-0008 with rpId: 0
+24/05/23 15:40:39 INFO Master: Received unregister request from application app-20240523154034-0008
+24/05/23 15:40:39 INFO Master: Removing app app-20240523154034-0008
+24/05/23 15:40:39 WARN Master: Got status update for unknown executor app-20240523154034-0008/0
+24/05/23 15:40:39 INFO Master: 127.0.0.1:62752 got disassociated, removing it.
+24/05/23 15:40:39 INFO Master: dyn134-200.wireless-1725.ndsu.nodak.edu:62751 got disassociated, removing it.
+24/05/23 15:41:08 INFO Master: Registering app MergeSort
+24/05/23 15:41:08 INFO Master: Registered app MergeSort with ID app-20240523154108-0009
+24/05/23 15:41:08 INFO Master: Start scheduling for app app-20240523154108-0009 with rpId: 0
+24/05/23 15:41:08 INFO Master: Launching executor app-20240523154108-0009/0 on worker worker-20240523151234-172.25.134.200-62413
+24/05/23 15:41:08 INFO Master: Start scheduling for app app-20240523154108-0009 with rpId: 0
+24/05/23 15:41:12 INFO Master: Received unregister request from application app-20240523154108-0009
+24/05/23 15:41:12 INFO Master: Removing app app-20240523154108-0009
+24/05/23 15:41:12 INFO Master: 127.0.0.1:62761 got disassociated, removing it.
+24/05/23 15:41:12 INFO Master: dyn134-200.wireless-1725.ndsu.nodak.edu:62760 got disassociated, removing it.
+24/05/23 15:41:12 WARN Master: Got status update for unknown executor app-20240523154108-0009/0
+24/05/23 15:42:31 INFO Master: Registering app MergeSort
+24/05/23 15:42:31 INFO Master: Registered app MergeSort with ID app-20240523154231-0010
+24/05/23 15:42:31 INFO Master: Start scheduling for app app-20240523154231-0010 with rpId: 0
+24/05/23 15:42:31 INFO Master: Launching executor app-20240523154231-0010/0 on worker worker-20240523151234-172.25.134.200-62413
+24/05/23 15:42:31 INFO Master: Start scheduling for app app-20240523154231-0010 with rpId: 0
+24/05/23 15:42:49 INFO Master: Received unregister request from application app-20240523154231-0010
+24/05/23 15:42:49 INFO Master: Removing app app-20240523154231-0010
+24/05/23 15:42:49 INFO Master: 127.0.0.1:62779 got disassociated, removing it.
+24/05/23 15:42:49 INFO Master: dyn134-200.wireless-1725.ndsu.nodak.edu:62778 got disassociated, removing it.
+24/05/23 15:42:49 WARN Master: Got status update for unknown executor app-20240523154231-0010/0
+24/05/23 15:46:52 INFO Master: Registering app MergeSort
+24/05/23 15:46:52 INFO Master: Registered app MergeSort with ID app-20240523154652-0011
+24/05/23 15:46:52 INFO Master: Start scheduling for app app-20240523154652-0011 with rpId: 0
+24/05/23 15:46:52 INFO Master: Launching executor app-20240523154652-0011/0 on worker worker-20240523151234-172.25.134.200-62413
+24/05/23 15:46:53 INFO Master: Start scheduling for app app-20240523154652-0011 with rpId: 0
+24/05/23 15:47:06 INFO Master: Received unregister request from application app-20240523154652-0011
+24/05/23 15:47:06 INFO Master: Removing app app-20240523154652-0011
+24/05/23 15:47:06 INFO Master: 127.0.0.1:62864 got disassociated, removing it.
+24/05/23 15:47:06 INFO Master: dyn134-200.wireless-1725.ndsu.nodak.edu:62863 got disassociated, removing it.
+24/05/23 15:47:06 WARN Master: Got status update for unknown executor app-20240523154652-0011/0
+24/05/23 15:50:00 INFO Master: Registering app MergeSort
+24/05/23 15:50:00 INFO Master: Registered app MergeSort with ID app-20240523155000-0012
+24/05/23 15:50:00 INFO Master: Start scheduling for app app-20240523155000-0012 with rpId: 0
+24/05/23 15:50:00 INFO Master: Launching executor app-20240523155000-0012/0 on worker worker-20240523151234-172.25.134.200-62413
+24/05/23 15:50:00 INFO Master: Start scheduling for app app-20240523155000-0012 with rpId: 0
+24/05/23 15:50:31 INFO Master: Received unregister request from application app-20240523155000-0012
+24/05/23 15:50:31 INFO Master: Removing app app-20240523155000-0012
+24/05/23 15:50:31 INFO Master: 127.0.0.1:62890 got disassociated, removing it.
+24/05/23 15:50:31 INFO Master: dyn134-200.wireless-1725.ndsu.nodak.edu:62888 got disassociated, removing it.
+24/05/23 15:50:31 WARN Master: Got status update for unknown executor app-20240523155000-0012/0
+24/05/23 15:51:37 INFO Master: Registering app MergeSort
+24/05/23 15:51:37 INFO Master: Registered app MergeSort with ID app-20240523155137-0013
+24/05/23 15:51:37 INFO Master: Start scheduling for app app-20240523155137-0013 with rpId: 0
+24/05/23 15:51:37 INFO Master: Launching executor app-20240523155137-0013/0 on worker worker-20240523151234-172.25.134.200-62413
+24/05/23 15:51:37 INFO Master: Start scheduling for app app-20240523155137-0013 with rpId: 0
+24/05/23 15:52:00 INFO Master: Received unregister request from application app-20240523155137-0013
+24/05/23 15:52:00 INFO Master: Removing app app-20240523155137-0013
+24/05/23 15:52:00 INFO Master: 127.0.0.1:62924 got disassociated, removing it.
+24/05/23 15:52:00 INFO Master: dyn134-200.wireless-1725.ndsu.nodak.edu:62923 got disassociated, removing it.
+24/05/23 15:52:01 WARN Master: Got status update for unknown executor app-20240523155137-0013/0
+24/05/23 16:23:54 INFO Master: 127.0.0.1:62414 got disassociated, removing it.
+24/05/23 16:23:54 INFO Master: 172.25.134.200:62413 got disassociated, removing it.
+24/05/23 16:23:54 INFO Master: Removing worker worker-20240523151234-172.25.134.200-62413 on 172.25.134.200:62413
+24/05/23 16:23:54 INFO Master: Telling app of lost worker: worker-20240523151234-172.25.134.200-62413
+24/05/23 16:24:02 ERROR Master: RECEIVED SIGNAL TERM

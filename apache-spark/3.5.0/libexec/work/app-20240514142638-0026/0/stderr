@@ -1,0 +1,412 @@
+Spark Executor Command: "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java" "-cp" "/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/conf/:/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/jars/*" "-Xmx1024M" "-Dspark.driver.port=53611" "-Djava.net.preferIPv6Addresses=false" "-XX:+IgnoreUnrecognizedVMOptions" "--add-opens=java.base/java.lang=ALL-UNNAMED" "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED" "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED" "--add-opens=java.base/java.io=ALL-UNNAMED" "--add-opens=java.base/java.net=ALL-UNNAMED" "--add-opens=java.base/java.nio=ALL-UNNAMED" "--add-opens=java.base/java.util=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED" "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED" "--add-opens=java.base/sun.nio.cs=ALL-UNNAMED" "--add-opens=java.base/sun.security.action=ALL-UNNAMED" "--add-opens=java.base/sun.util.calendar=ALL-UNNAMED" "--add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED" "-Djdk.reflect.useDirectMethodHandle=false" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@dyn230-001.wireless-1725.ndsu.nodak.edu:53611" "--executor-id" "0" "--hostname" "172.25.230.1" "--cores" "8" "--app-id" "app-20240514142638-0026" "--worker-url" "spark://Worker@172.25.230.1:50901" "--resourceProfileId" "0"
+========================================
+
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+24/05/14 14:26:40 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 1243@dyn230-001.wireless-1725.ndsu.NoDak.edu
+24/05/14 14:26:40 INFO SignalUtils: Registering signal handler for TERM
+24/05/14 14:26:40 INFO SignalUtils: Registering signal handler for HUP
+24/05/14 14:26:40 INFO SignalUtils: Registering signal handler for INT
+24/05/14 14:26:41 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/05/14 14:26:41 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/05/14 14:26:41 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/05/14 14:26:41 INFO SecurityManager: Changing view acls groups to: 
+24/05/14 14:26:41 INFO SecurityManager: Changing modify acls groups to: 
+24/05/14 14:26:41 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/05/14 14:26:41 INFO TransportClientFactory: Successfully created connection to dyn230-001.wireless-1725.ndsu.NoDak.edu/172.25.230.1:53611 after 82 ms (0 ms spent in bootstraps)
+24/05/14 14:26:41 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/05/14 14:26:41 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/05/14 14:26:41 INFO SecurityManager: Changing view acls groups to: 
+24/05/14 14:26:41 INFO SecurityManager: Changing modify acls groups to: 
+24/05/14 14:26:41 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/05/14 14:26:41 INFO TransportClientFactory: Successfully created connection to dyn230-001.wireless-1725.ndsu.NoDak.edu/172.25.230.1:53611 after 2 ms (0 ms spent in bootstraps)
+24/05/14 14:26:41 INFO DiskBlockManager: Created local directory at /private/var/folders/rh/d6ltsplj4f94dtzy8y9sz6lr0000gn/T/spark-a650efa9-c97f-462c-aa15-8b9d5ca02f7f/executor-88128b79-a6ab-40d3-a93c-8464818964cb/blockmgr-d6c461b9-d4b2-45d4-aded-cca48781a79c
+24/05/14 14:26:42 INFO MemoryStore: MemoryStore started with capacity 366.3 MiB
+24/05/14 14:26:42 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@dyn230-001.wireless-1725.ndsu.nodak.edu:53611
+24/05/14 14:26:42 INFO WorkerWatcher: Connecting to worker spark://Worker@172.25.230.1:50901
+24/05/14 14:26:42 INFO TransportClientFactory: Successfully created connection to /172.25.230.1:50901 after 6 ms (0 ms spent in bootstraps)
+24/05/14 14:26:42 INFO WorkerWatcher: Successfully connected to spark://Worker@172.25.230.1:50901
+24/05/14 14:26:42 INFO ResourceUtils: ==============================================================
+24/05/14 14:26:42 INFO ResourceUtils: No custom resources configured for spark.executor.
+24/05/14 14:26:42 INFO ResourceUtils: ==============================================================
+24/05/14 14:26:42 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+24/05/14 14:26:42 INFO Executor: Starting executor ID 0 on host 172.25.230.1
+24/05/14 14:26:42 INFO Executor: OS info Mac OS X, 14.4.1, x86_64
+24/05/14 14:26:42 INFO Executor: Java version 1.8.0_401
+24/05/14 14:26:42 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 53619.
+24/05/14 14:26:42 INFO NettyBlockTransferService: Server created on 172.25.230.1:53619
+24/05/14 14:26:42 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+24/05/14 14:26:42 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(0, 172.25.230.1, 53619, None)
+24/05/14 14:26:42 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(0, 172.25.230.1, 53619, None)
+24/05/14 14:26:42 INFO BlockManager: Initialized BlockManager: BlockManagerId(0, 172.25.230.1, 53619, None)
+24/05/14 14:26:42 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+24/05/14 14:26:42 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@7a67116e for default.
+24/05/14 14:26:42 INFO Executor: Fetching spark://dyn230-001.wireless-1725.ndsu.nodak.edu:53611/files/ShareGbest.py with timestamp 1715714797201
+24/05/14 14:26:42 INFO TransportClientFactory: Successfully created connection to dyn230-001.wireless-1725.ndsu.NoDak.edu/172.25.230.1:53611 after 1 ms (0 ms spent in bootstraps)
+24/05/14 14:26:42 INFO Utils: Fetching spark://dyn230-001.wireless-1725.ndsu.nodak.edu:53611/files/ShareGbest.py to /private/var/folders/rh/d6ltsplj4f94dtzy8y9sz6lr0000gn/T/spark-a650efa9-c97f-462c-aa15-8b9d5ca02f7f/executor-88128b79-a6ab-40d3-a93c-8464818964cb/spark-3937f3e7-90fd-4ca9-a724-cbc691b32b76/fetchFileTemp2239252132994674705.tmp
+24/05/14 14:26:42 INFO Utils: Copying /private/var/folders/rh/d6ltsplj4f94dtzy8y9sz6lr0000gn/T/spark-a650efa9-c97f-462c-aa15-8b9d5ca02f7f/executor-88128b79-a6ab-40d3-a93c-8464818964cb/spark-3937f3e7-90fd-4ca9-a724-cbc691b32b76/16592379341715714797201_cache to /opt/homebrew/Cellar/apache-spark/3.5.0/libexec/work/app-20240514142638-0026/0/./ShareGbest.py
+24/05/14 14:26:45 INFO CoarseGrainedExecutorBackend: Got assigned task 0
+24/05/14 14:26:45 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+24/05/14 14:26:45 INFO TorrentBroadcast: Started reading broadcast variable 1 with 1 pieces (estimated total size 4.0 MiB)
+24/05/14 14:26:45 INFO TransportClientFactory: Successfully created connection to dyn230-001.wireless-1725.ndsu.NoDak.edu/172.25.230.1:53614 after 3 ms (0 ms spent in bootstraps)
+24/05/14 14:26:45 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 6.4 KiB, free 366.3 MiB)
+24/05/14 14:26:45 INFO TorrentBroadcast: Reading broadcast variable 1 took 152 ms
+24/05/14 14:26:45 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 13.5 KiB, free 366.3 MiB)
+24/05/14 14:26:47 INFO CodeGenerator: Code generated in 337.497167 ms
+24/05/14 14:26:47 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/Test/4Cluster2Ddataset.csv, range: 0-19691, partition values: [empty row]
+24/05/14 14:26:47 INFO CodeGenerator: Code generated in 30.069208 ms
+24/05/14 14:26:47 INFO TorrentBroadcast: Started reading broadcast variable 0 with 1 pieces (estimated total size 4.0 MiB)
+24/05/14 14:26:47 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 34.6 KiB, free 366.2 MiB)
+24/05/14 14:26:47 INFO TorrentBroadcast: Reading broadcast variable 0 took 24 ms
+24/05/14 14:26:47 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 519.2 KiB, free 365.7 MiB)
+24/05/14 14:26:47 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1671 bytes result sent to driver
+24/05/14 14:26:47 INFO CoarseGrainedExecutorBackend: Got assigned task 1
+24/05/14 14:26:47 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+24/05/14 14:26:47 INFO TorrentBroadcast: Started reading broadcast variable 3 with 1 pieces (estimated total size 4.0 MiB)
+24/05/14 14:26:48 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 12.7 KiB, free 365.7 MiB)
+24/05/14 14:26:48 INFO TorrentBroadcast: Reading broadcast variable 3 took 135 ms
+24/05/14 14:26:48 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 27.6 KiB, free 365.7 MiB)
+24/05/14 14:26:49 INFO CodeGenerator: Code generated in 38.203542 ms
+24/05/14 14:26:49 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/Test/4Cluster2Ddataset.csv, range: 0-19691, partition values: [empty row]
+24/05/14 14:26:49 INFO TorrentBroadcast: Started reading broadcast variable 2 with 1 pieces (estimated total size 4.0 MiB)
+24/05/14 14:26:49 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 34.6 KiB, free 365.7 MiB)
+24/05/14 14:26:49 INFO TorrentBroadcast: Reading broadcast variable 2 took 37 ms
+24/05/14 14:26:49 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 519.2 KiB, free 365.2 MiB)
+24/05/14 14:26:49 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 1658 bytes result sent to driver
+24/05/14 14:26:50 INFO CoarseGrainedExecutorBackend: Got assigned task 2
+24/05/14 14:26:50 INFO Executor: Running task 0.0 in stage 2.0 (TID 2)
+24/05/14 14:26:50 INFO TorrentBroadcast: Started reading broadcast variable 5 with 1 pieces (estimated total size 4.0 MiB)
+24/05/14 14:26:50 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 6.2 KiB, free 365.2 MiB)
+24/05/14 14:26:50 INFO TorrentBroadcast: Reading broadcast variable 5 took 23 ms
+24/05/14 14:26:50 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 11.9 KiB, free 365.1 MiB)
+24/05/14 14:26:50 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/Test/4Cluster2Ddataset.csv, range: 0-19691, partition values: [empty row]
+24/05/14 14:26:50 INFO CodeGenerator: Code generated in 28.4245 ms
+24/05/14 14:26:50 INFO TorrentBroadcast: Started reading broadcast variable 4 with 1 pieces (estimated total size 4.0 MiB)
+24/05/14 14:26:50 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 34.5 KiB, free 365.1 MiB)
+24/05/14 14:26:50 INFO TorrentBroadcast: Reading broadcast variable 4 took 19 ms
+24/05/14 14:26:50 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 519.2 KiB, free 364.6 MiB)
+24/05/14 14:26:50 INFO Executor: Finished task 0.0 in stage 2.0 (TID 2). 11622 bytes result sent to driver
+24/05/14 14:26:50 INFO CoarseGrainedExecutorBackend: Got assigned task 3
+24/05/14 14:26:50 INFO CoarseGrainedExecutorBackend: Got assigned task 4
+24/05/14 14:26:50 INFO Executor: Running task 0.0 in stage 3.0 (TID 3)
+24/05/14 14:26:50 INFO CoarseGrainedExecutorBackend: Got assigned task 5
+24/05/14 14:26:50 INFO CoarseGrainedExecutorBackend: Got assigned task 6
+24/05/14 14:26:50 INFO Executor: Running task 1.0 in stage 3.0 (TID 4)
+24/05/14 14:26:50 INFO Executor: Running task 2.0 in stage 3.0 (TID 5)
+24/05/14 14:26:50 INFO CoarseGrainedExecutorBackend: Got assigned task 7
+24/05/14 14:26:50 INFO Executor: Running task 3.0 in stage 3.0 (TID 6)
+24/05/14 14:26:50 INFO CoarseGrainedExecutorBackend: Got assigned task 8
+24/05/14 14:26:50 INFO Executor: Running task 4.0 in stage 3.0 (TID 7)
+24/05/14 14:26:50 INFO Executor: Running task 5.0 in stage 3.0 (TID 8)
+24/05/14 14:26:50 INFO CoarseGrainedExecutorBackend: Got assigned task 9
+24/05/14 14:26:50 INFO Executor: Running task 6.0 in stage 3.0 (TID 9)
+24/05/14 14:26:50 INFO CoarseGrainedExecutorBackend: Got assigned task 10
+24/05/14 14:26:50 INFO Executor: Running task 7.0 in stage 3.0 (TID 10)
+24/05/14 14:26:50 INFO TorrentBroadcast: Started reading broadcast variable 6 with 1 pieces (estimated total size 4.0 MiB)
+24/05/14 14:26:50 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 6.7 KiB, free 364.6 MiB)
+24/05/14 14:26:50 INFO TorrentBroadcast: Reading broadcast variable 6 took 44 ms
+24/05/14 14:26:50 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 11.2 KiB, free 364.6 MiB)
+Iteration 0, Core ID 1254: gbest_position: [71.44545997757328, 23.521104015540026]
+Iteration 0, Core ID 1256: gbest_position: [76.36197111977675, 32.315106918331594]
+Iteration 0, Core ID 1253: gbest_position: [67.0439992619353, 20.915418722624878]
+Iteration 0, Core ID 1257: gbest_position: [65.54133322825781, 25.592778671203853]
+Iteration 0, Core ID 1259: gbest_position: [84.69806082813543, 36.14989436547025]
+Iteration 0, Core ID 1261: gbest_position: [55.7414394098809, 24.89148357065941]
+Iteration 0, Core ID 1255: gbest_position: [70.00796998565443, 28.633607383342202]
+Iteration 1, Core ID 1254: gbest_position: [78.45661344244718, 34.60678231337038]Iteration 1, Core ID 1253: gbest_position: [73.75280336676022, 30.43090057778366]
+
+Iteration 1, Core ID 1257: gbest_position: [65.54133322825781, 25.592778671203853]
+Iteration 1, Core ID 1256: gbest_position: [76.36197111977675, 32.315106918331594]
+Iteration 1, Core ID 1259: gbest_position: [81.26560730890293, 32.65299148669328]
+Iteration 1, Core ID 1261: gbest_position: [60.982232147739964, 26.373393196667745]
+Iteration 1, Core ID 1255: gbest_position: [70.00796998565443, 28.633607383342202]
+Iteration 2, Core ID 1257: gbest_position: [66.26356737165655, 24.666403805449974]
+Iteration 2, Core ID 1256: gbest_position: [68.01065659052614, 30.608157770460878]
+Iteration 2, Core ID 1253: gbest_position: [73.75280336676022, 30.43090057778366]
+Iteration 2, Core ID 1254: gbest_position: [78.45661344244718, 34.60678231337038]
+Iteration 2, Core ID 1261: gbest_position: [60.982232147739964, 26.373393196667745]
+Iteration 2, Core ID 1259: gbest_position: [75.16062633488522, 27.31463126373729]
+Iteration 2, Core ID 1255: gbest_position: [70.00796998565443, 28.633607383342202]
+Iteration 3, Core ID 1256: gbest_position: [68.73359170391562, 30.15224917610763]
+Iteration 3, Core ID 1257: gbest_position: [71.7448160477096, 25.677858896481304]
+Iteration 3, Core ID 1253: gbest_position: [74.51378826844788, 24.1157208795521]
+Iteration 3, Core ID 1254: gbest_position: [78.45661344244718, 34.60678231337038]
+Iteration 3, Core ID 1261: gbest_position: [71.01314129842336, 30.28219677753551]
+Iteration 3, Core ID 1259: gbest_position: [66.13159782863207, 26.485375420893366]
+Iteration 3, Core ID 1255: gbest_position: [69.44486326040689, 32.34937149561917]
+Iteration 4, Core ID 1256: gbest_position: [68.73359170391562, 30.15224917610763]
+Iteration 4, Core ID 1257: gbest_position: [70.25943847900275, 27.577408133401413]
+Iteration 4, Core ID 1254: gbest_position: [78.45661344244718, 34.60678231337038]
+Iteration 4, Core ID 1253: gbest_position: [74.51378826844788, 24.1157208795521]
+Iteration 4, Core ID 1258: gbest_position: [74.02705394604233, 30.877409043802036]
+Iteration 4, Core ID 1261: gbest_position: [70.78298630998867, 26.883518473410913]
+Iteration 4, Core ID 1259: gbest_position: [66.13159782863207, 26.485375420893366]
+Iteration 4, Core ID 1255: gbest_position: [68.99374129810504, 30.51657570255886]
+Iteration 5, Core ID 1257: gbest_position: [70.25943847900275, 27.577408133401413]
+Iteration 5, Core ID 1256: gbest_position: [68.73359170391562, 30.15224917610763]
+Iteration 5, Core ID 1254: gbest_position: [75.2995738589768, 30.82489602673565]
+Iteration 5, Core ID 1261: gbest_position: [70.78298630998867, 26.883518473410913]
+Iteration 5, Core ID 1259: gbest_position: [66.13159782863207, 26.485375420893366]
+Iteration 5, Core ID 1253: gbest_position: [68.63600422869712, 25.801059204851494]
+Iteration 5, Core ID 1258: gbest_position: [72.87810404368734, 29.990026228101684]
+Iteration 5, Core ID 1255: gbest_position: [68.99374129810504, 30.51657570255886]
+Iteration 6, Core ID 1256: gbest_position: [72.49687583638526, 28.560608342335478]
+Iteration 6, Core ID 1257: gbest_position: [70.25943847900275, 27.577408133401413]
+Iteration 6, Core ID 1261: gbest_position: [70.78298630998867, 26.883518473410913]
+Iteration 6, Core ID 1254: gbest_position: [81.03959166390374, 32.67720827068491]
+Iteration 6, Core ID 1253: gbest_position: [68.63600422869712, 25.801059204851494]
+Iteration 6, Core ID 1259: gbest_position: [70.21281468041505, 23.860837383913246]
+Iteration 6, Core ID 1258: gbest_position: [70.95197479561648, 31.22974206206879]
+Iteration 6, Core ID 1255: gbest_position: [68.99374129810504, 30.51657570255886]
+Iteration 7, Core ID 1256: gbest_position: [72.77688975010419, 24.277534507114233]
+Iteration 7, Core ID 1257: gbest_position: [71.34449808723765, 30.692322998331193]
+Iteration 7, Core ID 1261: gbest_position: [70.78298630998867, 26.883518473410913]
+Iteration 7, Core ID 1254: gbest_position: [81.03959166390374, 32.67720827068491]
+Iteration 7, Core ID 1259: gbest_position: [70.21281468041505, 23.860837383913246]
+Iteration 7, Core ID 1253: gbest_position: [68.63600422869712, 25.801059204851494]
+Iteration 7, Core ID 1258: gbest_position: [70.95197479561648, 31.22974206206879]
+Iteration 7, Core ID 1255: gbest_position: [68.99374129810504, 30.51657570255886]
+Iteration 8, Core ID 1256: gbest_position: [72.77688975010419, 24.277534507114233]
+Iteration 8, Core ID 1257: gbest_position: [71.34449808723765, 30.692322998331193]
+Iteration 8, Core ID 1253: gbest_position: [72.50084527011461, 27.043322119570703]
+Iteration 8, Core ID 1261: gbest_position: [70.78298630998867, 26.883518473410913]
+Iteration 8, Core ID 1254: gbest_position: [81.03959166390374, 32.67720827068491]
+Iteration 8, Core ID 1259: gbest_position: [70.21281468041505, 23.860837383913246]
+Iteration 8, Core ID 1258: gbest_position: [70.95197479561648, 31.22974206206879]
+Iteration 8, Core ID 1255: gbest_position: [70.03829045002381, 29.385962750317866]
+Iteration 9, Core ID 1257: gbest_position: [71.34449808723765, 30.692322998331193]
+Centroid found by core for label A: [71.34449808723765, 30.692322998331193]
+Iteration 9, Core ID 1253: gbest_position: [72.50084527011461, 27.043322119570703]
+Centroid found by core for label A: [72.50084527011461, 27.043322119570703]
+Iteration 9, Core ID 1256: gbest_position: [72.77688975010419, 24.277534507114233]
+Centroid found by core for label A: [72.77688975010419, 24.277534507114233]
+Iteration 9, Core ID 1261: gbest_position: [68.91252250752649, 24.261780832510865]
+Centroid found by core for label A: [68.91252250752649, 24.261780832510865]
+Iteration 9, Core ID 1254: gbest_position: [81.03959166390374, 32.67720827068491]
+Centroid found by core for label A: [81.03959166390374, 32.67720827068491]
+Iteration 9, Core ID 1258: gbest_position: [70.95197479561648, 31.22974206206879]
+Centroid found by core for label A: [70.95197479561648, 31.22974206206879]
+Iteration 9, Core ID 1259: gbest_position: [71.04504006238862, 24.520124668065662]
+Centroid found by core for label A: [71.04504006238862, 24.520124668065662]
+Iteration 9, Core ID 1255: gbest_position: [70.03829045002381, 29.385962750317866]
+Centroid found by core for label A: [70.03829045002381, 29.385962750317866]
+24/05/14 14:30:22 INFO PythonRunner: Times: total = 211872, boot = 394, init = 224, finish = 211254
+24/05/14 14:30:22 INFO PythonRunner: Times: total = 211872, boot = 411, init = 212, finish = 211249
+24/05/14 14:30:22 INFO PythonRunner: Times: total = 211872, boot = 421, init = 205, finish = 211246
+24/05/14 14:30:22 INFO PythonRunner: Times: total = 211871, boot = 404, init = 215, finish = 211252
+24/05/14 14:30:22 INFO PythonRunner: Times: total = 211871, boot = 415, init = 204, finish = 211252
+24/05/14 14:30:22 INFO PythonRunner: Times: total = 211872, boot = 425, init = 201, finish = 211246
+24/05/14 14:30:22 INFO PythonRunner: Times: total = 211893, boot = 402, init = 229, finish = 211262
+24/05/14 14:30:22 INFO PythonRunner: Times: total = 211871, boot = 398, init = 220, finish = 211253
+24/05/14 14:30:22 INFO Executor: Finished task 0.0 in stage 3.0 (TID 3). 1386 bytes result sent to driver
+24/05/14 14:30:22 INFO Executor: Finished task 6.0 in stage 3.0 (TID 9). 1386 bytes result sent to driver
+24/05/14 14:30:22 INFO Executor: Finished task 7.0 in stage 3.0 (TID 10). 1386 bytes result sent to driver
+24/05/14 14:30:22 INFO Executor: Finished task 5.0 in stage 3.0 (TID 8). 1386 bytes result sent to driver
+24/05/14 14:30:22 INFO Executor: Finished task 4.0 in stage 3.0 (TID 7). 1386 bytes result sent to driver
+24/05/14 14:30:22 INFO Executor: Finished task 3.0 in stage 3.0 (TID 6). 1386 bytes result sent to driver
+24/05/14 14:30:22 INFO Executor: Finished task 1.0 in stage 3.0 (TID 4). 1386 bytes result sent to driver
+24/05/14 14:30:22 INFO Executor: Finished task 2.0 in stage 3.0 (TID 5). 1386 bytes result sent to driver
+24/05/14 14:30:23 INFO CoarseGrainedExecutorBackend: Got assigned task 11
+24/05/14 14:30:23 INFO CoarseGrainedExecutorBackend: Got assigned task 12
+24/05/14 14:30:23 INFO CoarseGrainedExecutorBackend: Got assigned task 13
+24/05/14 14:30:23 INFO CoarseGrainedExecutorBackend: Got assigned task 14
+24/05/14 14:30:23 INFO CoarseGrainedExecutorBackend: Got assigned task 15
+24/05/14 14:30:23 INFO CoarseGrainedExecutorBackend: Got assigned task 16
+24/05/14 14:30:23 INFO Executor: Running task 1.0 in stage 4.0 (TID 12)
+24/05/14 14:30:23 INFO Executor: Running task 2.0 in stage 4.0 (TID 13)
+24/05/14 14:30:23 INFO Executor: Running task 5.0 in stage 4.0 (TID 16)
+24/05/14 14:30:23 INFO Executor: Running task 4.0 in stage 4.0 (TID 15)
+24/05/14 14:30:23 INFO Executor: Running task 3.0 in stage 4.0 (TID 14)
+24/05/14 14:30:23 INFO Executor: Running task 0.0 in stage 4.0 (TID 11)
+24/05/14 14:30:23 INFO CoarseGrainedExecutorBackend: Got assigned task 17
+24/05/14 14:30:23 INFO Executor: Running task 6.0 in stage 4.0 (TID 17)
+24/05/14 14:30:23 INFO CoarseGrainedExecutorBackend: Got assigned task 18
+24/05/14 14:30:23 INFO Executor: Running task 7.0 in stage 4.0 (TID 18)
+24/05/14 14:30:23 INFO TorrentBroadcast: Started reading broadcast variable 7 with 1 pieces (estimated total size 4.0 MiB)
+24/05/14 14:30:23 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 6.7 KiB, free 364.6 MiB)
+24/05/14 14:30:23 INFO TorrentBroadcast: Reading broadcast variable 7 took 55 ms
+24/05/14 14:30:23 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 11.2 KiB, free 364.6 MiB)
+Iteration 0, Core ID 1261: gbest_position: [78.8063867232938, 71.63589420185342]
+Iteration 0, Core ID 1255: gbest_position: [67.70258616410369, 72.25825244760219]
+Iteration 0, Core ID 1256: gbest_position: [80.95885910589674, 63.35889517676798]
+Iteration 0, Core ID 1257: gbest_position: [67.23498003813138, 66.38672156752726]
+Iteration 0, Core ID 1259: gbest_position: [66.90054257943811, 58.90493533126584]
+Iteration 0, Core ID 1258: gbest_position: [75.18224029852604, 68.0227879943322]
+Iteration 0, Core ID 1254: gbest_position: [67.23138884558796, 74.46404531089277]
+Iteration 1, Core ID 1261: gbest_position: [76.6300995443749, 72.07523999727763]
+Iteration 1, Core ID 1255: gbest_position: [67.70258616410369, 72.25825244760219]
+Iteration 1, Core ID 1256: gbest_position: [65.73442594617039, 83.14214828307878]
+Iteration 1, Core ID 1259: gbest_position: [65.76657626957878, 59.86694982029239]
+Iteration 1, Core ID 1258: gbest_position: [73.3058851281082, 71.564666613333]
+Iteration 1, Core ID 1257: gbest_position: [67.23498003813138, 66.38672156752726]
+Iteration 1, Core ID 1254: gbest_position: [67.23138884558796, 74.46404531089277]
+Iteration 2, Core ID 1261: gbest_position: [76.6300995443749, 72.07523999727763]
+Iteration 2, Core ID 1259: gbest_position: [65.02702915275341, 62.73260568115875]
+Iteration 2, Core ID 1257: gbest_position: [67.23498003813138, 66.38672156752726]
+Iteration 2, Core ID 1256: gbest_position: [65.73442594617039, 83.14214828307878]
+Iteration 2, Core ID 1258: gbest_position: [73.3058851281082, 71.564666613333]
+Iteration 2, Core ID 1255: gbest_position: [67.70258616410369, 72.25825244760219]
+Iteration 2, Core ID 1254: gbest_position: [71.67394075370356, 67.49660844246591]
+Iteration 3, Core ID 1253: gbest_position: [75.92916491130853, 74.36626576892732]
+Iteration 3, Core ID 1261: gbest_position: [76.6300995443749, 72.07523999727763]
+Iteration 3, Core ID 1257: gbest_position: [67.23498003813138, 66.38672156752726]
+Iteration 3, Core ID 1256: gbest_position: [65.73442594617039, 83.14214828307878]
+Iteration 3, Core ID 1258: gbest_position: [73.3058851281082, 71.564666613333]
+Iteration 3, Core ID 1254: gbest_position: [71.67394075370356, 67.49660844246591]
+Iteration 3, Core ID 1259: gbest_position: [64.16877400842738, 60.83555979978579]
+Iteration 3, Core ID 1255: gbest_position: [67.70258616410369, 72.25825244760219]
+Iteration 4, Core ID 1261: gbest_position: [76.6300995443749, 72.07523999727763]
+Iteration 4, Core ID 1253: gbest_position: [72.12961511944216, 75.09964498668172]
+Iteration 4, Core ID 1257: gbest_position: [67.23498003813138, 66.38672156752726]
+Iteration 4, Core ID 1256: gbest_position: [73.3888793375464, 65.4606132518387]
+Iteration 4, Core ID 1259: gbest_position: [62.84666163514627, 62.26318159372555]
+Iteration 4, Core ID 1258: gbest_position: [73.3058851281082, 71.564666613333]
+Iteration 4, Core ID 1254: gbest_position: [75.64451315641612, 71.29072725717948]
+Iteration 4, Core ID 1255: gbest_position: [67.70258616410369, 72.25825244760219]
+Iteration 5, Core ID 1261: gbest_position: [76.6300995443749, 72.07523999727763]
+Iteration 5, Core ID 1253: gbest_position: [72.12961511944216, 75.09964498668172]
+Iteration 5, Core ID 1259: gbest_position: [62.84666163514627, 62.26318159372555]
+Iteration 5, Core ID 1256: gbest_position: [80.9698173226247, 72.19184610060623]
+Iteration 5, Core ID 1257: gbest_position: [67.23498003813138, 66.38672156752726]
+Iteration 5, Core ID 1258: gbest_position: [70.56935077174451, 69.97895936455102]
+Iteration 5, Core ID 1254: gbest_position: [75.64451315641612, 71.29072725717948]
+Iteration 5, Core ID 1255: gbest_position: [67.70258616410369, 72.25825244760219]
+Iteration 6, Core ID 1261: gbest_position: [76.6300995443749, 72.07523999727763]
+Iteration 6, Core ID 1253: gbest_position: [72.12961511944216, 75.09964498668172]
+Iteration 6, Core ID 1257: gbest_position: [67.23498003813138, 66.38672156752726]
+Iteration 6, Core ID 1256: gbest_position: [80.9698173226247, 72.19184610060623]
+Iteration 6, Core ID 1259: gbest_position: [62.83750177358103, 62.11722864396809]
+Iteration 6, Core ID 1258: gbest_position: [70.56935077174451, 69.97895936455102]
+Iteration 6, Core ID 1254: gbest_position: [75.74412383684346, 69.3994595194841]
+Iteration 6, Core ID 1255: gbest_position: [70.67383475794514, 70.62268435607997]
+Iteration 7, Core ID 1261: gbest_position: [76.6300995443749, 72.07523999727763]
+Iteration 7, Core ID 1253: gbest_position: [72.12961511944216, 75.09964498668172]
+Iteration 7, Core ID 1257: gbest_position: [67.23498003813138, 66.38672156752726]
+Iteration 7, Core ID 1258: gbest_position: [70.56935077174451, 69.97895936455102]
+Iteration 7, Core ID 1254: gbest_position: [72.60395925666552, 70.07599841118166]
+Iteration 7, Core ID 1256: gbest_position: [80.9698173226247, 72.19184610060623]
+Iteration 7, Core ID 1255: gbest_position: [70.67383475794514, 70.62268435607997]
+Iteration 7, Core ID 1259: gbest_position: [62.83750177358103, 62.11722864396809]
+Iteration 8, Core ID 1261: gbest_position: [76.6300995443749, 72.07523999727763]
+Iteration 8, Core ID 1253: gbest_position: [72.12961511944216, 75.09964498668172]
+Iteration 8, Core ID 1258: gbest_position: [73.4149451838375, 72.04785959922998]
+Iteration 8, Core ID 1255: gbest_position: [70.67383475794514, 70.62268435607997]
+Iteration 8, Core ID 1257: gbest_position: [67.23498003813138, 66.38672156752726]
+Iteration 8, Core ID 1259: gbest_position: [62.83750177358103, 62.11722864396809]
+Iteration 8, Core ID 1256: gbest_position: [80.9698173226247, 72.19184610060623]
+Iteration 8, Core ID 1254: gbest_position: [72.60395925666552, 70.07599841118166]
+Iteration 9, Core ID 1261: gbest_position: [76.6300995443749, 72.07523999727763]
+Centroid found by core for label B: [76.6300995443749, 72.07523999727763]
+Iteration 9, Core ID 1253: gbest_position: [72.12961511944216, 75.09964498668172]
+Centroid found by core for label B: [72.12961511944216, 75.09964498668172]
+Iteration 9, Core ID 1257: gbest_position: [67.23498003813138, 66.38672156752726]
+Centroid found by core for label B: [67.23498003813138, 66.38672156752726]
+Iteration 9, Core ID 1259: gbest_position: [62.83750177358103, 62.11722864396809]
+Centroid found by core for label B: [62.83750177358103, 62.11722864396809]
+Iteration 9, Core ID 1258: gbest_position: [73.4149451838375, 72.04785959922998]
+Centroid found by core for label B: [73.4149451838375, 72.04785959922998]
+Iteration 9, Core ID 1255: gbest_position: [70.67383475794514, 70.62268435607997]
+Centroid found by core for label B: [70.67383475794514, 70.62268435607997]
+Iteration 9, Core ID 1256: gbest_position: [72.39129091989244, 80.66092620991836]
+Centroid found by core for label B: [72.39129091989244, 80.66092620991836]
+Iteration 9, Core ID 1254: gbest_position: [72.60395925666552, 70.07599841118166]
+Centroid found by core for label B: [72.60395925666552, 70.07599841118166]
+24/05/14 14:33:54 INFO PythonRunner: Times: total = 211351, boot = -561, init = 660, finish = 211252
+24/05/14 14:33:54 INFO PythonRunner: Times: total = 211341, boot = -557, init = 647, finish = 211251
+24/05/14 14:33:54 INFO PythonRunner: Times: total = 211341, boot = -556, init = 646, finish = 211251
+24/05/14 14:33:54 INFO PythonRunner: Times: total = 211351, boot = -559, init = 654, finish = 211256
+24/05/14 14:33:54 INFO PythonRunner: Times: total = 211349, boot = -557, init = 659, finish = 211247
+24/05/14 14:33:54 INFO PythonRunner: Times: total = 211377, boot = -561, init = 672, finish = 211266
+24/05/14 14:33:54 INFO PythonRunner: Times: total = 211349, boot = -563, init = 660, finish = 211252
+24/05/14 14:33:54 INFO PythonRunner: Times: total = 211376, boot = -556, init = 657, finish = 211275
+24/05/14 14:33:54 INFO Executor: Finished task 0.0 in stage 4.0 (TID 11). 1386 bytes result sent to driver
+24/05/14 14:33:54 INFO Executor: Finished task 1.0 in stage 4.0 (TID 12). 1386 bytes result sent to driver
+24/05/14 14:33:54 INFO Executor: Finished task 6.0 in stage 4.0 (TID 17). 1386 bytes result sent to driver
+24/05/14 14:33:54 INFO Executor: Finished task 5.0 in stage 4.0 (TID 16). 1386 bytes result sent to driver
+24/05/14 14:33:54 INFO Executor: Finished task 2.0 in stage 4.0 (TID 13). 1386 bytes result sent to driver
+24/05/14 14:33:54 INFO Executor: Finished task 4.0 in stage 4.0 (TID 15). 1386 bytes result sent to driver
+24/05/14 14:33:54 INFO Executor: Finished task 7.0 in stage 4.0 (TID 18). 1386 bytes result sent to driver
+24/05/14 14:33:54 INFO Executor: Finished task 3.0 in stage 4.0 (TID 14). 1386 bytes result sent to driver
+24/05/14 14:33:54 INFO CoarseGrainedExecutorBackend: Got assigned task 19
+24/05/14 14:33:54 INFO CoarseGrainedExecutorBackend: Got assigned task 20
+24/05/14 14:33:54 INFO Executor: Running task 0.0 in stage 5.0 (TID 19)
+24/05/14 14:33:54 INFO CoarseGrainedExecutorBackend: Got assigned task 21
+24/05/14 14:33:54 INFO CoarseGrainedExecutorBackend: Got assigned task 22
+24/05/14 14:33:54 INFO CoarseGrainedExecutorBackend: Got assigned task 23
+24/05/14 14:33:54 INFO Executor: Running task 1.0 in stage 5.0 (TID 20)
+24/05/14 14:33:54 INFO Executor: Running task 4.0 in stage 5.0 (TID 23)
+24/05/14 14:33:54 INFO CoarseGrainedExecutorBackend: Got assigned task 24
+24/05/14 14:33:54 INFO CoarseGrainedExecutorBackend: Got assigned task 25
+24/05/14 14:33:54 INFO Executor: Running task 5.0 in stage 5.0 (TID 24)
+24/05/14 14:33:54 INFO Executor: Running task 2.0 in stage 5.0 (TID 21)
+24/05/14 14:33:54 INFO Executor: Running task 3.0 in stage 5.0 (TID 22)
+24/05/14 14:33:54 INFO CoarseGrainedExecutorBackend: Got assigned task 26
+24/05/14 14:33:54 INFO Executor: Running task 6.0 in stage 5.0 (TID 25)
+24/05/14 14:33:54 INFO Executor: Running task 7.0 in stage 5.0 (TID 26)
+24/05/14 14:33:55 INFO TorrentBroadcast: Started reading broadcast variable 8 with 1 pieces (estimated total size 4.0 MiB)
+24/05/14 14:33:55 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 6.7 KiB, free 364.6 MiB)
+24/05/14 14:33:55 INFO TorrentBroadcast: Reading broadcast variable 8 took 42 ms
+24/05/14 14:33:55 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 11.2 KiB, free 364.5 MiB)
+Iteration 0, Core ID 1256: gbest_position: [23.98353853112686, 30.930999861025448]
+Iteration 0, Core ID 1254: gbest_position: [33.83083283864639, 24.598119378596472]
+Iteration 0, Core ID 1255: gbest_position: [29.630645709834962, 33.60470792754797]
+Iteration 0, Core ID 1258: gbest_position: [31.00094187271472, 25.54410075383754]
+Iteration 0, Core ID 1253: gbest_position: [37.04640588341946, 30.75977174582647]
+Iteration 0, Core ID 1257: gbest_position: [33.17600148053967, 25.95181622221814]
+Iteration 0, Core ID 1261: gbest_position: [39.214697373919996, 30.133552484613915]
+Iteration 0, Core ID 1259: gbest_position: [35.566623846509856, 18.468965728909176]
+Iteration 1, Core ID 1256: gbest_position: [23.98353853112686, 30.930999861025448]
+Iteration 1, Core ID 1255: gbest_position: [32.50901607771351, 37.88201506726226]
+Iteration 1, Core ID 1254: gbest_position: [32.5037966589466, 25.08820874963902]
+Iteration 1, Core ID 1258: gbest_position: [31.00094187271472, 25.54410075383754]
+Iteration 1, Core ID 1259: gbest_position: [28.766362108831206, 24.26057837386795]
+Iteration 1, Core ID 1261: gbest_position: [39.214697373919996, 30.133552484613915]
+Iteration 1, Core ID 1253: gbest_position: [30.744953635804357, 31.315209661920125]
+Iteration 1, Core ID 1257: gbest_position: [30.276608412989905, 27.66272526122117]
+Iteration 2, Core ID 1256: gbest_position: [28.770203143795065, 36.95327790979829]
+Iteration 2, Core ID 1255: gbest_position: [33.115258129793126, 36.69114768391457]
+Iteration 2, Core ID 1254: gbest_position: [32.5037966589466, 25.08820874963902]
+Iteration 2, Core ID 1258: gbest_position: [31.00094187271472, 25.54410075383754]
+Iteration 2, Core ID 1261: gbest_position: [37.43745218740732, 31.02093922716707]
+Iteration 2, Core ID 1257: gbest_position: [30.276608412989905, 27.66272526122117]Iteration 2, Core ID 1259: gbest_position: [28.766362108831206, 24.26057837386795]
+
+Iteration 2, Core ID 1253: gbest_position: [30.744953635804357, 31.315209661920125]
+Iteration 3, Core ID 1256: gbest_position: [28.770203143795065, 36.95327790979829]
+Iteration 3, Core ID 1255: gbest_position: [32.84632819117557, 36.11707470171114]
+Iteration 3, Core ID 1254: gbest_position: [31.99791621869538, 25.275036080029913]
+Iteration 3, Core ID 1258: gbest_position: [28.048818399875035, 28.100914163200564]
+Iteration 3, Core ID 1253: gbest_position: [30.744953635804357, 31.315209661920125]
+Iteration 3, Core ID 1259: gbest_position: [28.766362108831206, 24.26057837386795]
+Iteration 3, Core ID 1257: gbest_position: [30.385838430643762, 27.772144863551144]
+Iteration 3, Core ID 1261: gbest_position: [35.378626912379026, 31.05052799459936]
+Iteration 4, Core ID 1256: gbest_position: [28.770203143795065, 36.95327790979829]
+Iteration 4, Core ID 1255: gbest_position: [32.84632819117557, 36.11707470171114]
+Iteration 4, Core ID 1254: gbest_position: [31.99791621869538, 25.275036080029913]
+Iteration 4, Core ID 1258: gbest_position: [28.048818399875035, 28.100914163200564]
+Iteration 4, Core ID 1257: gbest_position: [30.385838430643762, 27.772144863551144]
+Iteration 4, Core ID 1259: gbest_position: [28.766362108831206, 24.26057837386795]
+Iteration 4, Core ID 1253: gbest_position: [30.744953635804357, 31.315209661920125]
+Iteration 4, Core ID 1261: gbest_position: [36.34416987177795, 29.355509689845764]
+Iteration 5, Core ID 1255: gbest_position: [32.84632819117557, 36.11707470171114]
+Iteration 5, Core ID 1256: gbest_position: [28.770203143795065, 36.95327790979829]
+Iteration 5, Core ID 1254: gbest_position: [31.99791621869538, 25.275036080029913]
+Iteration 5, Core ID 1258: gbest_position: [28.048818399875035, 28.100914163200564]
+Iteration 5, Core ID 1261: gbest_position: [36.34416987177795, 29.355509689845764]
+Iteration 5, Core ID 1253: gbest_position: [32.498101336161724, 18.78768614192703]
+Iteration 5, Core ID 1259: gbest_position: [28.766362108831206, 24.26057837386795]
+Iteration 5, Core ID 1257: gbest_position: [30.385838430643762, 27.772144863551144]
+Iteration 6, Core ID 1256: gbest_position: [30.78127143800837, 31.893398428606943]
+Iteration 6, Core ID 1255: gbest_position: [32.84632819117557, 36.11707470171114]
+Iteration 6, Core ID 1254: gbest_position: [31.99791621869538, 25.275036080029913]
+Iteration 6, Core ID 1258: gbest_position: [28.048818399875035, 28.100914163200564]
+Iteration 6, Core ID 1259: gbest_position: [28.766362108831206, 24.26057837386795]
+Iteration 6, Core ID 1261: gbest_position: [37.185369525510346, 28.07982499109271]
+Iteration 6, Core ID 1253: gbest_position: [32.498101336161724, 18.78768614192703]
+Iteration 6, Core ID 1257: gbest_position: [30.385838430643762, 27.772144863551144]
+Iteration 7, Core ID 1254: gbest_position: [31.99791621869538, 25.275036080029913]
+Iteration 7, Core ID 1255: gbest_position: [32.84632819117557, 36.11707470171114]
+Iteration 7, Core ID 1256: gbest_position: [30.78127143800837, 31.893398428606943]
+Iteration 7, Core ID 1258: gbest_position: [28.048818399875035, 28.100914163200564]
+Iteration 7, Core ID 1261: gbest_position: [36.96314535644699, 28.094034805518778]Iteration 7, Core ID 1253: gbest_position: [32.498101336161724, 18.78768614192703]
+
+Iteration 7, Core ID 1259: gbest_position: [28.766362108831206, 24.26057837386795]
+Iteration 7, Core ID 1257: gbest_position: [33.25832729143167, 28.211461697545715]

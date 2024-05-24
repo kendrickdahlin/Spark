@@ -1,0 +1,264 @@
+Spark Command: /Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java -cp /opt/homebrew/Cellar/apache-spark/3.5.0/libexec/conf/:/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/jars/* -Xmx1g org.apache.spark.deploy.worker.Worker --webui-port 8084 spark://localhost:7077
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+24/04/16 09:38:03 INFO Worker: Started daemon with process name: 48427@dyn230-001.wireless-1725.ndsu.NoDak.edu
+24/04/16 09:38:03 INFO SignalUtils: Registering signal handler for TERM
+24/04/16 09:38:03 INFO SignalUtils: Registering signal handler for HUP
+24/04/16 09:38:03 INFO SignalUtils: Registering signal handler for INT
+24/04/16 09:38:04 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/04/16 09:38:04 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/04/16 09:38:04 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/04/16 09:38:04 INFO SecurityManager: Changing view acls groups to: 
+24/04/16 09:38:04 INFO SecurityManager: Changing modify acls groups to: 
+24/04/16 09:38:04 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/04/16 09:38:04 INFO Utils: Successfully started service 'sparkWorker' on port 64260.
+24/04/16 09:38:04 INFO Worker: Worker decommissioning not enabled.
+24/04/16 09:38:04 INFO Worker: Starting Spark worker 172.25.230.1:64260 with 8 cores, 7.0 GiB RAM
+24/04/16 09:38:04 INFO Worker: Running Spark version 3.5.0
+24/04/16 09:38:04 INFO Worker: Spark home: /opt/homebrew/Cellar/apache-spark/3.5.0/libexec
+24/04/16 09:38:04 INFO ResourceUtils: ==============================================================
+24/04/16 09:38:04 INFO ResourceUtils: No custom resources configured for spark.worker.
+24/04/16 09:38:04 INFO ResourceUtils: ==============================================================
+24/04/16 09:38:04 INFO JettyUtils: Start Jetty 0.0.0.0:8084 for WorkerUI
+24/04/16 09:38:04 INFO Utils: Successfully started service 'WorkerUI' on port 8084.
+24/04/16 09:38:05 INFO WorkerWebUI: Bound WorkerWebUI to 0.0.0.0, and started at http://dyn230-001.wireless-1725.ndsu.nodak.edu:8084
+24/04/16 09:38:05 INFO Worker: Connecting to master localhost:7077...
+24/04/16 09:38:05 INFO TransportClientFactory: Successfully created connection to localhost/127.0.0.1:7077 after 50 ms (0 ms spent in bootstraps)
+24/04/16 09:38:05 INFO Worker: Successfully registered with master spark://localhost:7077
+24/04/16 09:44:06 INFO Worker: Asked to launch executor app-20240416094406-0000/3 for PSO with Spark
+24/04/16 09:44:06 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/04/16 09:44:06 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/04/16 09:44:06 INFO SecurityManager: Changing view acls groups to: 
+24/04/16 09:44:06 INFO SecurityManager: Changing modify acls groups to: 
+24/04/16 09:44:06 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/04/16 09:44:06 INFO ExecutorRunner: Launch command: "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java" "-cp" "/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/conf/:/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/jars/*" "-Xmx1024M" "-Dspark.driver.port=65398" "-Djava.net.preferIPv6Addresses=false" "-XX:+IgnoreUnrecognizedVMOptions" "--add-opens=java.base/java.lang=ALL-UNNAMED" "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED" "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED" "--add-opens=java.base/java.io=ALL-UNNAMED" "--add-opens=java.base/java.net=ALL-UNNAMED" "--add-opens=java.base/java.nio=ALL-UNNAMED" "--add-opens=java.base/java.util=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED" "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED" "--add-opens=java.base/sun.nio.cs=ALL-UNNAMED" "--add-opens=java.base/sun.security.action=ALL-UNNAMED" "--add-opens=java.base/sun.util.calendar=ALL-UNNAMED" "--add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED" "-Djdk.reflect.useDirectMethodHandle=false" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@dyn230-001.wireless-1725.ndsu.nodak.edu:65398" "--executor-id" "3" "--hostname" "172.25.230.1" "--cores" "8" "--app-id" "app-20240416094406-0000" "--worker-url" "spark://Worker@172.25.230.1:64260" "--resourceProfileId" "0"
+24/04/16 09:45:49 INFO Worker: Asked to kill executor app-20240416094406-0000/3
+24/04/16 09:45:49 INFO ExecutorRunner: Runner thread for executor app-20240416094406-0000/3 interrupted
+24/04/16 09:45:49 INFO ExecutorRunner: Killing process!
+24/04/16 09:45:50 INFO Worker: Executor app-20240416094406-0000/3 finished with state KILLED exitStatus 143
+24/04/16 09:45:50 INFO ExternalShuffleBlockResolver: Clean up non-shuffle and non-RDD files associated with the finished executor 3
+24/04/16 09:45:50 INFO ExternalShuffleBlockResolver: Executor is not registered (appId=app-20240416094406-0000, execId=3)
+24/04/16 09:45:50 INFO ExternalShuffleBlockResolver: Application app-20240416094406-0000 removed, cleanupLocalDirs = true
+24/04/16 09:45:50 INFO Worker: Cleaning up local directories for application app-20240416094406-0000
+24/04/16 10:15:57 INFO Worker: Asked to launch executor app-20240416101556-0001/3 for PSO with Spark
+24/04/16 10:15:57 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/04/16 10:15:57 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/04/16 10:15:57 INFO SecurityManager: Changing view acls groups to: 
+24/04/16 10:15:57 INFO SecurityManager: Changing modify acls groups to: 
+24/04/16 10:15:57 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/04/16 10:15:57 INFO ExecutorRunner: Launch command: "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java" "-cp" "/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/conf/:/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/jars/*" "-Xmx1024M" "-Dspark.driver.port=49975" "-Djava.net.preferIPv6Addresses=false" "-XX:+IgnoreUnrecognizedVMOptions" "--add-opens=java.base/java.lang=ALL-UNNAMED" "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED" "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED" "--add-opens=java.base/java.io=ALL-UNNAMED" "--add-opens=java.base/java.net=ALL-UNNAMED" "--add-opens=java.base/java.nio=ALL-UNNAMED" "--add-opens=java.base/java.util=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED" "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED" "--add-opens=java.base/sun.nio.cs=ALL-UNNAMED" "--add-opens=java.base/sun.security.action=ALL-UNNAMED" "--add-opens=java.base/sun.util.calendar=ALL-UNNAMED" "--add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED" "-Djdk.reflect.useDirectMethodHandle=false" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@dyn230-001.wireless-1725.ndsu.nodak.edu:49975" "--executor-id" "3" "--hostname" "172.25.230.1" "--cores" "8" "--app-id" "app-20240416101556-0001" "--worker-url" "spark://Worker@172.25.230.1:64260" "--resourceProfileId" "0"
+24/04/16 10:17:01 INFO Worker: Asked to kill executor app-20240416101556-0001/3
+24/04/16 10:17:01 INFO ExecutorRunner: Runner thread for executor app-20240416101556-0001/3 interrupted
+24/04/16 10:17:01 INFO ExecutorRunner: Killing process!
+24/04/16 10:17:02 INFO Worker: Executor app-20240416101556-0001/3 finished with state KILLED exitStatus 143
+24/04/16 10:17:02 INFO ExternalShuffleBlockResolver: Clean up non-shuffle and non-RDD files associated with the finished executor 3
+24/04/16 10:17:02 INFO ExternalShuffleBlockResolver: Executor is not registered (appId=app-20240416101556-0001, execId=3)
+24/04/16 10:17:02 INFO ExternalShuffleBlockResolver: Application app-20240416101556-0001 removed, cleanupLocalDirs = true
+24/04/16 10:17:02 INFO Worker: Cleaning up local directories for application app-20240416101556-0001
+24/04/16 10:21:29 INFO Worker: Asked to launch executor app-20240416102129-0002/3 for PSO with Spark
+24/04/16 10:21:29 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/04/16 10:21:29 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/04/16 10:21:29 INFO SecurityManager: Changing view acls groups to: 
+24/04/16 10:21:29 INFO SecurityManager: Changing modify acls groups to: 
+24/04/16 10:21:29 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/04/16 10:21:29 INFO ExecutorRunner: Launch command: "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java" "-cp" "/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/conf/:/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/jars/*" "-Xmx1024M" "-Dspark.driver.port=50380" "-Djava.net.preferIPv6Addresses=false" "-XX:+IgnoreUnrecognizedVMOptions" "--add-opens=java.base/java.lang=ALL-UNNAMED" "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED" "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED" "--add-opens=java.base/java.io=ALL-UNNAMED" "--add-opens=java.base/java.net=ALL-UNNAMED" "--add-opens=java.base/java.nio=ALL-UNNAMED" "--add-opens=java.base/java.util=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED" "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED" "--add-opens=java.base/sun.nio.cs=ALL-UNNAMED" "--add-opens=java.base/sun.security.action=ALL-UNNAMED" "--add-opens=java.base/sun.util.calendar=ALL-UNNAMED" "--add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED" "-Djdk.reflect.useDirectMethodHandle=false" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@dyn230-001.wireless-1725.ndsu.nodak.edu:50380" "--executor-id" "3" "--hostname" "172.25.230.1" "--cores" "8" "--app-id" "app-20240416102129-0002" "--worker-url" "spark://Worker@172.25.230.1:64260" "--resourceProfileId" "0"
+24/04/16 10:21:53 INFO Worker: Asked to kill executor app-20240416102129-0002/3
+24/04/16 10:21:53 INFO ExecutorRunner: Runner thread for executor app-20240416102129-0002/3 interrupted
+24/04/16 10:21:53 INFO ExecutorRunner: Killing process!
+24/04/16 10:21:54 INFO Worker: Executor app-20240416102129-0002/3 finished with state KILLED exitStatus 143
+24/04/16 10:21:54 INFO ExternalShuffleBlockResolver: Clean up non-shuffle and non-RDD files associated with the finished executor 3
+24/04/16 10:21:54 INFO ExternalShuffleBlockResolver: Executor is not registered (appId=app-20240416102129-0002, execId=3)
+24/04/16 10:21:54 INFO ExternalShuffleBlockResolver: Application app-20240416102129-0002 removed, cleanupLocalDirs = true
+24/04/16 10:21:54 INFO Worker: Cleaning up local directories for application app-20240416102129-0002
+24/04/16 10:44:20 INFO Worker: Asked to launch executor app-20240416104419-0003/3 for PSO with Spark
+24/04/16 10:44:20 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/04/16 10:44:20 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/04/16 10:44:20 INFO SecurityManager: Changing view acls groups to: 
+24/04/16 10:44:20 INFO SecurityManager: Changing modify acls groups to: 
+24/04/16 10:44:20 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/04/16 10:44:20 INFO ExecutorRunner: Launch command: "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java" "-cp" "/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/conf/:/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/jars/*" "-Xmx1024M" "-Dspark.driver.port=50530" "-Djava.net.preferIPv6Addresses=false" "-XX:+IgnoreUnrecognizedVMOptions" "--add-opens=java.base/java.lang=ALL-UNNAMED" "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED" "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED" "--add-opens=java.base/java.io=ALL-UNNAMED" "--add-opens=java.base/java.net=ALL-UNNAMED" "--add-opens=java.base/java.nio=ALL-UNNAMED" "--add-opens=java.base/java.util=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED" "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED" "--add-opens=java.base/sun.nio.cs=ALL-UNNAMED" "--add-opens=java.base/sun.security.action=ALL-UNNAMED" "--add-opens=java.base/sun.util.calendar=ALL-UNNAMED" "--add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED" "-Djdk.reflect.useDirectMethodHandle=false" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@dyn230-001.wireless-1725.ndsu.nodak.edu:50530" "--executor-id" "3" "--hostname" "172.25.230.1" "--cores" "8" "--app-id" "app-20240416104419-0003" "--worker-url" "spark://Worker@172.25.230.1:64260" "--resourceProfileId" "0"
+24/04/16 10:44:36 INFO Worker: Asked to kill executor app-20240416104419-0003/3
+24/04/16 10:44:36 INFO ExecutorRunner: Runner thread for executor app-20240416104419-0003/3 interrupted
+24/04/16 10:44:36 INFO ExecutorRunner: Killing process!
+24/04/16 10:44:36 INFO Worker: Executor app-20240416104419-0003/3 finished with state KILLED exitStatus 143
+24/04/16 10:44:36 INFO ExternalShuffleBlockResolver: Clean up non-shuffle and non-RDD files associated with the finished executor 3
+24/04/16 10:44:36 INFO ExternalShuffleBlockResolver: Executor is not registered (appId=app-20240416104419-0003, execId=3)
+24/04/16 10:44:36 INFO ExternalShuffleBlockResolver: Application app-20240416104419-0003 removed, cleanupLocalDirs = true
+24/04/16 10:44:36 INFO Worker: Cleaning up local directories for application app-20240416104419-0003
+24/04/16 10:46:16 INFO Worker: Asked to launch executor app-20240416104616-0004/3 for PSO with Spark
+24/04/16 10:46:16 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/04/16 10:46:16 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/04/16 10:46:16 INFO SecurityManager: Changing view acls groups to: 
+24/04/16 10:46:16 INFO SecurityManager: Changing modify acls groups to: 
+24/04/16 10:46:16 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/04/16 10:46:16 INFO ExecutorRunner: Launch command: "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java" "-cp" "/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/conf/:/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/jars/*" "-Xmx1024M" "-Dspark.driver.port=50567" "-Djava.net.preferIPv6Addresses=false" "-XX:+IgnoreUnrecognizedVMOptions" "--add-opens=java.base/java.lang=ALL-UNNAMED" "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED" "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED" "--add-opens=java.base/java.io=ALL-UNNAMED" "--add-opens=java.base/java.net=ALL-UNNAMED" "--add-opens=java.base/java.nio=ALL-UNNAMED" "--add-opens=java.base/java.util=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED" "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED" "--add-opens=java.base/sun.nio.cs=ALL-UNNAMED" "--add-opens=java.base/sun.security.action=ALL-UNNAMED" "--add-opens=java.base/sun.util.calendar=ALL-UNNAMED" "--add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED" "-Djdk.reflect.useDirectMethodHandle=false" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@dyn230-001.wireless-1725.ndsu.nodak.edu:50567" "--executor-id" "3" "--hostname" "172.25.230.1" "--cores" "8" "--app-id" "app-20240416104616-0004" "--worker-url" "spark://Worker@172.25.230.1:64260" "--resourceProfileId" "0"
+24/04/16 10:46:33 INFO Worker: Asked to kill executor app-20240416104616-0004/3
+24/04/16 10:46:33 INFO ExecutorRunner: Runner thread for executor app-20240416104616-0004/3 interrupted
+24/04/16 10:46:33 INFO ExecutorRunner: Killing process!
+24/04/16 10:46:34 INFO Worker: Executor app-20240416104616-0004/3 finished with state KILLED exitStatus 143
+24/04/16 10:46:34 INFO ExternalShuffleBlockResolver: Clean up non-shuffle and non-RDD files associated with the finished executor 3
+24/04/16 10:46:34 INFO ExternalShuffleBlockResolver: Executor is not registered (appId=app-20240416104616-0004, execId=3)
+24/04/16 10:46:34 INFO ExternalShuffleBlockResolver: Application app-20240416104616-0004 removed, cleanupLocalDirs = true
+24/04/16 10:46:34 INFO Worker: Cleaning up local directories for application app-20240416104616-0004
+24/04/16 10:49:56 INFO Worker: Asked to launch executor app-20240416104956-0005/3 for PSO with Spark
+24/04/16 10:49:56 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/04/16 10:49:56 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/04/16 10:49:56 INFO SecurityManager: Changing view acls groups to: 
+24/04/16 10:49:56 INFO SecurityManager: Changing modify acls groups to: 
+24/04/16 10:49:56 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/04/16 10:49:56 INFO ExecutorRunner: Launch command: "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java" "-cp" "/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/conf/:/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/jars/*" "-Xmx1024M" "-Dspark.driver.port=50606" "-Djava.net.preferIPv6Addresses=false" "-XX:+IgnoreUnrecognizedVMOptions" "--add-opens=java.base/java.lang=ALL-UNNAMED" "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED" "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED" "--add-opens=java.base/java.io=ALL-UNNAMED" "--add-opens=java.base/java.net=ALL-UNNAMED" "--add-opens=java.base/java.nio=ALL-UNNAMED" "--add-opens=java.base/java.util=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED" "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED" "--add-opens=java.base/sun.nio.cs=ALL-UNNAMED" "--add-opens=java.base/sun.security.action=ALL-UNNAMED" "--add-opens=java.base/sun.util.calendar=ALL-UNNAMED" "--add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED" "-Djdk.reflect.useDirectMethodHandle=false" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@dyn230-001.wireless-1725.ndsu.nodak.edu:50606" "--executor-id" "3" "--hostname" "172.25.230.1" "--cores" "8" "--app-id" "app-20240416104956-0005" "--worker-url" "spark://Worker@172.25.230.1:64260" "--resourceProfileId" "0"
+24/04/16 10:50:16 INFO Worker: Asked to kill executor app-20240416104956-0005/3
+24/04/16 10:50:16 INFO ExecutorRunner: Runner thread for executor app-20240416104956-0005/3 interrupted
+24/04/16 10:50:16 INFO ExecutorRunner: Killing process!
+24/04/16 10:50:17 INFO Worker: Executor app-20240416104956-0005/3 finished with state KILLED exitStatus 143
+24/04/16 10:50:17 INFO ExternalShuffleBlockResolver: Clean up non-shuffle and non-RDD files associated with the finished executor 3
+24/04/16 10:50:17 INFO ExternalShuffleBlockResolver: Executor is not registered (appId=app-20240416104956-0005, execId=3)
+24/04/16 10:50:17 INFO ExternalShuffleBlockResolver: Application app-20240416104956-0005 removed, cleanupLocalDirs = true
+24/04/16 10:50:17 INFO Worker: Cleaning up local directories for application app-20240416104956-0005
+24/04/16 11:15:18 INFO Worker: Asked to launch executor app-20240416111518-0006/3 for PSO with Spark
+24/04/16 11:15:18 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/04/16 11:15:18 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/04/16 11:15:18 INFO SecurityManager: Changing view acls groups to: 
+24/04/16 11:15:18 INFO SecurityManager: Changing modify acls groups to: 
+24/04/16 11:15:18 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/04/16 11:15:18 INFO ExecutorRunner: Launch command: "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java" "-cp" "/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/conf/:/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/jars/*" "-Xmx1024M" "-Dspark.driver.port=50686" "-Djava.net.preferIPv6Addresses=false" "-XX:+IgnoreUnrecognizedVMOptions" "--add-opens=java.base/java.lang=ALL-UNNAMED" "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED" "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED" "--add-opens=java.base/java.io=ALL-UNNAMED" "--add-opens=java.base/java.net=ALL-UNNAMED" "--add-opens=java.base/java.nio=ALL-UNNAMED" "--add-opens=java.base/java.util=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED" "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED" "--add-opens=java.base/sun.nio.cs=ALL-UNNAMED" "--add-opens=java.base/sun.security.action=ALL-UNNAMED" "--add-opens=java.base/sun.util.calendar=ALL-UNNAMED" "--add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED" "-Djdk.reflect.useDirectMethodHandle=false" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@dyn230-001.wireless-1725.ndsu.nodak.edu:50686" "--executor-id" "3" "--hostname" "172.25.230.1" "--cores" "8" "--app-id" "app-20240416111518-0006" "--worker-url" "spark://Worker@172.25.230.1:64260" "--resourceProfileId" "0"
+24/04/16 11:15:37 INFO Worker: Asked to kill executor app-20240416111518-0006/3
+24/04/16 11:15:37 INFO ExecutorRunner: Runner thread for executor app-20240416111518-0006/3 interrupted
+24/04/16 11:15:37 INFO ExecutorRunner: Killing process!
+24/04/16 11:15:38 INFO Worker: Executor app-20240416111518-0006/3 finished with state KILLED exitStatus 143
+24/04/16 11:15:38 INFO ExternalShuffleBlockResolver: Clean up non-shuffle and non-RDD files associated with the finished executor 3
+24/04/16 11:15:38 INFO ExternalShuffleBlockResolver: Executor is not registered (appId=app-20240416111518-0006, execId=3)
+24/04/16 11:15:38 INFO ExternalShuffleBlockResolver: Application app-20240416111518-0006 removed, cleanupLocalDirs = true
+24/04/16 11:15:38 INFO Worker: Cleaning up local directories for application app-20240416111518-0006
+24/04/16 18:48:04 INFO Worker: Master with url spark://localhost:7077 requested this worker to reconnect.
+24/04/16 18:48:04 INFO Worker: Connecting to master localhost:7077...
+24/04/16 18:48:04 INFO Worker: Successfully registered with master spark://localhost:7077
+24/04/17 01:28:00 INFO Worker: Master with url spark://localhost:7077 requested this worker to reconnect.
+24/04/17 01:28:00 INFO Worker: Master with url spark://localhost:7077 requested this worker to reconnect.
+24/04/17 01:28:00 INFO Worker: Connecting to master localhost:7077...
+24/04/17 01:28:00 INFO Worker: Not spawning another attempt to register with the master, since there is an attempt scheduled already.
+24/04/17 01:28:00 INFO Worker: Successfully registered with master spark://localhost:7077
+24/04/17 04:03:14 INFO Worker: Master with url spark://localhost:7077 requested this worker to reconnect.
+24/04/17 04:03:14 INFO Worker: Connecting to master localhost:7077...
+24/04/17 04:03:14 INFO Worker: Successfully registered with master spark://localhost:7077
+24/04/17 11:15:51 INFO Worker: localhost:7077 Disassociated !
+24/04/17 11:15:51 ERROR Worker: Connection to master failed! Waiting for master to reconnect...
+24/04/17 11:15:51 INFO Worker: localhost:7077 Disassociated !
+24/04/17 11:15:51 ERROR Worker: Connection to master failed! Waiting for master to reconnect...
+24/04/17 11:15:51 INFO Worker: Not spawning another attempt to register with the master, since there is an attempt scheduled already.
+24/04/17 11:15:51 INFO Worker: Connecting to master localhost:7077...
+24/04/17 11:15:51 INFO TransportClientFactory: Found inactive connection to localhost/127.0.0.1:7077, creating a new one.
+24/04/17 11:15:51 WARN Worker: Failed to connect to master localhost:7077
+org.apache.spark.SparkException: Exception thrown in awaitResult: 
+	at org.apache.spark.util.SparkThreadUtils$.awaitResult(SparkThreadUtils.scala:56)
+	at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:310)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	at org.apache.spark.rpc.RpcEnv.setupEndpointRefByURI(RpcEnv.scala:102)
+	at org.apache.spark.rpc.RpcEnv.setupEndpointRef(RpcEnv.scala:110)
+	at org.apache.spark.deploy.worker.Worker$$anon$1.run(Worker.scala:313)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.io.IOException: Failed to connect to localhost/127.0.0.1:7077
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:294)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:214)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:226)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.createClient(NettyRpcEnv.scala:204)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:202)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:198)
+	... 4 more
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:7077
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:715)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:750)
+24/04/17 11:16:05 INFO Worker: Retrying connection to master (attempt # 1)
+24/04/17 11:16:05 INFO Worker: Connecting to master localhost:7077...
+24/04/17 11:16:05 INFO TransportClientFactory: Found inactive connection to localhost/127.0.0.1:7077, creating a new one.
+24/04/17 11:16:05 WARN Worker: Failed to connect to master localhost:7077
+org.apache.spark.SparkException: Exception thrown in awaitResult: 
+	at org.apache.spark.util.SparkThreadUtils$.awaitResult(SparkThreadUtils.scala:56)
+	at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:310)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	at org.apache.spark.rpc.RpcEnv.setupEndpointRefByURI(RpcEnv.scala:102)
+	at org.apache.spark.rpc.RpcEnv.setupEndpointRef(RpcEnv.scala:110)
+	at org.apache.spark.deploy.worker.Worker$$anon$2.run(Worker.scala:370)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.io.IOException: Failed to connect to localhost/127.0.0.1:7077
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:294)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:214)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:226)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.createClient(NettyRpcEnv.scala:204)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:202)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:198)
+	... 4 more
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:7077
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:715)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:750)
+24/04/17 11:16:19 INFO Worker: Retrying connection to master (attempt # 2)
+24/04/17 11:16:19 INFO Worker: Connecting to master localhost:7077...
+24/04/17 11:16:19 INFO TransportClientFactory: Found inactive connection to localhost/127.0.0.1:7077, creating a new one.
+24/04/17 11:16:19 WARN Worker: Failed to connect to master localhost:7077
+org.apache.spark.SparkException: Exception thrown in awaitResult: 
+	at org.apache.spark.util.SparkThreadUtils$.awaitResult(SparkThreadUtils.scala:56)
+	at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:310)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	at org.apache.spark.rpc.RpcEnv.setupEndpointRefByURI(RpcEnv.scala:102)
+	at org.apache.spark.rpc.RpcEnv.setupEndpointRef(RpcEnv.scala:110)
+	at org.apache.spark.deploy.worker.Worker$$anon$2.run(Worker.scala:370)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.io.IOException: Failed to connect to localhost/127.0.0.1:7077
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:294)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:214)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:226)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.createClient(NettyRpcEnv.scala:204)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:202)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:198)
+	... 4 more
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:7077
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:715)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:750)
+24/04/17 11:16:25 ERROR Worker: RECEIVED SIGNAL TERM
+24/04/17 11:16:25 INFO ShutdownHookManager: Shutdown hook called
+24/04/17 11:16:25 INFO ShutdownHookManager: Deleting directory /private/var/folders/rh/d6ltsplj4f94dtzy8y9sz6lr0000gn/T/spark-1c3a3eeb-c726-4279-afcd-46ba2d8ee4b7

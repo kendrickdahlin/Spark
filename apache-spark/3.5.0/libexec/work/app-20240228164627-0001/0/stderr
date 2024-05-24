@@ -1,0 +1,80 @@
+Spark Executor Command: "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java" "-cp" "/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/conf/:/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/jars/*" "-Xmx1024M" "-Dspark.driver.port=49929" "-Djava.net.preferIPv6Addresses=false" "-XX:+IgnoreUnrecognizedVMOptions" "--add-opens=java.base/java.lang=ALL-UNNAMED" "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED" "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED" "--add-opens=java.base/java.io=ALL-UNNAMED" "--add-opens=java.base/java.net=ALL-UNNAMED" "--add-opens=java.base/java.nio=ALL-UNNAMED" "--add-opens=java.base/java.util=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED" "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED" "--add-opens=java.base/sun.nio.cs=ALL-UNNAMED" "--add-opens=java.base/sun.security.action=ALL-UNNAMED" "--add-opens=java.base/sun.util.calendar=ALL-UNNAMED" "--add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED" "-Djdk.reflect.useDirectMethodHandle=false" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@dyn230-001.wireless-1725.ndsu.nodak.edu:49929" "--executor-id" "0" "--hostname" "172.25.230.1" "--cores" "8" "--app-id" "app-20240228164627-0001" "--worker-url" "spark://Worker@172.25.230.1:49614" "--resourceProfileId" "0"
+========================================
+
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+24/02/28 16:46:29 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 3560@dyn230-001.wireless-1725.ndsu.NoDak.edu
+24/02/28 16:46:29 INFO SignalUtils: Registering signal handler for TERM
+24/02/28 16:46:29 INFO SignalUtils: Registering signal handler for HUP
+24/02/28 16:46:29 INFO SignalUtils: Registering signal handler for INT
+24/02/28 16:46:30 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/02/28 16:46:30 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/02/28 16:46:30 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/02/28 16:46:30 INFO SecurityManager: Changing view acls groups to: 
+24/02/28 16:46:30 INFO SecurityManager: Changing modify acls groups to: 
+24/02/28 16:46:30 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/02/28 16:46:30 INFO TransportClientFactory: Successfully created connection to dyn230-001.wireless-1725.ndsu.NoDak.edu/172.25.230.1:49929 after 69 ms (0 ms spent in bootstraps)
+24/02/28 16:46:30 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/02/28 16:46:30 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/02/28 16:46:30 INFO SecurityManager: Changing view acls groups to: 
+24/02/28 16:46:30 INFO SecurityManager: Changing modify acls groups to: 
+24/02/28 16:46:30 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/02/28 16:46:30 INFO TransportClientFactory: Successfully created connection to dyn230-001.wireless-1725.ndsu.NoDak.edu/172.25.230.1:49929 after 2 ms (0 ms spent in bootstraps)
+24/02/28 16:46:30 INFO DiskBlockManager: Created local directory at /private/var/folders/rh/d6ltsplj4f94dtzy8y9sz6lr0000gn/T/spark-88e2129b-f66d-44c0-bae6-3960792731aa/executor-9981ccf5-ea74-4b20-a271-555fc4c791f0/blockmgr-1e78fd90-b9b9-49ec-b6ea-1719736d1d67
+24/02/28 16:46:30 INFO MemoryStore: MemoryStore started with capacity 366.3 MiB
+24/02/28 16:46:31 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@dyn230-001.wireless-1725.ndsu.nodak.edu:49929
+24/02/28 16:46:31 INFO WorkerWatcher: Connecting to worker spark://Worker@172.25.230.1:49614
+24/02/28 16:46:31 INFO TransportClientFactory: Successfully created connection to /172.25.230.1:49614 after 7 ms (0 ms spent in bootstraps)
+24/02/28 16:46:31 INFO WorkerWatcher: Successfully connected to spark://Worker@172.25.230.1:49614
+24/02/28 16:46:31 INFO ResourceUtils: ==============================================================
+24/02/28 16:46:31 INFO ResourceUtils: No custom resources configured for spark.executor.
+24/02/28 16:46:31 INFO ResourceUtils: ==============================================================
+24/02/28 16:46:31 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+24/02/28 16:46:31 INFO Executor: Starting executor ID 0 on host 172.25.230.1
+24/02/28 16:46:31 INFO Executor: OS info Mac OS X, 14.3.1, x86_64
+24/02/28 16:46:31 INFO Executor: Java version 1.8.0_401
+24/02/28 16:46:31 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 49936.
+24/02/28 16:46:31 INFO NettyBlockTransferService: Server created on 172.25.230.1:49936
+24/02/28 16:46:31 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+24/02/28 16:46:31 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(0, 172.25.230.1, 49936, None)
+24/02/28 16:46:31 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(0, 172.25.230.1, 49936, None)
+24/02/28 16:46:31 INFO BlockManager: Initialized BlockManager: BlockManagerId(0, 172.25.230.1, 49936, None)
+24/02/28 16:46:31 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+24/02/28 16:46:31 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@68a70017 for default.
+24/02/28 16:47:07 INFO CoarseGrainedExecutorBackend: Got assigned task 0
+24/02/28 16:47:07 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+24/02/28 16:47:07 INFO TorrentBroadcast: Started reading broadcast variable 1 with 1 pieces (estimated total size 4.0 MiB)
+24/02/28 16:47:07 INFO TransportClientFactory: Successfully created connection to dyn230-001.wireless-1725.ndsu.nodak.edu/172.25.230.1:49931 after 4 ms (0 ms spent in bootstraps)
+24/02/28 16:47:07 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 18.0 KiB, free 366.3 MiB)
+24/02/28 16:47:07 INFO TorrentBroadcast: Reading broadcast variable 1 took 149 ms
+24/02/28 16:47:08 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 39.1 KiB, free 366.2 MiB)
+24/02/28 16:47:09 INFO CodeGenerator: Code generated in 475.441875 ms
+24/02/28 16:47:09 INFO CodeGenerator: Code generated in 63.337042 ms
+24/02/28 16:47:09 INFO CodeGenerator: Code generated in 30.346958 ms
+24/02/28 16:47:09 INFO CodeGenerator: Code generated in 18.881208 ms
+24/02/28 16:47:09 INFO CodeGenerator: Code generated in 19.060208 ms
+24/02/28 16:47:09 INFO FileScanRDD: Reading File path: file:///Users/aaronmackenzie/Desktop/a.txt, range: 0-125, partition values: [empty row]
+24/02/28 16:47:09 INFO TorrentBroadcast: Started reading broadcast variable 0 with 1 pieces (estimated total size 4.0 MiB)
+24/02/28 16:47:09 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 34.3 KiB, free 364.0 MiB)
+24/02/28 16:47:09 INFO TorrentBroadcast: Reading broadcast variable 0 took 33 ms
+24/02/28 16:47:10 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 519.0 KiB, free 363.5 MiB)
+24/02/28 16:47:10 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 2859 bytes result sent to driver
+24/02/28 16:47:10 INFO CoarseGrainedExecutorBackend: Got assigned task 1
+24/02/28 16:47:10 INFO Executor: Running task 0.0 in stage 2.0 (TID 1)
+24/02/28 16:47:10 INFO MapOutputTrackerWorker: Updating epoch to 1 and clearing cache
+24/02/28 16:47:10 INFO TorrentBroadcast: Started reading broadcast variable 2 with 1 pieces (estimated total size 4.0 MiB)
+24/02/28 16:47:10 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 18.9 KiB, free 365.7 MiB)
+24/02/28 16:47:10 INFO TorrentBroadcast: Reading broadcast variable 2 took 20 ms
+24/02/28 16:47:10 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 40.3 KiB, free 365.6 MiB)
+24/02/28 16:47:10 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 0, fetching them
+24/02/28 16:47:11 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@dyn230-001.wireless-1725.ndsu.nodak.edu:49929)
+24/02/28 16:47:11 INFO MapOutputTrackerWorker: Got the map output locations
+24/02/28 16:47:11 INFO ShuffleBlockFetcherIterator: Getting 1 (1259.0 B) non-empty blocks including 1 (1259.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+24/02/28 16:47:11 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 14 ms
+24/02/28 16:47:11 INFO CodeGenerator: Code generated in 74.111959 ms
+24/02/28 16:47:11 INFO Executor: Finished task 0.0 in stage 2.0 (TID 1). 5521 bytes result sent to driver
+24/02/28 17:25:38 INFO Executor: Told to re-register on heartbeat
+24/02/28 17:25:38 INFO BlockManager: BlockManager BlockManagerId(0, 172.25.230.1, 49936, None) re-registering with master
+24/02/28 17:25:38 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(0, 172.25.230.1, 49936, None)
+24/02/28 17:25:38 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(0, 172.25.230.1, 49936, None)
+24/02/28 17:25:38 INFO BlockManager: Reporting 6 blocks to the master.
+24/02/28 17:25:38 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown

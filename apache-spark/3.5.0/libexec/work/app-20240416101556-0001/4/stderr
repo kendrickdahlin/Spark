@@ -1,0 +1,346 @@
+Spark Executor Command: "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java" "-cp" "/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/conf/:/opt/homebrew/Cellar/apache-spark/3.5.0/libexec/jars/*" "-Xmx1024M" "-Dspark.driver.port=49975" "-Djava.net.preferIPv6Addresses=false" "-XX:+IgnoreUnrecognizedVMOptions" "--add-opens=java.base/java.lang=ALL-UNNAMED" "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED" "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED" "--add-opens=java.base/java.io=ALL-UNNAMED" "--add-opens=java.base/java.net=ALL-UNNAMED" "--add-opens=java.base/java.nio=ALL-UNNAMED" "--add-opens=java.base/java.util=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED" "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED" "--add-opens=java.base/sun.nio.cs=ALL-UNNAMED" "--add-opens=java.base/sun.security.action=ALL-UNNAMED" "--add-opens=java.base/sun.util.calendar=ALL-UNNAMED" "--add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED" "-Djdk.reflect.useDirectMethodHandle=false" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@dyn230-001.wireless-1725.ndsu.nodak.edu:49975" "--executor-id" "4" "--hostname" "172.25.230.1" "--cores" "8" "--app-id" "app-20240416101556-0001" "--worker-url" "spark://Worker@172.25.230.1:64254" "--resourceProfileId" "0"
+========================================
+
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+24/04/16 10:16:01 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 49123@dyn230-001.wireless-1725.ndsu.NoDak.edu
+24/04/16 10:16:01 INFO SignalUtils: Registering signal handler for TERM
+24/04/16 10:16:01 INFO SignalUtils: Registering signal handler for HUP
+24/04/16 10:16:01 INFO SignalUtils: Registering signal handler for INT
+24/04/16 10:16:03 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/04/16 10:16:03 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/04/16 10:16:03 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/04/16 10:16:03 INFO SecurityManager: Changing view acls groups to: 
+24/04/16 10:16:03 INFO SecurityManager: Changing modify acls groups to: 
+24/04/16 10:16:03 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/04/16 10:16:04 INFO TransportClientFactory: Successfully created connection to dyn230-001.wireless-1725.ndsu.NoDak.edu/172.25.230.1:49975 after 365 ms (0 ms spent in bootstraps)
+24/04/16 10:16:05 INFO SecurityManager: Changing view acls to: aaronmackenzie
+24/04/16 10:16:05 INFO SecurityManager: Changing modify acls to: aaronmackenzie
+24/04/16 10:16:05 INFO SecurityManager: Changing view acls groups to: 
+24/04/16 10:16:05 INFO SecurityManager: Changing modify acls groups to: 
+24/04/16 10:16:05 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: aaronmackenzie; groups with view permissions: EMPTY; users with modify permissions: aaronmackenzie; groups with modify permissions: EMPTY
+24/04/16 10:16:05 INFO TransportClientFactory: Successfully created connection to dyn230-001.wireless-1725.ndsu.NoDak.edu/172.25.230.1:49975 after 18 ms (0 ms spent in bootstraps)
+24/04/16 10:16:06 INFO DiskBlockManager: Created local directory at /private/var/folders/rh/d6ltsplj4f94dtzy8y9sz6lr0000gn/T/spark-f2f1384c-303d-40c9-9907-b3a15ffc151f/executor-40e43c3b-8082-431a-bec4-9ed062c4a8ec/blockmgr-1fa29f2e-5887-49f3-90da-dc9af6e320d3
+24/04/16 10:16:06 INFO MemoryStore: MemoryStore started with capacity 366.3 MiB
+24/04/16 10:16:07 INFO WorkerWatcher: Connecting to worker spark://Worker@172.25.230.1:64254
+24/04/16 10:16:07 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@dyn230-001.wireless-1725.ndsu.nodak.edu:49975
+24/04/16 10:16:07 INFO TransportClientFactory: Successfully created connection to /172.25.230.1:64254 after 149 ms (0 ms spent in bootstraps)
+24/04/16 10:16:07 INFO WorkerWatcher: Successfully connected to spark://Worker@172.25.230.1:64254
+24/04/16 10:16:07 INFO ResourceUtils: ==============================================================
+24/04/16 10:16:07 INFO ResourceUtils: No custom resources configured for spark.executor.
+24/04/16 10:16:07 INFO ResourceUtils: ==============================================================
+24/04/16 10:16:08 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+24/04/16 10:16:08 INFO Executor: Starting executor ID 4 on host 172.25.230.1
+24/04/16 10:16:08 INFO Executor: OS info Mac OS X, 14.4.1, x86_64
+24/04/16 10:16:08 INFO Executor: Java version 1.8.0_401
+24/04/16 10:16:08 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 50009.
+24/04/16 10:16:08 INFO NettyBlockTransferService: Server created on 172.25.230.1:50009
+24/04/16 10:16:08 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+24/04/16 10:16:08 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(4, 172.25.230.1, 50009, None)
+24/04/16 10:16:08 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(4, 172.25.230.1, 50009, None)
+24/04/16 10:16:08 INFO BlockManager: Initialized BlockManager: BlockManagerId(4, 172.25.230.1, 50009, None)
+24/04/16 10:16:08 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+24/04/16 10:16:08 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@2e60b4cc for default.
+24/04/16 10:16:15 INFO CoarseGrainedExecutorBackend: Got assigned task 1
+24/04/16 10:16:15 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+24/04/16 10:16:15 INFO TorrentBroadcast: Started reading broadcast variable 4 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:15 INFO TransportClientFactory: Successfully created connection to dyn230-001.wireless-1725.ndsu.NoDak.edu/172.25.230.1:49978 after 4 ms (0 ms spent in bootstraps)
+24/04/16 10:16:15 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 366.3 MiB)
+24/04/16 10:16:15 INFO TorrentBroadcast: Reading broadcast variable 4 took 137 ms
+24/04/16 10:16:15 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 20.8 KiB, free 366.3 MiB)
+24/04/16 10:16:17 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:17 INFO CodeGenerator: Code generated in 421.296625 ms
+24/04/16 10:16:17 INFO TorrentBroadcast: Started reading broadcast variable 3 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:17 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 34.3 KiB, free 366.2 MiB)
+24/04/16 10:16:17 INFO TorrentBroadcast: Reading broadcast variable 3 took 32 ms
+24/04/16 10:16:17 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 519.0 KiB, free 365.7 MiB)
+24/04/16 10:16:18 INFO PythonRunner: Times: total = 1631, boot = 433, init = 1196, finish = 2
+24/04/16 10:16:18 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 1752 bytes result sent to driver
+24/04/16 10:16:18 INFO CoarseGrainedExecutorBackend: Got assigned task 2
+24/04/16 10:16:18 INFO Executor: Running task 0.0 in stage 2.0 (TID 2)
+24/04/16 10:16:18 INFO TorrentBroadcast: Started reading broadcast variable 5 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:18 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.7 MiB)
+24/04/16 10:16:18 INFO TorrentBroadcast: Reading broadcast variable 5 took 16 ms
+24/04/16 10:16:18 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 20.8 KiB, free 365.7 MiB)
+24/04/16 10:16:18 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:18 INFO PythonRunner: Times: total = 78, boot = -247, init = 322, finish = 3
+24/04/16 10:16:18 INFO Executor: Finished task 0.0 in stage 2.0 (TID 2). 1709 bytes result sent to driver
+24/04/16 10:16:18 INFO CoarseGrainedExecutorBackend: Got assigned task 3
+24/04/16 10:16:18 INFO Executor: Running task 0.0 in stage 3.0 (TID 3)
+24/04/16 10:16:18 INFO TorrentBroadcast: Started reading broadcast variable 6 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:18 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.7 MiB)
+24/04/16 10:16:18 INFO TorrentBroadcast: Reading broadcast variable 6 took 25 ms
+24/04/16 10:16:18 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 20.8 KiB, free 365.7 MiB)
+24/04/16 10:16:18 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:18 INFO PythonRunner: Times: total = 82, boot = -151, init = 230, finish = 3
+24/04/16 10:16:18 INFO Executor: Finished task 0.0 in stage 3.0 (TID 3). 1709 bytes result sent to driver
+24/04/16 10:16:19 INFO CoarseGrainedExecutorBackend: Got assigned task 4
+24/04/16 10:16:19 INFO Executor: Running task 0.0 in stage 4.0 (TID 4)
+24/04/16 10:16:19 INFO TorrentBroadcast: Started reading broadcast variable 7 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:19 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.7 MiB)
+24/04/16 10:16:19 INFO TorrentBroadcast: Reading broadcast variable 7 took 54 ms
+24/04/16 10:16:19 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 20.8 KiB, free 365.6 MiB)
+24/04/16 10:16:19 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:19 INFO PythonRunner: Times: total = 58, boot = -229, init = 285, finish = 2
+24/04/16 10:16:19 INFO Executor: Finished task 0.0 in stage 4.0 (TID 4). 1709 bytes result sent to driver
+24/04/16 10:16:25 INFO CoarseGrainedExecutorBackend: Got assigned task 7
+24/04/16 10:16:25 INFO Executor: Running task 0.0 in stage 7.0 (TID 7)
+24/04/16 10:16:25 INFO TorrentBroadcast: Started reading broadcast variable 10 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:25 INFO MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.6 MiB)
+24/04/16 10:16:25 INFO TorrentBroadcast: Reading broadcast variable 10 took 19 ms
+24/04/16 10:16:25 INFO MemoryStore: Block broadcast_10 stored as values in memory (estimated size 20.8 KiB, free 365.6 MiB)
+24/04/16 10:16:25 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:25 INFO PythonRunner: Times: total = 69, boot = -6580, init = 6644, finish = 5
+24/04/16 10:16:25 INFO Executor: Finished task 0.0 in stage 7.0 (TID 7). 1709 bytes result sent to driver
+24/04/16 10:16:38 INFO CoarseGrainedExecutorBackend: Got assigned task 26
+24/04/16 10:16:38 INFO Executor: Running task 0.0 in stage 26.0 (TID 26)
+24/04/16 10:16:38 INFO TorrentBroadcast: Started reading broadcast variable 29 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:38 INFO MemoryStore: Block broadcast_29_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.7 MiB)
+24/04/16 10:16:38 INFO TorrentBroadcast: Reading broadcast variable 29 took 16 ms
+24/04/16 10:16:38 INFO MemoryStore: Block broadcast_29 stored as values in memory (estimated size 20.8 KiB, free 365.7 MiB)
+24/04/16 10:16:38 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:38 INFO PythonRunner: Times: total = 71, boot = -12475, init = 12544, finish = 2
+24/04/16 10:16:38 INFO Executor: Finished task 0.0 in stage 26.0 (TID 26). 1709 bytes result sent to driver
+24/04/16 10:16:38 INFO CoarseGrainedExecutorBackend: Got assigned task 30
+24/04/16 10:16:38 INFO Executor: Running task 0.0 in stage 30.0 (TID 30)
+24/04/16 10:16:38 INFO TorrentBroadcast: Started reading broadcast variable 33 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:38 INFO MemoryStore: Block broadcast_33_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.7 MiB)
+24/04/16 10:16:38 INFO TorrentBroadcast: Reading broadcast variable 33 took 14 ms
+24/04/16 10:16:38 INFO MemoryStore: Block broadcast_33 stored as values in memory (estimated size 20.8 KiB, free 365.7 MiB)
+24/04/16 10:16:38 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:38 INFO PythonRunner: Times: total = 51, boot = -520, init = 568, finish = 3
+24/04/16 10:16:38 INFO Executor: Finished task 0.0 in stage 30.0 (TID 30). 1666 bytes result sent to driver
+24/04/16 10:16:38 INFO CoarseGrainedExecutorBackend: Got assigned task 31
+24/04/16 10:16:38 INFO Executor: Running task 0.0 in stage 31.0 (TID 31)
+24/04/16 10:16:38 INFO TorrentBroadcast: Started reading broadcast variable 34 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:39 INFO MemoryStore: Block broadcast_34_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.7 MiB)
+24/04/16 10:16:39 INFO TorrentBroadcast: Reading broadcast variable 34 took 19 ms
+24/04/16 10:16:39 INFO MemoryStore: Block broadcast_34 stored as values in memory (estimated size 20.8 KiB, free 365.7 MiB)
+24/04/16 10:16:39 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:39 INFO PythonRunner: Times: total = 40, boot = -74, init = 112, finish = 2
+24/04/16 10:16:39 INFO Executor: Finished task 0.0 in stage 31.0 (TID 31). 1709 bytes result sent to driver
+24/04/16 10:16:40 INFO CoarseGrainedExecutorBackend: Got assigned task 36
+24/04/16 10:16:40 INFO Executor: Running task 0.0 in stage 36.0 (TID 36)
+24/04/16 10:16:40 INFO TorrentBroadcast: Started reading broadcast variable 39 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:40 INFO MemoryStore: Block broadcast_39_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.7 MiB)
+24/04/16 10:16:40 INFO TorrentBroadcast: Reading broadcast variable 39 took 24 ms
+24/04/16 10:16:40 INFO MemoryStore: Block broadcast_39 stored as values in memory (estimated size 20.8 KiB, free 365.7 MiB)
+24/04/16 10:16:40 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:40 INFO PythonRunner: Times: total = 61, boot = -1277, init = 1335, finish = 3
+24/04/16 10:16:40 INFO Executor: Finished task 0.0 in stage 36.0 (TID 36). 1709 bytes result sent to driver
+24/04/16 10:16:41 INFO CoarseGrainedExecutorBackend: Got assigned task 42
+24/04/16 10:16:41 INFO Executor: Running task 0.0 in stage 42.0 (TID 42)
+24/04/16 10:16:41 INFO TorrentBroadcast: Started reading broadcast variable 45 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:41 INFO MemoryStore: Block broadcast_45_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.7 MiB)
+24/04/16 10:16:41 INFO TorrentBroadcast: Reading broadcast variable 45 took 19 ms
+24/04/16 10:16:41 INFO MemoryStore: Block broadcast_45 stored as values in memory (estimated size 20.8 KiB, free 365.7 MiB)
+24/04/16 10:16:41 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:41 INFO PythonRunner: Times: total = 43, boot = -887, init = 928, finish = 2
+24/04/16 10:16:41 INFO Executor: Finished task 0.0 in stage 42.0 (TID 42). 1709 bytes result sent to driver
+24/04/16 10:16:41 INFO CoarseGrainedExecutorBackend: Got assigned task 44
+24/04/16 10:16:41 INFO Executor: Running task 0.0 in stage 44.0 (TID 44)
+24/04/16 10:16:41 INFO TorrentBroadcast: Started reading broadcast variable 47 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:41 INFO MemoryStore: Block broadcast_47_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.7 MiB)
+24/04/16 10:16:41 INFO TorrentBroadcast: Reading broadcast variable 47 took 12 ms
+24/04/16 10:16:41 INFO MemoryStore: Block broadcast_47 stored as values in memory (estimated size 20.8 KiB, free 365.7 MiB)
+24/04/16 10:16:41 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:41 INFO PythonRunner: Times: total = 42, boot = -290, init = 330, finish = 2
+24/04/16 10:16:41 INFO Executor: Finished task 0.0 in stage 44.0 (TID 44). 1666 bytes result sent to driver
+24/04/16 10:16:41 INFO CoarseGrainedExecutorBackend: Got assigned task 45
+24/04/16 10:16:41 INFO Executor: Running task 0.0 in stage 45.0 (TID 45)
+24/04/16 10:16:41 INFO TorrentBroadcast: Started reading broadcast variable 48 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:41 INFO MemoryStore: Block broadcast_48_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.7 MiB)
+24/04/16 10:16:41 INFO TorrentBroadcast: Reading broadcast variable 48 took 14 ms
+24/04/16 10:16:41 INFO MemoryStore: Block broadcast_48 stored as values in memory (estimated size 20.8 KiB, free 365.6 MiB)
+24/04/16 10:16:41 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:41 INFO PythonRunner: Times: total = 40, boot = -59, init = 97, finish = 2
+24/04/16 10:16:41 INFO Executor: Finished task 0.0 in stage 45.0 (TID 45). 1666 bytes result sent to driver
+24/04/16 10:16:41 INFO CoarseGrainedExecutorBackend: Got assigned task 46
+24/04/16 10:16:41 INFO Executor: Running task 0.0 in stage 46.0 (TID 46)
+24/04/16 10:16:41 INFO TorrentBroadcast: Started reading broadcast variable 49 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:41 INFO MemoryStore: Block broadcast_49_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.6 MiB)
+24/04/16 10:16:41 INFO TorrentBroadcast: Reading broadcast variable 49 took 9 ms
+24/04/16 10:16:41 INFO MemoryStore: Block broadcast_49 stored as values in memory (estimated size 20.8 KiB, free 365.6 MiB)
+24/04/16 10:16:41 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:42 INFO PythonRunner: Times: total = 187, boot = -47, init = 232, finish = 2
+24/04/16 10:16:42 INFO Executor: Finished task 0.0 in stage 46.0 (TID 46). 1709 bytes result sent to driver
+24/04/16 10:16:42 INFO CoarseGrainedExecutorBackend: Got assigned task 48
+24/04/16 10:16:42 INFO Executor: Running task 0.0 in stage 48.0 (TID 48)
+24/04/16 10:16:42 INFO TorrentBroadcast: Started reading broadcast variable 51 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:42 INFO MemoryStore: Block broadcast_51_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.6 MiB)
+24/04/16 10:16:42 INFO TorrentBroadcast: Reading broadcast variable 51 took 12 ms
+24/04/16 10:16:42 INFO MemoryStore: Block broadcast_51 stored as values in memory (estimated size 20.8 KiB, free 365.6 MiB)
+24/04/16 10:16:42 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:42 INFO PythonRunner: Times: total = 54, boot = -242, init = 294, finish = 2
+24/04/16 10:16:42 INFO Executor: Finished task 0.0 in stage 48.0 (TID 48). 1666 bytes result sent to driver
+24/04/16 10:16:42 INFO CoarseGrainedExecutorBackend: Got assigned task 53
+24/04/16 10:16:42 INFO Executor: Running task 0.0 in stage 53.0 (TID 53)
+24/04/16 10:16:42 INFO TorrentBroadcast: Started reading broadcast variable 56 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:42 INFO MemoryStore: Block broadcast_56_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.6 MiB)
+24/04/16 10:16:42 INFO TorrentBroadcast: Reading broadcast variable 56 took 9 ms
+24/04/16 10:16:42 INFO MemoryStore: Block broadcast_56 stored as values in memory (estimated size 20.8 KiB, free 365.5 MiB)
+24/04/16 10:16:42 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:43 INFO PythonRunner: Times: total = 41, boot = -652, init = 690, finish = 3
+24/04/16 10:16:43 INFO Executor: Finished task 0.0 in stage 53.0 (TID 53). 1709 bytes result sent to driver
+24/04/16 10:16:45 INFO CoarseGrainedExecutorBackend: Got assigned task 65
+24/04/16 10:16:45 INFO Executor: Running task 0.0 in stage 65.0 (TID 65)
+24/04/16 10:16:45 INFO TorrentBroadcast: Started reading broadcast variable 68 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:45 INFO MemoryStore: Block broadcast_68_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.7 MiB)
+24/04/16 10:16:45 INFO TorrentBroadcast: Reading broadcast variable 68 took 10 ms
+24/04/16 10:16:45 INFO MemoryStore: Block broadcast_68 stored as values in memory (estimated size 20.8 KiB, free 365.7 MiB)
+24/04/16 10:16:45 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:45 INFO PythonRunner: Times: total = 49, boot = -2147, init = 2193, finish = 3
+24/04/16 10:16:45 INFO Executor: Finished task 0.0 in stage 65.0 (TID 65). 1709 bytes result sent to driver
+24/04/16 10:16:46 INFO CoarseGrainedExecutorBackend: Got assigned task 75
+24/04/16 10:16:46 INFO Executor: Running task 0.0 in stage 75.0 (TID 75)
+24/04/16 10:16:46 INFO TorrentBroadcast: Started reading broadcast variable 78 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:46 INFO MemoryStore: Block broadcast_78_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.7 MiB)
+24/04/16 10:16:46 INFO TorrentBroadcast: Reading broadcast variable 78 took 24 ms
+24/04/16 10:16:46 INFO MemoryStore: Block broadcast_78 stored as values in memory (estimated size 20.8 KiB, free 365.7 MiB)
+24/04/16 10:16:47 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:47 INFO PythonRunner: Times: total = 68, boot = -1734, init = 1800, finish = 2
+24/04/16 10:16:47 INFO Executor: Finished task 0.0 in stage 75.0 (TID 75). 1709 bytes result sent to driver
+24/04/16 10:16:47 INFO CoarseGrainedExecutorBackend: Got assigned task 79
+24/04/16 10:16:47 INFO Executor: Running task 0.0 in stage 79.0 (TID 79)
+24/04/16 10:16:47 INFO TorrentBroadcast: Started reading broadcast variable 82 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:47 INFO MemoryStore: Block broadcast_82_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.7 MiB)
+24/04/16 10:16:47 INFO TorrentBroadcast: Reading broadcast variable 82 took 8 ms
+24/04/16 10:16:47 INFO MemoryStore: Block broadcast_82 stored as values in memory (estimated size 20.8 KiB, free 365.7 MiB)
+24/04/16 10:16:47 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:47 INFO PythonRunner: Times: total = 39, boot = -628, init = 665, finish = 2
+24/04/16 10:16:47 INFO Executor: Finished task 0.0 in stage 79.0 (TID 79). 1666 bytes result sent to driver
+24/04/16 10:16:47 INFO CoarseGrainedExecutorBackend: Got assigned task 81
+24/04/16 10:16:47 INFO Executor: Running task 0.0 in stage 81.0 (TID 81)
+24/04/16 10:16:47 INFO TorrentBroadcast: Started reading broadcast variable 84 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:48 INFO MemoryStore: Block broadcast_84_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.7 MiB)
+24/04/16 10:16:48 INFO TorrentBroadcast: Reading broadcast variable 84 took 34 ms
+24/04/16 10:16:48 INFO MemoryStore: Block broadcast_84 stored as values in memory (estimated size 20.8 KiB, free 365.6 MiB)
+24/04/16 10:16:48 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:48 INFO PythonRunner: Times: total = 44, boot = -287, init = 329, finish = 2
+24/04/16 10:16:48 INFO Executor: Finished task 0.0 in stage 81.0 (TID 81). 1709 bytes result sent to driver
+24/04/16 10:16:48 INFO CoarseGrainedExecutorBackend: Got assigned task 83
+24/04/16 10:16:48 INFO Executor: Running task 0.0 in stage 83.0 (TID 83)
+24/04/16 10:16:48 INFO TorrentBroadcast: Started reading broadcast variable 86 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:48 INFO MemoryStore: Block broadcast_86_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.6 MiB)
+24/04/16 10:16:48 INFO TorrentBroadcast: Reading broadcast variable 86 took 13 ms
+24/04/16 10:16:48 INFO MemoryStore: Block broadcast_86 stored as values in memory (estimated size 20.8 KiB, free 365.6 MiB)
+24/04/16 10:16:48 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:48 INFO PythonRunner: Times: total = 104, boot = -447, init = 549, finish = 2
+24/04/16 10:16:48 INFO Executor: Finished task 0.0 in stage 83.0 (TID 83). 1752 bytes result sent to driver
+24/04/16 10:16:49 INFO CoarseGrainedExecutorBackend: Got assigned task 88
+24/04/16 10:16:49 INFO Executor: Running task 0.0 in stage 88.0 (TID 88)
+24/04/16 10:16:49 INFO TorrentBroadcast: Started reading broadcast variable 91 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:49 INFO MemoryStore: Block broadcast_91_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.6 MiB)
+24/04/16 10:16:49 INFO TorrentBroadcast: Reading broadcast variable 91 took 17 ms
+24/04/16 10:16:49 INFO MemoryStore: Block broadcast_91 stored as values in memory (estimated size 20.8 KiB, free 365.6 MiB)
+24/04/16 10:16:49 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:49 INFO PythonRunner: Times: total = 56, boot = -687, init = 740, finish = 3
+24/04/16 10:16:49 INFO Executor: Finished task 0.0 in stage 88.0 (TID 88). 1709 bytes result sent to driver
+24/04/16 10:16:52 INFO CoarseGrainedExecutorBackend: Got assigned task 109
+24/04/16 10:16:52 INFO Executor: Running task 0.0 in stage 109.0 (TID 109)
+24/04/16 10:16:52 INFO TorrentBroadcast: Started reading broadcast variable 112 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:52 INFO MemoryStore: Block broadcast_112_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.7 MiB)
+24/04/16 10:16:52 INFO TorrentBroadcast: Reading broadcast variable 112 took 22 ms
+24/04/16 10:16:52 INFO MemoryStore: Block broadcast_112 stored as values in memory (estimated size 20.8 KiB, free 365.7 MiB)
+24/04/16 10:16:52 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:52 INFO PythonRunner: Times: total = 61, boot = -2975, init = 3033, finish = 3
+24/04/16 10:16:52 INFO Executor: Finished task 0.0 in stage 109.0 (TID 109). 1709 bytes result sent to driver
+24/04/16 10:16:52 INFO CoarseGrainedExecutorBackend: Got assigned task 110
+24/04/16 10:16:52 INFO Executor: Running task 0.0 in stage 110.0 (TID 110)
+24/04/16 10:16:52 INFO TorrentBroadcast: Started reading broadcast variable 113 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:52 INFO MemoryStore: Block broadcast_113_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.7 MiB)
+24/04/16 10:16:52 INFO TorrentBroadcast: Reading broadcast variable 113 took 14 ms
+24/04/16 10:16:52 INFO MemoryStore: Block broadcast_113 stored as values in memory (estimated size 20.8 KiB, free 365.7 MiB)
+24/04/16 10:16:52 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:52 INFO PythonRunner: Times: total = 41, boot = -73, init = 112, finish = 2
+24/04/16 10:16:52 INFO Executor: Finished task 0.0 in stage 110.0 (TID 110). 1666 bytes result sent to driver
+24/04/16 10:16:53 INFO CoarseGrainedExecutorBackend: Got assigned task 118
+24/04/16 10:16:53 INFO Executor: Running task 0.0 in stage 118.0 (TID 118)
+24/04/16 10:16:53 INFO TorrentBroadcast: Started reading broadcast variable 121 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:53 INFO MemoryStore: Block broadcast_121_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.7 MiB)
+24/04/16 10:16:53 INFO TorrentBroadcast: Reading broadcast variable 121 took 10 ms
+24/04/16 10:16:53 INFO MemoryStore: Block broadcast_121 stored as values in memory (estimated size 20.8 KiB, free 365.7 MiB)
+24/04/16 10:16:53 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:53 INFO PythonRunner: Times: total = 41, boot = -1074, init = 1113, finish = 2
+24/04/16 10:16:53 INFO Executor: Finished task 0.0 in stage 118.0 (TID 118). 1666 bytes result sent to driver
+24/04/16 10:16:54 INFO CoarseGrainedExecutorBackend: Got assigned task 122
+24/04/16 10:16:54 INFO Executor: Running task 0.0 in stage 122.0 (TID 122)
+24/04/16 10:16:54 INFO TorrentBroadcast: Started reading broadcast variable 125 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:54 INFO MemoryStore: Block broadcast_125_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.7 MiB)
+24/04/16 10:16:54 INFO TorrentBroadcast: Reading broadcast variable 125 took 14 ms
+24/04/16 10:16:54 INFO MemoryStore: Block broadcast_125 stored as values in memory (estimated size 20.8 KiB, free 365.7 MiB)
+24/04/16 10:16:54 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:54 INFO PythonRunner: Times: total = 49, boot = -864, init = 911, finish = 2
+24/04/16 10:16:54 INFO Executor: Finished task 0.0 in stage 122.0 (TID 122). 1709 bytes result sent to driver
+24/04/16 10:16:55 INFO CoarseGrainedExecutorBackend: Got assigned task 127
+24/04/16 10:16:55 INFO Executor: Running task 0.0 in stage 127.0 (TID 127)
+24/04/16 10:16:55 INFO TorrentBroadcast: Started reading broadcast variable 130 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:55 INFO MemoryStore: Block broadcast_130_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.7 MiB)
+24/04/16 10:16:55 INFO TorrentBroadcast: Reading broadcast variable 130 took 6 ms
+24/04/16 10:16:55 INFO MemoryStore: Block broadcast_130 stored as values in memory (estimated size 20.8 KiB, free 365.7 MiB)
+24/04/16 10:16:55 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:55 INFO PythonRunner: Times: total = 50, boot = -662, init = 710, finish = 2
+24/04/16 10:16:55 INFO Executor: Finished task 0.0 in stage 127.0 (TID 127). 1709 bytes result sent to driver
+24/04/16 10:16:56 INFO CoarseGrainedExecutorBackend: Got assigned task 136
+24/04/16 10:16:56 INFO Executor: Running task 0.0 in stage 136.0 (TID 136)
+24/04/16 10:16:56 INFO TorrentBroadcast: Started reading broadcast variable 139 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:56 INFO MemoryStore: Block broadcast_139_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.7 MiB)
+24/04/16 10:16:56 INFO TorrentBroadcast: Reading broadcast variable 139 took 27 ms
+24/04/16 10:16:56 INFO MemoryStore: Block broadcast_139 stored as values in memory (estimated size 20.8 KiB, free 365.7 MiB)
+24/04/16 10:16:56 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:56 INFO PythonRunner: Times: total = 48, boot = -1220, init = 1266, finish = 2
+24/04/16 10:16:56 INFO Executor: Finished task 0.0 in stage 136.0 (TID 136). 1666 bytes result sent to driver
+24/04/16 10:16:57 INFO CoarseGrainedExecutorBackend: Got assigned task 140
+24/04/16 10:16:57 INFO Executor: Running task 0.0 in stage 140.0 (TID 140)
+24/04/16 10:16:57 INFO TorrentBroadcast: Started reading broadcast variable 143 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:57 INFO MemoryStore: Block broadcast_143_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.7 MiB)
+24/04/16 10:16:57 INFO TorrentBroadcast: Reading broadcast variable 143 took 8 ms
+24/04/16 10:16:57 INFO MemoryStore: Block broadcast_143 stored as values in memory (estimated size 20.8 KiB, free 365.6 MiB)
+24/04/16 10:16:57 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:57 INFO PythonRunner: Times: total = 41, boot = -502, init = 541, finish = 2
+24/04/16 10:16:57 INFO Executor: Finished task 0.0 in stage 140.0 (TID 140). 1666 bytes result sent to driver
+24/04/16 10:16:57 INFO CoarseGrainedExecutorBackend: Got assigned task 142
+24/04/16 10:16:57 INFO Executor: Running task 0.0 in stage 142.0 (TID 142)
+24/04/16 10:16:57 INFO TorrentBroadcast: Started reading broadcast variable 145 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:57 INFO MemoryStore: Block broadcast_145_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.6 MiB)
+24/04/16 10:16:57 INFO TorrentBroadcast: Reading broadcast variable 145 took 17 ms
+24/04/16 10:16:57 INFO MemoryStore: Block broadcast_145 stored as values in memory (estimated size 20.8 KiB, free 365.6 MiB)
+24/04/16 10:16:57 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:57 INFO PythonRunner: Times: total = 42, boot = -218, init = 258, finish = 2
+24/04/16 10:16:57 INFO Executor: Finished task 0.0 in stage 142.0 (TID 142). 1709 bytes result sent to driver
+24/04/16 10:16:59 INFO CoarseGrainedExecutorBackend: Got assigned task 153
+24/04/16 10:16:59 INFO Executor: Running task 0.0 in stage 153.0 (TID 153)
+24/04/16 10:16:59 INFO TorrentBroadcast: Started reading broadcast variable 156 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:16:59 INFO MemoryStore: Block broadcast_156_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.7 MiB)
+24/04/16 10:16:59 INFO TorrentBroadcast: Reading broadcast variable 156 took 19 ms
+24/04/16 10:16:59 INFO MemoryStore: Block broadcast_156 stored as values in memory (estimated size 20.8 KiB, free 365.7 MiB)
+24/04/16 10:16:59 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:16:59 INFO PythonRunner: Times: total = 51, boot = -1917, init = 1966, finish = 2
+24/04/16 10:16:59 INFO Executor: Finished task 0.0 in stage 153.0 (TID 153). 1709 bytes result sent to driver
+24/04/16 10:16:59 INFO CoarseGrainedExecutorBackend: Got assigned task 157
+24/04/16 10:16:59 INFO Executor: Running task 0.0 in stage 157.0 (TID 157)
+24/04/16 10:16:59 INFO TorrentBroadcast: Started reading broadcast variable 160 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:17:00 INFO MemoryStore: Block broadcast_160_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.7 MiB)
+24/04/16 10:17:00 INFO TorrentBroadcast: Reading broadcast variable 160 took 37 ms
+24/04/16 10:17:00 INFO MemoryStore: Block broadcast_160 stored as values in memory (estimated size 20.8 KiB, free 365.7 MiB)
+24/04/16 10:17:00 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:17:00 INFO PythonRunner: Times: total = 48, boot = -662, init = 708, finish = 2
+24/04/16 10:17:00 INFO Executor: Finished task 0.0 in stage 157.0 (TID 157). 1709 bytes result sent to driver
+24/04/16 10:17:00 INFO CoarseGrainedExecutorBackend: Got assigned task 160
+24/04/16 10:17:00 INFO Executor: Running task 0.0 in stage 160.0 (TID 160)
+24/04/16 10:17:00 INFO TorrentBroadcast: Started reading broadcast variable 163 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:17:00 INFO MemoryStore: Block broadcast_163_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.7 MiB)
+24/04/16 10:17:00 INFO TorrentBroadcast: Reading broadcast variable 163 took 13 ms
+24/04/16 10:17:00 INFO MemoryStore: Block broadcast_163 stored as values in memory (estimated size 20.8 KiB, free 365.7 MiB)
+24/04/16 10:17:00 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:17:00 INFO PythonRunner: Times: total = 56, boot = -322, init = 375, finish = 3
+24/04/16 10:17:00 INFO Executor: Finished task 0.0 in stage 160.0 (TID 160). 1709 bytes result sent to driver
+24/04/16 10:17:00 INFO CoarseGrainedExecutorBackend: Got assigned task 161
+24/04/16 10:17:00 INFO Executor: Running task 0.0 in stage 161.0 (TID 161)
+24/04/16 10:17:00 INFO TorrentBroadcast: Started reading broadcast variable 164 with 1 pieces (estimated total size 4.0 MiB)
+24/04/16 10:17:00 INFO MemoryStore: Block broadcast_164_piece0 stored as bytes in memory (estimated size 10.8 KiB, free 365.7 MiB)
+24/04/16 10:17:00 INFO TorrentBroadcast: Reading broadcast variable 164 took 6 ms
+24/04/16 10:17:00 INFO MemoryStore: Block broadcast_164 stored as values in memory (estimated size 20.8 KiB, free 365.6 MiB)
+24/04/16 10:17:00 INFO FileScanRDD: Reading File path: file:///opt/homebrew/Cellar/apache-spark/3.5.0/libexec/ScpsoDataset.csv, range: 0-39421, partition values: [empty row]
+24/04/16 10:17:00 INFO PythonRunner: Times: total = 42, boot = -52, init = 92, finish = 2
+24/04/16 10:17:00 INFO Executor: Finished task 0.0 in stage 161.0 (TID 161). 1666 bytes result sent to driver
+24/04/16 10:17:01 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
