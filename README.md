@@ -23,11 +23,27 @@ sbin/stop-master.sh --host localhost --port 7077
 Remove copied file \
 `rm /Programs/FILENAME.py`
 
-cp Desktop/Spark/Sorting/mergesortspark.py apache-spark/3.5.0/libexec/
+My code
+`cp Desktop/Spark/Sorting/mergesortspark.py apache-spark/3.5.0/libexec/
 cd apache-spark/3.5.0/libexec 
 sbin/start-master.sh --host localhost --port 7077 
 sbin/start-worker.sh spark://localhost:7077
 spark-submit --master spark://localhost:7077 mergesortspark.py
-spark-submit --master spark://localhost:7077 MonteCarloPi.py
+spark-submit --master spark://localhost:7077 MonteCarloPi.py`
+
+# Run program in remote repo
+
+Add new file to remote directory 
+
+`scp /Users/dahlink/apache-spark/3.5.0/libexec/mergesort2.py kendrick.dahlin@spark.cs.ndsu.edu:/home/kendrick.dahlin/`
+Login to remote directory
+
+`ssh kendrick.dahlin@spark.cs.ndsu.edu`
+
+Run the program
+
+`spark-submit mergesort2.py`
+
+
 
 
