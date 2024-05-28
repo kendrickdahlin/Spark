@@ -24,4 +24,9 @@
     - previous code no longer working
     - simple square function also not working
 </details>
-  
+
+<details>
+  <summary>Week 2</summary>
+  ### 5/28
+  - Code now working locally - didn't make any changes.
+</details>
