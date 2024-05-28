@@ -1,7 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
+#Implements the mergeSort algorithm using
 
 
 import random
@@ -13,6 +10,11 @@ spark = SparkSession.builder\
 sc = spark.sparkContext
 
 def mergeSort(list):
+    print("")
+    print("====Initital List======")
+    print(list)
+    print("")
+
     list_length = len(list)
 
     if list_length == 1:
@@ -33,11 +35,7 @@ def merge(left, right):
 #arr = [random.randint(0,10) for _ in range(20)]
 
 def sparkSort(list):
-    print("")
-    print("====Initital List======")
-    print(list)
-    print("")
-
+   
     if len(list) == 1:
         return list
     q = len(list) // 2 #calculate the central point
@@ -51,23 +49,12 @@ df = spark.read.option("header", True).csv("Data.csv")
 
 rdd = sc.parallelize(df.collect())
 
-rdd.map(lambda x: print(x))
-
 #result = rdd.map(lambda x: [mergeSort(list(x))])
-result = rdd.mapPartitions(lambda x: [sparkSort(list(x))])
-
-partial_sorted = result.collect()
-print("")
-print("====Partial Sort======")
-print(partial_sorted)
-print("")
-print("")
-
-sorted_array = result.reduce(merge)
+result = rdd.mapPartitions(lambda x: sparkSort(list(x))).collect()
 
 print("")
 print("====Sorted Array======")
-print(sorted_array)
+print(result)
 print("")
 print("")
 
