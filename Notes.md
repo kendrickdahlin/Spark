@@ -69,3 +69,23 @@ options:
     - `a = sc.accumulator(1)` look more on spark docs
   - within a spark task you cannot use any other spark functions
 </details>
+
+<details>
+     <summary>Firefly algorithm</summary>
+     ### Shared variables in spark
+     1. Accumulator
+          - can be updated, value can only be accessed after .collect()
+     2. Broadcast variable
+          - read only variable
+     - mapPartition(foo) divides function to all workers
+          - foo is called a spark task
+     - until using .collect(), spark task won't end
+     ###Firefly algorithm
+     - implemented in an island manner
+     - 4Cluster2DataSet.csv or genereate4Cluster2Ddataset.py
+     - Expected centroid values:
+          - A: (70,30)
+          - B: (70,70)
+          - C: (30,30)
+          - D: (30,70)
+</details>
