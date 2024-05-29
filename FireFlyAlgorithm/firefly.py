@@ -60,4 +60,4 @@ def main(data):
         print(f"Center of class {cls} : {center}")
 
 if __name__ == "__main__":
-    main("4Cluster2Ddataset.csv")
+    main("FireFlyData.csv")
