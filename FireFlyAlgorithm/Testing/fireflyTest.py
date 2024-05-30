@@ -13,7 +13,7 @@ dimensions = 4
 
 fileName = f"{clusters}Cluster{dimensions}D.csv"
 
-true_centers = generate_data(10, clusters, dimensions)
+true_centers = gd2C4D.generate_data(10)
 print("True Centers: ", true_centers)
 
 result = ff.run(fileName)

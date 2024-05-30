@@ -9,8 +9,8 @@ def generate_data(num_rows=100):
     ranges = {}
 
     #defining category ranges
-    ranges['A'] = [(0, 50), (0,50), (0,50), (0,50)]
-    ranges['B'] = [(50, 100), (50,100), (50,100), (50,100)]
+    ranges['A'] = [(10, 40), (10,40), (10,40), (10,40)]
+    ranges['B'] = [(60, 80), (60,80), (60,80), (60,80)]
 
     for _ in range(num_rows):
         category = random.choice(categories)
