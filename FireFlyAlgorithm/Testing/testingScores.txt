@@ -1,0 +1,121 @@
+====4Cluster2DStable====
+Testing params alpha: 0.1, beta: 0.5, gamma: 0.1
+Total score: 1575662.3756002057
+Testing params alpha: 0.1, beta: 0.5, gamma: 0.5
+Total score: 1761133.7777122827
+Testing params alpha: 0.1, beta: 0.5, gamma: 1
+Total score: 1819254.2567874931
+Testing params alpha: 0.1, beta: 1, gamma: 0.1
+Total score: 1985077.3857028405
+Testing params alpha: 0.1, beta: 1, gamma: 0.5
+Total score: 2044287.2691293047
+Testing params alpha: 0.1, beta: 1, gamma: 1
+Total score: 2248344.0130373654
+Testing params alpha: 0.1, beta: 1.5, gamma: 0.1
+Total score: 1344538.4728877502
+Testing params alpha: 0.1, beta: 1.5, gamma: 0.5
+Total score: 1681169.9720321088
+Testing params alpha: 0.1, beta: 1.5, gamma: 1
+Total score: 1802385.782523393
+Testing params alpha: 0.3, beta: 0.5, gamma: 0.1
+Total score: 1590278.831614049
+Testing params alpha: 0.3, beta: 0.5, gamma: 0.5
+Total score: 1831831.6457909225
+Testing params alpha: 0.3, beta: 0.5, gamma: 1
+Total score: 2125861.492391494
+Testing params alpha: 0.3, beta: 1, gamma: 0.1
+Total score: 1329491.7035496968
+Testing params alpha: 0.3, beta: 1, gamma: 0.5
+Total score: 1598306.9740743274
+Testing params alpha: 0.3, beta: 1, gamma: 1
+Total score: 1654555.5902274095
+Testing params alpha: 0.3, beta: 1.5, gamma: 0.1
+Total score: 1329491.6990868608
+Testing params alpha: 0.3, beta: 1.5, gamma: 0.5
+Total score: 1906826.9835236077
+Testing params alpha: 0.3, beta: 1.5, gamma: 1
+Total score: 1680967.8628162981
+Testing params alpha: 0.5, beta: 0.5, gamma: 0.1
+Total score: 1329626.5666501937
+Testing params alpha: 0.5, beta: 0.5, gamma: 0.5
+Total score: 1744288.9709147864
+Testing params alpha: 0.5, beta: 0.5, gamma: 1
+Total score: 2344252.6632174277
+Testing params alpha: 0.5, beta: 1, gamma: 0.1
+Total score: 1329491.731290383
+Testing params alpha: 0.5, beta: 1, gamma: 0.5
+Total score: 1725359.2752499639
+Testing params alpha: 0.5, beta: 1, gamma: 1
+Total score: 1596209.9516528165
+Testing params alpha: 0.5, beta: 1.5, gamma: 0.1
+Total score: 1329491.7019971225
+Testing params alpha: 0.5, beta: 1.5, gamma: 0.5
+Total score: 1329492.4521220154
+Testing params alpha: 0.5, beta: 1.5, gamma: 1
+Total score: 1835535.9387532026
+Best Parameters: {'alpha': 0.3, 'beta0': 1.5, 'gamma': 0.1}
+Center of class B: [70.21746591 70.16576945]
+Center of class A: [70.61929853 30.00574183]
+Center of class D: [29.97278768 70.07889537]
+Center of class C: [30.12721259 30.25545039]
+
+
+
+=====2Cluster4D=========
+Testing params alpha: 0.1, beta: 0.5, gamma: 0.1
+Total score: 73.87155317073126
+Testing params alpha: 0.1, beta: 0.5, gamma: 0.5
+Total score: 101.8103295717683
+Testing params alpha: 0.1, beta: 0.5, gamma: 1
+Total score: 91.23803354400087
+Testing params alpha: 0.1, beta: 1, gamma: 0.1
+Total score: 93.19702882237756
+Testing params alpha: 0.1, beta: 1, gamma: 0.5
+Total score: 77.20199794640888
+Testing params alpha: 0.1, beta: 1, gamma: 1
+Total score: 100.69849939112473
+Testing params alpha: 0.1, beta: 1.5, gamma: 0.1
+Total score: 98.46598857982455
+Testing params alpha: 0.1, beta: 1.5, gamma: 0.5
+Total score: 83.9819945341045
+Testing params alpha: 0.1, beta: 1.5, gamma: 1
+Total score: 124.61016100197295
+Testing params alpha: 0.3, beta: 0.5, gamma: 0.1
+Total score: 68.32730975170631
+Testing params alpha: 0.3, beta: 0.5, gamma: 0.5
+Total score: 129.5100630451548
+Testing params alpha: 0.3, beta: 0.5, gamma: 1
+Total score: 90.62803192074935
+Testing params alpha: 0.3, beta: 1, gamma: 0.1
+Total score: 84.13939524510539
+Testing params alpha: 0.3, beta: 1, gamma: 0.5
+Total score: 113.24780016395829
+Testing params alpha: 0.3, beta: 1, gamma: 1
+Total score: 135.9430831629777
+Testing params alpha: 0.3, beta: 1.5, gamma: 0.1
+Total score: 75.12175637598797
+Testing params alpha: 0.3, beta: 1.5, gamma: 0.5
+Total score: 112.26132071845613
+Testing params alpha: 0.3, beta: 1.5, gamma: 1
+Total score: 111.55873535290964
+Testing params alpha: 0.5, beta: 0.5, gamma: 0.1
+Total score: 107.26743422056433
+Testing params alpha: 0.5, beta: 0.5, gamma: 0.5
+Total score: 97.8388423094606
+Testing params alpha: 0.5, beta: 0.5, gamma: 1
+Total score: 142.34672884194495
+Testing params alpha: 0.5, beta: 1, gamma: 0.1
+Total score: 106.393813967516
+Testing params alpha: 0.5, beta: 1, gamma: 0.5
+Total score: 105.63643125524447
+Testing params alpha: 0.5, beta: 1, gamma: 1
+Total score: 89.63179431862517
+Testing params alpha: 0.5, beta: 1.5, gamma: 0.1
+Total score: 84.39679669693459
+Testing params alpha: 0.5, beta: 1.5, gamma: 0.5
+Total score: 113.12821510207074
+Testing params alpha: 0.5, beta: 1.5, gamma: 1
+Total score: 101.89976499048592
+Best Parameters: {'alpha': 0.3, 'beta0': 0.5, 'gamma': 0.1}
+Center of class B: [76.90863294 85.39962572 87.13448972 82.75831638]
+Center of class A: [-0.72574676 22.7041054  21.18708522 20.70831115]
