@@ -27,6 +27,17 @@
 
 <details>
   <summary>Week 2</summary>
+  
   ### 5/28
   - Code now working locally - didn't make any changes.
+
+  ### 5/29
+  - Created  `firefly` algorithm without spark
+    - created simple algorithm using chatgpt
+    - developed `gridSearch` to find best parameters
+    - on `4Cluster2D.csv` resulted in 100% accuracy (with rounding)
+
+  ### 5/30
+
+  ### 5/31
 </details>
