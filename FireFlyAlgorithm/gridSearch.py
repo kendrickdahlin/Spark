@@ -18,11 +18,11 @@ def grid_search(csv_file, param_grid, true_centers):
                 centers = {}
                 total_score = 0
                 for cls in classes:
-                    points = df[df['Class'] == cls][['x', 'y']].values
-                    center = fa.find_center(points, print_output = True)
+                    points = df[df[df.columns[-1]] == cls][df.columns[:-1]].values
+                    center = fa.find_center(points, print_output = False)
                     centers[cls] = center
                     true_center = true_centers[cls]
-                    total_score += np.sum(true_center-center)
+                    total_score += np.sum(abs(true_center-center))
                     #total_score += fa.objective_function(center, points)
                 print(f"Total score: {total_score}")
                 if total_score < best_score:
@@ -33,14 +33,21 @@ def grid_search(csv_file, param_grid, true_centers):
 
     return best_params, best_centers
 
-if __name__ == "__main__":
+
+def find_params(file_name, true_centers):
     param_grid = {
         'alpha': [0.1, 0.3, 0.5],
         'beta0': [0.5, 1, 1.5],
         'gamma': [0.1, 0.5, 1]
     }
-    true_centers = {"A": (70,30), "B": (70,70), "C": (30,30), "D": (30,70) }
-    best_params, best_centers = grid_search("4Cluster2D.csv", param_grid, true_centers)
+    best_params, best_centers = grid_search(file_name, param_grid, true_centers)
     print("Best Parameters:", best_params)
     for cls, center in best_centers.items():
         print(f"Center of class {cls}: {center}")
+
+centers = {'A': [30,30], 
+           'B': [30,70], 
+           'C': [70,30],
+           'D': [70,70]}
+
+find_params("4Cluster2DStable.csv", centers)
