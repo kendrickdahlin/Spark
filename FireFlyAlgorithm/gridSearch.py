@@ -40,7 +40,7 @@ if __name__ == "__main__":
         'gamma': [0.1, 0.5, 1]
     }
     true_centers = {"A": (70,30), "B": (70,70), "C": (30,30), "D": (30,70) }
-    best_params, best_centers = grid_search("FireFlyData.csv", param_grid, true_centers)
+    best_params, best_centers = grid_search("4Cluster2D.csv", param_grid, true_centers)
     print("Best Parameters:", best_params)
     for cls, center in best_centers.items():
         print(f"Center of class {cls}: {center}")
