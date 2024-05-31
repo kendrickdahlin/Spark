@@ -8,12 +8,12 @@ from generateData import generate_data
 #fa = FireflyAlgorithm(n_fireflies=50, max_iter=100)
 
 clusters = 2
-dimensions = 4
+dimensions = 10
 
 
 fileName = f"{clusters}Cluster{dimensions}D.csv"
 
-true_centers = gd2C4D.generate_data(10)
-print("True Centers: ", true_centers)
+ranges = generate_data(5000, clusters, dimensions)
+print("Ranges: ", ranges)
 
 result = ff.run(fileName)

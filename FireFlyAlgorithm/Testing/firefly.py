@@ -63,4 +63,4 @@ def run(data, print_output = False):
     return centroids
 
 if __name__ == "__main__":
-    run("4Cluster2D.csv")
+    run("4Cluster2D.csv", True)

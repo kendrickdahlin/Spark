@@ -11,8 +11,8 @@ Parameters:
     - num_rows: number of data points   
     - num_classes: number of clusters
     - num_columns: dimenion of dataset
-Return: Center of each class 
-    - {'String': [Int, ... , Int], ..., 'String': [Int, ... , Int]}
+Return: Ranges of each class 
+    - {'String': [(Int,Int), ... , (Int,Int)], ..., 'String': [(Int,Int) ... ,(Int,Int)]}
 """
 def generate_data(num_rows, num_classes, num_columns):
     data = []
@@ -29,7 +29,7 @@ def generate_data(num_rows, num_classes, num_columns):
     centers = {}
     for key, value in ranges.items(): 
         centers[key] = [(pair[0] + pair[1])/2 for pair in value]
-    return centers
+    return ranges
 
 def generate_ranges(num_classes, num_columns):
     min_value = 0
