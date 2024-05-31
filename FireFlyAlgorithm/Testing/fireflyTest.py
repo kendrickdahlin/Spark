@@ -13,10 +13,10 @@ dimensions = 10
 
 fileName = f"{clusters}Cluster{dimensions}D.csv"
 
-ranges = generate_data(5000, clusters, dimensions)
-print("Ranges: ", ranges)
+#ranges = generate_data(5000, clusters, dimensions)
+#print("Ranges: ", ranges)
 
-alpha = 0.5
+alpha = 0.3
 beta0 = 1
 gamma = 1
 result = ff.run(fileName, alpha, beta0, gamma)

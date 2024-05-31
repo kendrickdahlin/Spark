@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 class FireflyAlgorithm:
-    def __init__(self, n_fireflies, max_iter, alpha=0.3, beta0=1.5, gamma=0.1, convergence_threshold = 1e-6, patience = 10):
+    def __init__(self, n_fireflies, max_iter, alpha=0.3, beta0=1, gamma=0.2, convergence_threshold = 1e-6, patience = 10):
         self.n_fireflies = n_fireflies
         self.max_iter = max_iter
         self.alpha = alpha
@@ -20,10 +20,11 @@ class FireflyAlgorithm:
     def distance(self, firefly1, firefly2):
         return np.linalg.norm(firefly1 - firefly2)
 
-    def move_firefly(self, firefly_i, firefly_j):
+    def move_firefly(self, firefly_i, firefly_j, iteration):
         r = self.distance(firefly_i, firefly_j)
         beta = self.beta0 * np.exp(-self.gamma * r**2)
-        random_factor = self.alpha * (np.random.rand(firefly_i.shape[0]) - 0.5)
+        alpha = self.alpha * (1-iteration/self.max_iter) # decreases alpha over time
+        random_factor = alpha * (np.random.rand(firefly_i.shape[0]) - 0.5)
         return firefly_i + beta * (firefly_j - firefly_i) + random_factor
 
     def find_center(self, points, print_output=False, cls = ""):
@@ -43,7 +44,7 @@ class FireflyAlgorithm:
             for i in range(self.n_fireflies):
                 for j in range(self.n_fireflies):
                     if i != j and self.objective_function(fireflies[j], points) < self.objective_function(fireflies[i], points):
-                        fireflies[i] = self.move_firefly(fireflies[i], fireflies[j])
+                        fireflies[i] = self.move_firefly(fireflies[i], fireflies[j], k)
                         fitness = self.objective_function(fireflies[i], points)
                         if fitness < best_fitness:
                             best_firefly = fireflies[i]
