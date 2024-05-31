@@ -45,8 +45,8 @@ class FireflyAlgorithm:
 
         return best_firefly
 
-def run(data, print_output = False):
-    fa = FireflyAlgorithm(n_fireflies=50, max_iter=70) 
+def run(data, alpha = 0.3, beta0 = 1.5, gamma = 0.1, print_output = False):
+    fa = FireflyAlgorithm(n_fireflies=50, max_iter=70, alpha=alpha, beta0=beta0, gamma=gamma) 
 
     df = pd.read_csv(data) 
     feature_columns = df.columns[:-1]
