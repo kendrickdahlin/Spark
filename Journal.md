@@ -32,12 +32,21 @@
   - Code now working locally - didn't make any changes.
 
   ### 5/29
-  - Created  `firefly` algorithm without spark
+  - Created  `firefly.py` algorithm without spark
     - created simple algorithm using chatgpt
-    - developed `gridSearch` to find best parameters
+    - developed `gridSearch.py` to find best parameters
     - on `4Cluster2D.csv` resulted in 100% accuracy (with rounding)
 
   ### 5/30
+  - Altered `firefly.py` program to take in dataset with any number of classes or dimension. 
+  - Worked on finding parameters that fit all programs, but with little sucesss.  `4Cluster2D.csv` is an ideal dataset, so the program converged perfectly. But other datasets did not consistently come within 10 units of error. 
 
   ### 5/31
+  - Continued attempting to tweak paramaeters and `firefly.py` to improve accuracy. Added the following features:
+    - Convergence condition: when improvement is consistently below a certain threshold, stop program and determine convergence.
+    - Dynamic alpha: alpha level starts high and gradually decreases
+  - Created an initial version of the FireFly algorithm with Spark. 
+    - Using Spark requries handling the dataset in a slightly different way. 
+    - New algorithm uses a Spark dataframe instead of pandas.  
+
 </details>
