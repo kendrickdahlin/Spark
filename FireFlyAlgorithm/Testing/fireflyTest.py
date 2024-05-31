@@ -16,4 +16,7 @@ fileName = f"{clusters}Cluster{dimensions}D.csv"
 ranges = generate_data(5000, clusters, dimensions)
 print("Ranges: ", ranges)
 
-result = ff.run(fileName)
+alpha = 0.5
+beta0 = 1
+gamma = 1
+result = ff.run(fileName, alpha, beta0, gamma)

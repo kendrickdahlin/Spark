@@ -2,12 +2,14 @@ import numpy as np
 import pandas as pd
 
 class FireflyAlgorithm:
-    def __init__(self, n_fireflies, max_iter, alpha=0.3, beta0=1.5, gamma=0.1):
+    def __init__(self, n_fireflies, max_iter, alpha=0.3, beta0=1.5, gamma=0.1, convergence_threshold = 1e-6, patience = 10):
         self.n_fireflies = n_fireflies
         self.max_iter = max_iter
         self.alpha = alpha
         self.beta0 = beta0
         self.gamma = gamma
+        self.convergence_threshold = convergence_threshold
+        self.patience = patience
 
     def objective_function(self, center, points):
         return np.sum(np.sum((points - center)**2, axis=1))
@@ -28,12 +30,16 @@ class FireflyAlgorithm:
         fireflies = self.initialize_fireflies(points.shape[1])
         best_firefly = fireflies[0]
         best_fitness = self.objective_function(best_firefly, points)
+        no_improvement_count = 0
 
-        if print_output == True:
+        if print_output:
             print(f"Finding centroid {cls}")
         for k in range(self.max_iter):
-            if print_output == True and k%10 == 0:
+            if print_output and k%10 == 0:
                 print(f"Iteration: {k}/{self.max_iter}")
+
+            previous_best_fitness = best_fitness
+
             for i in range(self.n_fireflies):
                 for j in range(self.n_fireflies):
                     if i != j and self.objective_function(fireflies[j], points) < self.objective_function(fireflies[i], points):
@@ -42,6 +48,14 @@ class FireflyAlgorithm:
                         if fitness < best_fitness:
                             best_firefly = fireflies[i]
                             best_fitness = fitness
+            
+            if (abs(previous_best_fitness - best_fitness)<self.convergence_threshold):
+                no_improvement_count +=1
+            else:
+                no_improvement_count = 0
+            if no_improvement_count >= self.patience:
+                print(f"Convergence reached at iteration {k}")
+                break
 
         return best_firefly
 
