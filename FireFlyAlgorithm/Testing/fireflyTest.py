@@ -18,5 +18,5 @@ fileName = f"{clusters}Cluster{dimensions}D.csv"
 
 alpha = 0.3
 beta0 = 1
-gamma = 1
+gamma = 0.2
 result = ff.run(fileName, alpha, beta0, gamma)

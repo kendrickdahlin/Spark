@@ -55,6 +55,7 @@ Scp data.csv from local directory into NDSU master directory
 Put file into NDSU hdfs system 
 
 `hdfs dfs -put Data.csv /user/kendrick.dahlin/ `
+hdfs dfs -put 2Cluster4D.csv /user/kendrick.dahlin/
 hdfs dfs -put 4Cluster2D.csv /user/kendrick.dahlin/
 Verify file is in hdfs system:
 
