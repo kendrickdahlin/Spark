@@ -24,9 +24,9 @@
 
 </details>
 <details>
-  <summary>Parrelization</summary>
+  <summary>Parallelization</summary>
   
-  `myRDD = sc.parrelize()`
+  `myRDD = sc.parallelize()`
 
 - not all of the spark context functions work
 - rdd belongs to spark session
