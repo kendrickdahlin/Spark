@@ -14,7 +14,9 @@ Parameters:
 Return: Ranges of each class 
     - {'String': [(Int,Int), ... , (Int,Int)], ..., 'String': [(Int,Int) ... ,(Int,Int)]}
 """
-def generate_data(num_rows, num_classes, num_columns):
+
+
+def generate_data(num_rows, num_classes, num_columns, file_name = ""):
     data = []
     categories = [chr(65 + i) for i in range(num_classes)]
     ranges = generate_ranges(num_classes, num_columns)
@@ -23,8 +25,9 @@ def generate_data(num_rows, num_classes, num_columns):
         category = random.choice(categories)
         values = [random.uniform(min(r), max(r)) for r in ranges[category]]
         data.append(values + [category])
-
-    save_to_csv(data, f"{num_classes}Cluster{num_columns}D.csv", num_columns)
+    if file_name == "":
+        file_name = f"{num_classes}Cluster{num_columns}D.csv"
+    save_to_csv(data, file_name, num_columns)
     
     centers = {}
     for key, value in ranges.items(): 

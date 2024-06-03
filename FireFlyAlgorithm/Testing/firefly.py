@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 class FireflyAlgorithm:
-    def __init__(self, n_fireflies, max_iter, alpha=0.3, beta0=1, gamma=0.2, convergence_threshold = 1e-6, patience = 10):
+    def __init__(self, n_fireflies=50, max_iter=100, alpha=0.3, beta0=1, gamma=0.2, convergence_threshold = 1e-6, patience = 10):
         self.n_fireflies = n_fireflies
         self.max_iter = max_iter
         self.alpha = alpha
@@ -12,7 +12,9 @@ class FireflyAlgorithm:
         self.patience = patience
 
     def objective_function(self, center, points):
-        return np.sum(np.sum((points - center)**2, axis=1))
+        #return np.sum(np.sum((points - center)**2, axis=1))
+        return np.sum(np.linalg.norm(points-center, axis = 1))
+    
 
     def initialize_fireflies(self, dimensions):
         return np.random.uniform(0, 100, (self.n_fireflies, dimensions))
@@ -60,22 +62,21 @@ class FireflyAlgorithm:
 
         return best_firefly
 
-def run(data, alpha = 0.3, beta0 = 1.5, gamma = 0.1, print_output = False):
-    fa = FireflyAlgorithm(n_fireflies=50, max_iter=70, alpha=alpha, beta0=beta0, gamma=gamma) 
+    def run(self,data, print_output = False):
+        df = pd.read_csv(data) 
+        feature_columns = df.columns[:-1]
+        class_column = df.columns[-1]
+    
+        classes = df[class_column].unique()
 
-    df = pd.read_csv(data) 
-    feature_columns = df.columns[:-1]
-    class_column = df.columns[-1]
-  
-    classes = df[class_column].unique()
-
-    centroids = {}
-    for cls in classes:
-        points = df[df[class_column] == cls][feature_columns].values
-        center = fa.find_center(points, print_output, cls)
-        print(f"Center of class {cls} : {center}")
-        centroids[cls] = center
-    return centroids
+        centroids = {}
+        for cls in classes:
+            points = df[df[class_column] == cls][feature_columns].values
+            center = self.find_center(points, print_output, cls)
+            print(f"Center of class {cls} : {center}")
+            centroids[cls] = center
+        return centroids
 
 if __name__ == "__main__":
-    run("4Cluster2D.csv", True)
+    fa = FireflyAlgorithm()
+    fa.run("4Cluster2D.csv", True)

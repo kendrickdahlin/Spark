@@ -50,3 +50,13 @@
     - New algorithm uses a Spark dataframe instead of pandas.  
 
 </details>
+
+<details>
+  <summary>Week 3</summary>
+
+  ### 6/31
+    - Updated fireflyTest to include testing. It now takes a subset of data and classifies it using the model and returns an accuracy level.
+      - For binary classification accuracy is 100%. 
+      - For 4 classes the accuracy is between 92-95%. 
+    - Worked on introductory presentation
+</details>
