@@ -2,81 +2,102 @@ import numpy as np
 import pandas as pd
 
 class FireflyAlgorithm:
-    def __init__(self, n_fireflies=50, max_iter=100, alpha=0.3, beta0=1, gamma=0.2, convergence_threshold = 1e-6, patience = 10):
+    def __init__(self, n_fireflies=50, max_iter=20, alpha=0.3, beta0=1, gamma=0.04):
         self.n_fireflies = n_fireflies
         self.max_iter = max_iter
         self.alpha = alpha
         self.beta0 = beta0
         self.gamma = gamma
-        self.convergence_threshold = convergence_threshold
-        self.patience = patience
+        self.lb = 0 
+        self.ub = 100
+        self.centroids = {}
 
-    def objective_function(self, center, points):
-        #return np.sum(np.sum((points - center)**2, axis=1))
-        return np.sum(np.linalg.norm(points-center, axis = 1))
-    
+    def objective_function(self, x, points):
+        #return np.sum(np.sum((self.points - center)**2, axis=1))
+        return np.sum(np.linalg.norm(points-x, axis = 1))
 
-    def initialize_fireflies(self, dimensions):
-        return np.random.uniform(0, 100, (self.n_fireflies, dimensions))
+    def find_center(self, points):
+        dim = points.shape[1]
 
-    def distance(self, firefly1, firefly2):
-        return np.linalg.norm(firefly1 - firefly2)
+        #initialize fireflies
+        fireflies = np.random.uniform(self.lb, self.ub, (self.n_fireflies, dim))
+        fitness = np.apply_along_axis(self.objective_function, 1, fireflies, points)
 
-    def move_firefly(self, firefly_i, firefly_j, iteration):
-        r = self.distance(firefly_i, firefly_j)
-        beta = self.beta0 * np.exp(-self.gamma * r**2)
-        alpha = self.alpha * (1-iteration/self.max_iter) # decreases alpha over time
-        random_factor = alpha * (np.random.rand(firefly_i.shape[0]) - 0.5)
-        return firefly_i + beta * (firefly_j - firefly_i) + random_factor
-
-    def find_center(self, points, print_output=False, cls = ""):
-        fireflies = self.initialize_fireflies(points.shape[1])
+        #set arbitrary global best
         best_firefly = fireflies[0]
-        best_fitness = self.objective_function(best_firefly, points)
-        no_improvement_count = 0
-
-        if print_output:
-            print(f"Finding centroid {cls}")
+        best_fitness = fitness[0]
+        
+       
         for k in range(self.max_iter):
-            if print_output and k%10 == 0:
-                print(f"Iteration: {k}/{self.max_iter}")
-
-            previous_best_fitness = best_fitness
-
+            k_alpha = self.alpha * (1-k/self.max_iter) # decreases alpha over time
+            ##PARALLELIZE HERE
             for i in range(self.n_fireflies):
                 for j in range(self.n_fireflies):
-                    if i != j and self.objective_function(fireflies[j], points) < self.objective_function(fireflies[i], points):
-                        fireflies[i] = self.move_firefly(fireflies[i], fireflies[j], k)
-                        fitness = self.objective_function(fireflies[i], points)
-                        if fitness < best_fitness:
-                            best_firefly = fireflies[i]
-                            best_fitness = fitness
-            
-            if (abs(previous_best_fitness - best_fitness)<self.convergence_threshold):
-                no_improvement_count +=1
-            else:
-                no_improvement_count = 0
-            if no_improvement_count >= self.patience:
-                print(f"Convergence reached at iteration {k}")
-                break
+                    if fitness[j] < fitness[i]:
+                        #move firefly
+                        r = np.linalg.norm(fireflies[i] - fireflies[j]) #distance
+                        beta = self.beta0 * np.exp(-self.gamma * r**2) #attractiveness
+                        random_factor = k_alpha * (np.random.rand(dim) - 0.5) #randomness
 
+                        #moves firefly based on equation then clips to keep within given interval
+                        fireflies[i] += beta * (fireflies[j] - fireflies[i]) + random_factor
+                        fireflies[i] = np.clip(fireflies[i], self.lb, self.ub)
+
+                        #update fitness
+                        fitness[i] = self.objective_function(fireflies[i], points)
+                        #update new best
+                        if fitness[i] < best_fitness:
+                            best_firefly = fireflies[i]
+                            best_fitness = fitness[i]
         return best_firefly
 
-    def run(self,data, print_output = False):
-        df = pd.read_csv(data) 
-        feature_columns = df.columns[:-1]
-        class_column = df.columns[-1]
+    #returns string of classification
+    def classify(self, row):
+        distances = {}
+        for key, points in self.centroids.items():
+            coord = np.array(row)
+            distances[key]= np.linalg.norm(points-coord)
+        cls = min(distances, key = distances.get)
+        return cls
     
-        classes = df[class_column].unique()
+    def run(self,file_name):
+        df = pd.read_csv(file_name) 
+        #split into training and test data
 
-        centroids = {}
-        for cls in classes:
-            points = df[df[class_column] == cls][feature_columns].values
-            center = self.find_center(points, print_output, cls)
-            print(f"Center of class {cls} : {center}")
-            centroids[cls] = center
-        return centroids
+        df = df.sample(frac=1) # shuffle df
+        ratio = 0.8
+ 
+        total_rows = df.shape[0]
+        train_size = int(total_rows*ratio)
+        
+        # Split data into test and train
+        train_df = df[0:train_size]
+        test_df = df[train_size:]
 
+        #train
+        feature_columns = train_df.columns[:-1]
+        class_column = train_df.columns[-1]
+        classes = train_df[class_column].unique()
+        classes.sort()
+
+        for cls in classes: 
+            points = train_df[train_df[class_column] == cls][feature_columns].values
+            center = self.find_center(points)
+            #print(f"Center of class {cls} : {center}")
+            self.centroids[cls] = center
+        
+        #test 
+        accuracy = 0
+        count = 0
+        for index, row in test_df.iterrows():
+            cls = self.classify(row[:-1])
+            if cls == row[-1]:
+                accuracy+=1
+            count +=1
+        #print("Accuracy: ", accuracy/count)
+        return self.centroids, accuracy/count
+
+    
 if __name__ == "__main__":
     fa = FireflyAlgorithm()
-    fa.run("4Cluster2D.csv", True)
+    fa.run("4Cluster2D.csv")

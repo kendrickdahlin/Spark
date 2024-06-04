@@ -90,3 +90,13 @@ options:
      - C: (30,30)
      - D: (30,70)
 </details>
+
+### Methods of parallelizing
+1. initialize particles outside main function
+  - particles and label are passed to function
+  - sc.parallelize(particles)
+  - mapPartition(main)
+2. initialize particles inside main function
+  - data are passed to function
+  - sc.parallelize(data)
+  - mapPartion(main)

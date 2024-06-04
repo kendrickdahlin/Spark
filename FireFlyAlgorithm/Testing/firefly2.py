@@ -1,61 +1,64 @@
 import numpy as np
+from numpy.random import default_rng
+import pandas as pd
 
-# Firefly Algorithm
 
-# Objective function (replace with your own function)
-def objective_function(x):
-    return np.sum(x**2)
+class FireflyAlgorithm:
+    def __init__(self, pop_size=20, alpha=1.0, beta0=1.0, gamma=0.01, seed=None):
+        self.pop_size = pop_size
+        self.alpha = alpha
+        self.beta0 = beta0
+        self.gamma = gamma
+        self.rng = default_rng(seed)
+        self.lb = 0
+        self.ub = 100
+        self.max_evals = 100
+        self.points = 0
+        
 
-# Problem dimension
-dimension = 10
+    def objective_function(self, center, points):
+        return np.sum(np.linalg.norm(self.points-center, axis =1))
 
-# Search space bounds
-lower_bound = -5
-upper_bound = 5
+    def find_center(self, points):
+        self.points = points
+        dim = points.shape[0]
+        fireflies = self.rng.uniform(self.lb, self.ub, (self.pop_size, dim))
+        intensity = np.apply_along_axis(self.objective_function, 1, fireflies)
+        best = np.min(intensity)
 
-# Population size
-population_size = 50
 
-# Maximum number of iterations
-max_iterations = 100
+        evaluations = self.pop_size
+        new_alpha = self.alpha
+        search_range = self.ub - self.lb
+        
 
-# Initialization
-population = lower_bound + (upper_bound - lower_bound) * np.random.rand(population_size, dimension)
-fitness = np.apply_along_axis(objective_function, 1, population)
+        while evaluations <= self.max_evals:
+            new_alpha *= 0.97
+            for i in range(self.pop_size):
+                for j in range(self.pop_size):
+                    if intensity[i] >= intensity[j]:
+                        r = np.sum(np.square(fireflies[i] - fireflies[j]), axis=-1)
+                        beta = self.beta0 * np.exp(-self.gamma * r)
+                        
+                        steps = new_alpha * (self.rng.random(dim) - 0.5) * search_range
+                        fireflies[i] += beta * (fireflies[j] - fireflies[i]) + steps
+                        fireflies[i] = np.clip(fireflies[i], self.lb, self.ub)
+                        intensity[i] = self.objective_function(fireflies[i])
+                        evaluations += 1
+                        best = min(intensity[i], best)
+        return best
+    
+    def run(self,data, print_output = False):
+        df = pd.read_csv(data) 
+        feature_columns = df.columns[:-1]
+        class_column = df.columns[-1]
+    
+        classes = df[class_column].unique()
 
-# Main loop
-for iteration in range(max_iterations):
-
-    # Move fireflies towards brighter ones
-    alpha = 0.2  # Attraction coefficient
-    beta = 1  # Absorption coefficient
-    gamma = 1  # Randomization parameter
-
-    for i in range(population_size):
-        for j in range(population_size):
-            if fitness[j] < fitness[i]:
-                distance = np.linalg.norm(population[i] - population[j])
-                attractiveness = np.exp(-gamma * distance**2)
-                population[i] += alpha * attractiveness * (population[j] - population[i]) + beta * (np.random.rand(dimension) - 0.5)
-
-        # Limit the updated positions within the search space
-        population[i] = np.maximum(lower_bound, population[i])
-        population[i] = np.minimum(upper_bound, population[i])
-
-    # Evaluate fitness of the updated population
-    fitness = np.apply_along_axis(objective_function, 1, population)
-
-    # Update the best solution and fitness
-    best_index = np.argmin(fitness)
-    best_solution = population[best_index]
-    best_fitness = fitness[best_index]
-
-    # Display the best fitness value at each iteration
-    print(f"Iteration {iteration+1}, Best Fitness = {best_fitness}")
-
-# Display the final best solution and fitness
-print("-------------------")
-print("Optimization Results")
-print("-------------------")
-print("Best Solution:", best_solution)
-print("Best Fitness:", best_fitness)
+        centroids = {}
+        for cls in classes:
+            points = df[df[class_column] == cls][feature_columns].values
+            center = self.find_center(points)
+            print(f"Center of class {cls} : {center}")
+            centroids[cls] = center
+        return centroids

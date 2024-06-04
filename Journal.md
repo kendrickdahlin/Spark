@@ -54,9 +54,15 @@
 <details>
   <summary>Week 3</summary>
 
-  ### 6/31
+  ### 6/3
     - Updated fireflyTest to include testing. It now takes a subset of data and classifies it using the model and returns an accuracy level.
       - For binary classification accuracy is 100%. 
       - For 4 classes the accuracy is between 92-95%. 
     - Worked on introductory presentation
+  ### 6/4
+    - Cleaned up firefly.py
+      - tuned paramaters --> reducing gamma increases accuracy
+      - removed redundancies
+      - added testing to run function
+    - Began working on implementing spark in three method
 </details>
