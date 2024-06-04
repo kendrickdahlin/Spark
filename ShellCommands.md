@@ -27,7 +27,7 @@ Remove copied file \
 
 Add new file to remote directory 
 
-`scp /Users/dahlink/apache-spark/3.5.0/libexec/mergesort2.py kendrick.dahlin@spark.cs.ndsu.edu:/home/kendrick.dahlin/`
+`scp /Users/dahlink/Desktop/Spark/FireFlyAlgorithm/FireFlySpark/fireflySpark2.py kendrick.dahlin@spark.cs.ndsu.edu:/home/kendrick.dahlin/`
 
 Login to remote directory
 

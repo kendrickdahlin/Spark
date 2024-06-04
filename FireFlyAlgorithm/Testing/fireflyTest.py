@@ -8,11 +8,11 @@ import generate2Cluster4D as gd2C4D
 from generateData import generate_data
 
 # create an instance of the firefly class
-fa = ff.FireflyAlgorithm(gamma=0.3)
+fa = ff.FireflyAlgorithm(alpha = 0.1, beta0 = 0.5,gamma=1)
 
 clusters = 4
-dimensions = 2
-size = 50
+dimensions = 10
+size = 5000
 
 file_name = f"{clusters}Cluster{dimensions}D.csv"
 
