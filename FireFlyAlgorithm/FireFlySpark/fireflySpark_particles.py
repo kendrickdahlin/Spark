@@ -13,52 +13,50 @@ class FireflyAlgorithm:
         self.lb = 0 
         self.ub = 100
         self.centroids = {}
+        self.points = []
 
-    def objective_function(self, x, points):
-        #return np.sum(np.sum((self.points - center)**2, axis=1))
-        return np.sum(np.linalg.norm(points-x, axis = 1))
+    def objective_function(self, x):
+        return np.sum(np.linalg.norm(self.points-x, axis = 1))
 
-    def find_center(self, points, fireflies):
-    
+    def find_center(self, fireflies):
         #initialize fireflies
-        
-        
         fireflies = list(map(lambda firefly: list(firefly), fireflies))
-        self.n_fireflies = len(fireflies)
+        n_fireflies = len(fireflies)
+        #for i in range (n_fireflies):
+            #print (f"Firefly {i} at: {fireflies[i]}")
         dim = len(fireflies[0])
         
-        fitness = np.apply_along_axis(self.objective_function, 1, fireflies, points)
+        fitness = np.apply_along_axis(self.objective_function, 1, fireflies)
         
         
         #set arbitrary global best
         best_firefly = fireflies[0]
         best_fitness = fitness[0]
         
-       
         for k in range(self.max_iter):
             k_alpha = self.alpha * (1-k/self.max_iter) # decreases alpha over time
            
-            for i in range(self.n_fireflies):
-                for j in range(self.n_fireflies):
+            for i in range(n_fireflies):
+                for j in range(n_fireflies):
+                    ##Here check broadcast variable
                     if fitness[j] < fitness[i]:
-                   
                         #move firefly
                         r = np.linalg.norm(np.subtract(fireflies[i], fireflies[j])) #distance
-              
                         beta = self.beta0 * np.exp(-self.gamma * r**2) #attractiveness
-                    
                         random_factor = k_alpha * (np.random.rand(dim) - 0.5) #randomness
-                        #moves firefly based on equation then clips to keep within given interval
+                        #moves firefly based on equation 
                         fireflies[i] += beta * (np.subtract(fireflies[j],fireflies[i])) + random_factor
-                        fireflies[i] = np.clip(fireflies[i], self.lb, self.ub)
+                        fireflies[i] = np.clip(fireflies[i], self.lb, self.ub) # keeps new loc within range
 
                         #update fitness
-                        fitness[i] = self.objective_function(fireflies[i], points)
+                        fitness[i] = self.objective_function(fireflies[i])
                         #update new best
+                    
                         if fitness[i] < best_fitness:
+                            #update global best
                             best_firefly = fireflies[i]
                             best_fitness = fitness[i]
-        return best_firefly
+        return best_firefly, best_fitness
 
     #returns string of classification
     def classify(self, row):
@@ -76,40 +74,58 @@ class FireflyAlgorithm:
             .appName("Firefly Algorithm with Spark") \
             .getOrCreate()
 
-        # Determine the number of available cores
-        num_cores = spark.sparkContext.defaultParallelism
+        sc = spark.sparkContext
+        num_cores = sc.defaultParallelism  #Determine the number of available cores
+        self.n_fireflies = max(self.n_fireflies, num_cores) 
+        
 
         # Read the dataset from CSV file into a Spark DataFrame
         df = spark.read.csv(file_name, header=True, inferSchema=True)
+        dim = len(df.columns)-1
         
-        #TODO split into training and test data
-        
-        
-        #TODO replace `dim` with code
-        dim = 2
+        #split into training and test data
+        train, test = df.randomSplit([0.8, 0.2], seed=12345)
 
+        #initialize fireflies
         fireflies = np.random.uniform(self.lb, self.ub, (self.n_fireflies, dim))
-       
-
-        #add a label to every firefly
-        fireflies_rdd = spark.sparkContext.parallelize(fireflies, numSlices=num_cores)
-        class_column = df.columns[-1]
-        classes = df.select(class_column).distinct()
+        fireflies_rdd = sc.parallelize(fireflies, numSlices=num_cores)
+        class_column = train.columns[-1]
+        classes = train.select(class_column).distinct().collect()
         
         
-        for cls in classes.collect():
+        for cls in classes:
             cls = cls[class_column]
-            data = df.filter(df[class_column] == cls).drop(class_column).collect()
+            data = train.filter(df[class_column] == cls).drop(class_column).collect()
             
             points = []
             for row in data:
                 points.append(list(row))
-            
-            center = fireflies_rdd.mapPartitions(lambda fireflies: [self.find_center(points, fireflies)]).collect()
+            self.points = points
+            center = fireflies_rdd.mapPartitions(lambda fireflies: [self.find_center(fireflies)]).collect()
             #clean appearance
             center = list(map(lambda point: list(point), center))
-            print (f"Center of class {cls}: {center}")
+            
+            #TODO replace code with collect?
+            best_centroid = center[0][0]
+            best_fitness = center[0][1]
+            
+            for centroid, fitness in center:
+                if fitness < best_fitness:
+                    best_fitness = fitness
+                    best_centroid = centroid
+            self.centroids[cls] = best_centroid
+            print (f"Center of class {cls}: {best_centroid}")
     
+        #test
+        accuracy = 0
+        count = 0
+        for row in test.collect():
+            row = list(row)
+            cls = self.classify(row[:-1])
+            if cls == row[-1]:
+                accuracy +=1
+            count +=1
+        print("Accuracy: ", accuracy/count)
         # Stop the SparkSession
         spark.stop()
 
