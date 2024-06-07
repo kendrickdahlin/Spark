@@ -1,8 +1,11 @@
 import numpy as np
 import pandas as pd
 from pyspark.sql import SparkSession
+import threading
+import random
 
 ##SPLITS PARTICLES INTO PARTITIONS
+
 class FireflyAlgorithm:
     def __init__(self, n_fireflies=56, max_iter=20, alpha=0.3, beta0=1, gamma=0.04):
         self.n_fireflies = n_fireflies
@@ -14,11 +17,15 @@ class FireflyAlgorithm:
         self.ub = 100
         self.centroids = {}
         self.points = []
+        self.a_best_fitness = 0
+        self.a_best_firefly = 0
+        self.bc_best_firefly = 0
 
     def objective_function(self, x):
-        return np.sum(np.linalg.norm(self.points-x, axis = 1))
+        return np.sum(np.linalg.norm(np.subtract(self.points,x), axis = 1))
 
-    def find_center(self, fireflies):
+    def find_center(self, fireflies):    
+        name = f"core {random.randint(0,100)}"
         #initialize fireflies
         fireflies = list(map(lambda firefly: list(firefly), fireflies))
         n_fireflies = len(fireflies)
@@ -39,6 +46,11 @@ class FireflyAlgorithm:
             for i in range(n_fireflies):
                 for j in range(n_fireflies):
                     ##Here check broadcast variable
+                    if self.objective_function(self.bc_best_firefly.value) < best_fitness:
+                        print(f"better value found at {name}")
+                        best_firefly = self.bc_best_firefly.value
+                        fireflies[0] = best_firefly
+                        best_fitness = self.objective_function(self.bc_best_firefly.value)
                     if fitness[j] < fitness[i]:
                         #move firefly
                         r = np.linalg.norm(np.subtract(fireflies[i], fireflies[j])) #distance
@@ -53,11 +65,15 @@ class FireflyAlgorithm:
                         #update new best
                     
                         if fitness[i] < best_fitness:
-                            #update global best
+                            #update partition best
                             best_firefly = fireflies[i]
                             best_fitness = fitness[i]
-        return best_firefly
-    
+                            #update global best
+                            self.a_best_firefly = best_firefly
+                            self.a_best_fitness = best_fitness
+                            print(f"updating global from {name}")
+        return best_firefly, best_fitness
+
     #returns string of classification
     def classify(self, row):
         distances = {}
@@ -67,7 +83,14 @@ class FireflyAlgorithm:
         cls = min(distances, key = distances.get)
         return cls
     
-
+    def track_global(self):
+        best_fitness = self.a_best_fitness
+        while True:     
+            if self.a_best_fitness.value < best_fitness.value:
+                print(f"in thread, best fitness updating from {best_fitness} to {self.a_best_fitness}")
+                best_fitness = self.a_best_fitness
+                self.bc_best_firefly = self.a_best_firefly
+                
     def run(self, file_name):
         # Create a SparkSession
         spark = SparkSession.builder \
@@ -88,12 +111,23 @@ class FireflyAlgorithm:
 
         #initialize fireflies
         fireflies = np.random.uniform(self.lb, self.ub, (self.n_fireflies, dim))
-        fireflies_rdd = sc.parallelize(fireflies)
+        fireflies_rdd = sc.parallelize(fireflies, numSlices=num_cores)
         class_column = train.columns[-1]
         classes = train.select(class_column).distinct().collect()
         
         
         for cls in classes:
+            
+            ##define broadcast and accumulator
+            self.a_best_firefly = [sc.accumulator(i) for i in fireflies[0]]
+            self.a_best_fitness = sc.accumulator(100000000)
+            self.bc_best_firefly = sc.broadcast(fireflies[0])
+            
+            
+            ##define thread to constantly check if they are updated
+            global_thread = threading.Thread(target= self.track_global)
+            
+            global_thread.start()
             cls = cls[class_column]
             data = train.filter(df[class_column] == cls).drop(class_column).collect()
             
@@ -105,9 +139,17 @@ class FireflyAlgorithm:
             #clean appearance
             center = list(map(lambda point: list(point), center))
             
-            self.centroids[cls] = [sum(x) / len(center) for x in zip(*center)]
-            #print(f"Centroid for class {cls}: {self.centroids[cls]}")
-                
+            #TODO replace code with collect?
+            best_centroid = center[0][0]
+            best_fitness = center[0][1]
+            
+            for centroid, fitness in center:
+                if fitness < best_fitness:
+                    best_fitness = fitness
+                    best_centroid = centroid
+            self.centroids[cls] = best_centroid
+            print (f"Center of class {cls}: {center}")
+    
         #test
         accuracy = 0
         count = 0

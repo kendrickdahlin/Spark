@@ -16,16 +16,15 @@ class FireflyAlgorithm:
         self.points = []
 
     def objective_function(self, x):
-        return np.sum(np.linalg.norm(self.points-x, axis = 1))
+        return np.sum(np.linalg.norm(np.subtract(self.points,x), axis = 1))
 
-    def find_center(self, fireflies):
-        #initialize fireflies
-        fireflies = list(map(lambda firefly: list(firefly), fireflies))
-        n_fireflies = len(fireflies)
-        #for i in range (n_fireflies):
-            #print (f"Firefly {i} at: {fireflies[i]}")
-        dim = len(fireflies[0])
+    def find_center(self, points):
+        #clean points data
+        self.points = [list(i) for i in list(points)]
+        dim = len(self.points[0])
         
+        #initialize fireflies
+        fireflies = np.random.uniform(self.lb, self.ub, (self.n_fireflies, dim))
         fitness = np.apply_along_axis(self.objective_function, 1, fireflies)
         
         
@@ -36,8 +35,8 @@ class FireflyAlgorithm:
         for k in range(self.max_iter):
             k_alpha = self.alpha * (1-k/self.max_iter) # decreases alpha over time
            
-            for i in range(n_fireflies):
-                for j in range(n_fireflies):
+            for i in range(self.n_fireflies):
+                for j in range(self.n_fireflies):
                     ##Here check broadcast variable
                     if fitness[j] < fitness[i]:
                         #move firefly
@@ -59,11 +58,10 @@ class FireflyAlgorithm:
         return best_firefly
     
     #returns string of classification
-    def classify(self, row):
+    def classify(self, point):
         distances = {}
-        for key, points in self.centroids.items():
-            coord = np.array(row)
-            distances[key]= np.linalg.norm(points-coord)
+        for cls, centroid in self.centroids.items():
+            distances[cls]= np.linalg.norm(np.subtract(centroid,point))
         cls = min(distances, key = distances.get)
         return cls
     
@@ -79,48 +77,50 @@ class FireflyAlgorithm:
         self.n_fireflies = max(self.n_fireflies, num_cores) 
         
 
-        # Read the dataset from CSV file into a Spark DataFrame
-        df = spark.read.csv(file_name, header=True, inferSchema=True)
-        dim = len(df.columns)-1
+        # Read the dataset from CSV file into a  DataFrame
+        df = pd.read_csv(file_name)
         
-        #split into training and test data
-        train, test = df.randomSplit([0.8, 0.2], seed=12345)
+        df = df.sample(frac=1) # shuffle df
+        ratio = 0.8
+ 
+        total_rows = df.shape[0]
+        train_size = int(total_rows*ratio)
+        
+        # Split data into test and train
+        train_df = df[0:train_size]
+        test_df = df[train_size:]
 
-        #initialize fireflies
-        fireflies = np.random.uniform(self.lb, self.ub, (self.n_fireflies, dim))
-        fireflies_rdd = sc.parallelize(fireflies)
-        class_column = train.columns[-1]
-        classes = train.select(class_column).distinct().collect()
+        #train
+        feature_columns = train_df.columns[:-1]
+        class_column = train_df.columns[-1]
+        classes = train_df[class_column].unique()
+        classes.sort()
         
         
         for cls in classes:
-            cls = cls[class_column]
-            data = train.filter(df[class_column] == cls).drop(class_column).collect()
-            
-            points = []
-            for row in data:
-                points.append(list(row))
-            self.points = points
-            center = fireflies_rdd.mapPartitions(lambda fireflies: [self.find_center(fireflies)]).collect()
+            points = train_df[train_df[class_column] == cls][feature_columns].values
+            points_rdd = sc.parallelize(points)
+            center = points_rdd.mapPartitions(lambda points: [self.find_center(points)]).collect()
             #clean appearance
             center = list(map(lambda point: list(point), center))
             
             self.centroids[cls] = [sum(x) / len(center) for x in zip(*center)]
             #print(f"Centroid for class {cls}: {self.centroids[cls]}")
                 
+    
         #test
         accuracy = 0
         count = 0
-        for row in test.collect():
-            row = list(row)
-            cls = self.classify(row[:-1])
+        for index, row in test_df.iterrows():
+            cls = self.classify(row[:-1].values)
             if cls == row[-1]:
                 accuracy +=1
             count +=1
         print("Accuracy: ", accuracy/count)
         # Stop the SparkSession
         spark.stop()
+        return self.centroids
 
 if __name__ == "__main__":
     fa = FireflyAlgorithm()
-    fa.run("4Cluster2D.csv")
+    fa.run("Data/Aggregation.csv")

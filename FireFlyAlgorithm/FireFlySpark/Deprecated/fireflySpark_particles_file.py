@@ -19,6 +19,7 @@ class FireflyAlgorithm:
         return np.sum(np.linalg.norm(self.points-x, axis = 1))
 
     def find_center(self, fireflies):
+        global_best = open("global_best", "w+")
         #initialize fireflies
         fireflies = list(map(lambda firefly: list(firefly), fireflies))
         n_fireflies = len(fireflies)
@@ -38,7 +39,22 @@ class FireflyAlgorithm:
            
             for i in range(n_fireflies):
                 for j in range(n_fireflies):
-                    ##Here check broadcast variable
+                    ##Here check file for new best
+                    global_best = open("global_best")
+                    lines = global_best.readlines()
+#                     print("read lines: ", lines)
+                    if len(lines)>0:
+                        lines = lines[0].split(',')
+                        global_firefly = [float(i) for i in lines[:-1]]
+#                         print("global firefly: ", global_firefly)
+                        global_fitness = float(lines[-1])
+#                         print("global fitness: ", global_fitness)
+#                         print("best fitness" , best_fitness)
+                        
+                        if global_fitness < best_fitness:
+                            best_fitness = global_fitness
+                            best_firefly = global_firefly
+                            fireflies[i] = global_firefly
                     if fitness[j] < fitness[i]:
                         #move firefly
                         r = np.linalg.norm(np.subtract(fireflies[i], fireflies[j])) #distance
@@ -56,8 +72,15 @@ class FireflyAlgorithm:
                             #update global best
                             best_firefly = fireflies[i]
                             best_fitness = fitness[i]
-        return best_firefly
-    
+                            lines = global_best.readlines()
+                            global_best = open("global_best", "w")
+                            
+                            #update file
+                            lines = ','.join(f"{i}" for i in best_firefly)
+                            lines = lines+f',{best_fitness}'
+                            global_best.writelines(lines)
+        return best_firefly, best_fitness
+
     #returns string of classification
     def classify(self, row):
         distances = {}
@@ -88,7 +111,7 @@ class FireflyAlgorithm:
 
         #initialize fireflies
         fireflies = np.random.uniform(self.lb, self.ub, (self.n_fireflies, dim))
-        fireflies_rdd = sc.parallelize(fireflies)
+        fireflies_rdd = sc.parallelize(fireflies, numSlices=num_cores)
         class_column = train.columns[-1]
         classes = train.select(class_column).distinct().collect()
         
@@ -105,9 +128,17 @@ class FireflyAlgorithm:
             #clean appearance
             center = list(map(lambda point: list(point), center))
             
-            self.centroids[cls] = [sum(x) / len(center) for x in zip(*center)]
-            #print(f"Centroid for class {cls}: {self.centroids[cls]}")
-                
+            #TODO replace code with collect?
+            best_centroid = center[0][0]
+            best_fitness = center[0][1]
+            
+            for centroid, fitness in center:
+                if fitness < best_fitness:
+                    best_fitness = fitness
+                    best_centroid = centroid
+            self.centroids[cls] = best_centroid
+            print (f"Center of class {cls}: {center}")
+    
         #test
         accuracy = 0
         count = 0
