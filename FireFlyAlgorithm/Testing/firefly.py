@@ -10,18 +10,19 @@ class FireflyAlgorithm:
         self.gamma = gamma
         self.lb = 0 
         self.ub = 100
+        self.points = []
         self.centroids = {}
 
-    def objective_function(self, x, points):
+    def objective_function(self, x):
         #return np.sum(np.sum((self.points - center)**2, axis=1))
-        return np.sum(np.linalg.norm(points-x, axis = 1))
+        return np.sum(np.linalg.norm(self.points-x, axis = 1))
 
-    def find_center(self, points):
-        dim = points.shape[1]
+    def find_center(self):
+        dim = self.points.shape[1]
 
         #initialize fireflies
         fireflies = np.random.uniform(self.lb, self.ub, (self.n_fireflies, dim))
-        fitness = np.apply_along_axis(self.objective_function, 1, fireflies, points)
+        fitness = np.apply_along_axis(self.objective_function, 1, fireflies)
 
         #set arbitrary global best
         best_firefly = fireflies[0]
@@ -44,7 +45,7 @@ class FireflyAlgorithm:
                         fireflies[i] = np.clip(fireflies[i], self.lb, self.ub)
 
                         #update fitness
-                        fitness[i] = self.objective_function(fireflies[i], points)
+                        fitness[i] = self.objective_function(fireflies[i])
                         #update new best
                         if fitness[i] < best_fitness:
                             best_firefly = fireflies[i]
@@ -81,8 +82,8 @@ class FireflyAlgorithm:
         classes.sort()
 
         for cls in classes: 
-            points = train_df[train_df[class_column] == cls][feature_columns].values
-            center = self.find_center(points)
+            self.points = train_df[train_df[class_column] == cls][feature_columns].values
+            center = self.find_center()
             #print(f"Center of class {cls} : {center}")
             self.centroids[cls] = center
         
