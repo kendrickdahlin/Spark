@@ -1,15 +1,10 @@
 import numpy as np
 import pandas as pd
 from pyspark.sql import SparkSession
-from sklearn.metrics import accuracy_score
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder, StandardScaler
-import matplotlib.pyplot as plt
-import matplotlib.cm as cm
 
 #define objective function
 def objective_function(firefly, X,y):
-    pred = (np.dot(X,firefly[:-1])+firefly[-1]>=0).astype(int)
+    pred = predict(firefly, X)
     mse = np.mean(np.subtract(y,pred)**2)
     return mse
 
@@ -19,7 +14,7 @@ def firefly(X,y):
     n_fireflies = 50
     max_iter = 100
     gamma = 0.5  
-    delta = 0.07 #how much it moves towards best firefly
+    delta = 0.7 #how much it moves towards best firefly
     lb = -5
     ub = 5
     dim = X.shape[1]+1
@@ -31,31 +26,24 @@ def firefly(X,y):
     gbest_firefly = fireflies[np.argmin(fitness)]
     gbest_fitness = np.min(fitness)
     
-    fitness_over_time = [[i] for i in fitness]
-    firefly_positions = [fireflies.copy()]
-    
     for k in range(max_iter):
         for i in range(n_fireflies):
-            pbest_fitness = 0
+            pbest_attractiveness = 0
             pbest_firefly = fireflies[i]
             for j in range(n_fireflies):
                 #if j is better, move i towards it
                 if fitness[j] < fitness[i]:
-                    r = np.linalg.norm(np.subtract(fireflies[j], fireflies[i])) #distance
-                    beta1 = np.exp(-gamma * r**2) #attractiveness
-                    if beta1 > pbest_fitness:
-                        pbest_fitness = beta1
+                    r = np.sum(abs(np.subtract(fireflies[j], fireflies[i]))**2) #distance squared
+                    beta1 = fitness[j]*np.exp(-gamma * r) #attractiveness
+                    if beta1 > pbest_attractiveness:
+                        pbest_attractiveness = beta1
                         pbest_firefly = fireflies[j]
-                    
-            #update firefly 
-            fireflies[i] += delta * np.subtract(pbest_firefly,fireflies[i]) #increase by proportion
+            fireflies[i] += delta * np.subtract(pbest_firefly,fireflies[i]) #proportion
             fitness[i] = objective_function(fireflies[i], X, y)
-            fitness_over_time[i].append(fitness[i])
 
             if fitness[i] < gbest_fitness:
                 gbest_fitness = fitness[i]
                 gbest_firefly = fireflies[i]
-        firefly_positions.append(fireflies.copy())
    
     return gbest_firefly
 
@@ -64,6 +52,24 @@ def firefly(X,y):
 def predict(model, X):
     pred = (np.dot(X,model[:-1])+model[-1]>=0).astype(int)
     return pred
+
+#manual label encoding
+def label_encode(y):
+    classes = np.unique(y)
+    class_to_index = {c: idx for idx, c in enumerate(classes)}
+    y_encoded = np.array([class_to_index[label] for label in y])
+    return y_encoded
+
+#manual standardization
+def standardize(X):
+    mean = np.mean(X, axis=0)
+    std = np.std(X, axis=0)
+    X_scaled = (X - mean) / std
+    return X_scaled
+
+# Manual accuracy calculation
+def accuracy_score(y_true, y_pred):
+    return np.mean(y_true == y_pred)
 
 
 def run(file_name):
@@ -79,10 +85,10 @@ def run(file_name):
     
     
     #transform y values to ints
-    y = LabelEncoder().fit_transform(y)
+    y = label_encode(y)
     
     #scale X values
-    X = StandardScaler().fit_transform(X)
+    X = standardize(X)
    
  
     #Create an RDD of (feature, label) pairs
@@ -103,9 +109,8 @@ def run(file_name):
     model = [sum(x) / len(weights) for x in zip(*weights)]
     
     y_pred = predict(model,X)
-    accuracy2 = accuracy_score(y, y_pred)
-    mse = np.mean(np.subtract(y,y_pred)**2)
-    print(f'Accuracy: {accuracy2 * 100:.2f}%')
+    accuracy = accuracy_score(y, y_pred)
+    print(f'Accuracy: {accuracy * 100:.2f}%')
         
     
 if __name__ == "__main__":

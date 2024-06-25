@@ -9,11 +9,6 @@ import java.util.stream.IntStream;
 
 import javax.crypto.interfaces.PBEKey;
 
-import org.apache.spark.ml.linalg.Vectors;
-import org.apache.spark.ml.feature.StandardScaler;
-import org.apache.spark.ml.classification.FireflyModel;
-import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator;
-
 
 public class Firefly {
     public static double objectiveFunction(double[] firefly, double[][] X, int[] y){
