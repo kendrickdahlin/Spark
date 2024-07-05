@@ -11,28 +11,29 @@ import csv
 
 spark = SparkSession.builder.appName("Firefly Algorithm with Spark").getOrCreate()
 sc = spark.sparkContext
-    
+
 #define objective function
 def objective_function(firefly, X,y):
-    pred = predict(firefly,X)
+    pred = predict(firefly, X)
     mse = np.mean(np.subtract(y,pred)**2)
     return mse
 
 #define firefly algorithm
-def firefly(X,y, n_fireflies):
+def firefly(X,y,fireflies):
+    #print message in each node
+    print(f"Fireflies: {fireflies}")
+
     #set up params
-    n_fireflies = n_fireflies
     max_iter = 100
     gamma = 0.5  
     delta = 0.7 #how much it moves towards best firefly
-    lb = -5
-    ub = 5
-    dim = X.shape[1]+1
     
     #initialize fireflies
-    fireflies = np.random.uniform(lb,ub,(n_fireflies,dim))
-    fitness = np.apply_along_axis(objective_function, 1, fireflies, X,y)
+    fireflies = list(map(lambda firefly: list(firefly), fireflies))
+    fitness = np.apply_along_axis(objective_function, 1, fireflies,X,y)
+    n_fireflies = len(fireflies)
     
+    #set global best
     gbest_firefly = fireflies[np.argmin(fitness)]
     gbest_fitness = np.min(fitness)
     
@@ -56,15 +57,22 @@ def firefly(X,y, n_fireflies):
                 gbest_firefly = fireflies[i]
    
     return gbest_firefly
-     
+    
 #classifies input
 def predict(model, X):
     pred = (np.dot(X,model[:-1])+model[-1]>=0).astype(int)
     return pred
 
-
 def run(TestNum, FilePath, NumParticles, StartTime, TestList):
-    #read data
+    n_fireflies = NumParticles
+    lb = -5
+    ub = 5
+
+    num_cores = sc.defaultParallelism  #Determine the number of available cores
+    n_fireflies = max(n_fireflies, num_cores) 
+    
+
+    # Read the dataset from CSV file into a Spark DataFrame
     df = spark.read.csv(FilePath, header=True, inferSchema=True)
     X = np.array(df.select(df.columns[:-1]).collect())
     y = np.array(df.select(df.columns[-1]).collect()).flatten()
@@ -77,24 +85,13 @@ def run(TestNum, FilePath, NumParticles, StartTime, TestList):
     scaler = StandardScaler()
     X = scaler.fit_transform(X)
 
-   
- 
-    #Create an RDD of (feature, label) pairs
-    data_rdd = sc.parallelize(list(zip(X, y)))
+    #create an RDD of fireflies
+    dim = len(df.columns)
+    fireflies = np.random.uniform(lb, ub, (n_fireflies, dim))
+    fireflies_rdd = sc.parallelize(fireflies)
 
-    #Firefly algorithm applied to partitions
-    def firefly_partition(partition):
-        partition_list = list(partition)
-        if len(partition_list) == 0:
-            return []
-        X_partition, y_partition = zip(*partition_list)
-        X_partition = np.array(X_partition)
-        y_partition = np.array(y_partition)
-        return [firefly(X_partition, y_partition, NumParticles)]
-
-    # Apply Firefly algorithm to each partition and collect results
-    weights = data_rdd.mapPartitions(firefly_partition).collect()
-    model = [sum(x) / len(weights) for x in zip(*weights)]
+  
+    #firefly algorithm applied to partitions
 
     y_pred = predict(model,X)
     accuracy = accuracy_score(y, y_pred)
@@ -105,7 +102,6 @@ def run(TestNum, FilePath, NumParticles, StartTime, TestList):
     TestList.append((TestNum, FilePath, NumParticles, accuracy, precision, recall, f1, (time.time()-StartTime)))
         
     return TestList
-
 
 def repeat_csv(output_file, repetitions):
     input_file = 'Behavior.csv'
@@ -136,3 +132,5 @@ run(TestNum,FilePath,NumParticles,StartTime,TestList)
 print(TestList)
 
 spark.stop()
+
+

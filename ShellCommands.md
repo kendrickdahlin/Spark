@@ -47,12 +47,14 @@ Run the program
 
 Scp data.csv from local directory into NDSU master directory
 
-`scp /Users/dahlink/Desktop/NDSU/Data.csv kendrick.dahlin@spark.cs.ndsu.edu:/home/kendrick.dahlin/`
+`scp Desktop/Firefly/target/Firefly-1.0-SNAPSHOT.jar kendrick.dahlin@spark.cs.ndsu.edu:/home/kendrick.dahlin/`
+
+`scp /Users/dahlink/Desktop/Firefly/Data.csv kendrick.dahlin@spark.cs.ndsu.edu:/home/kendrick.dahlin/`
 
 Put file into NDSU hdfs system 
 
 `hdfs dfs -put Data.csv /user/kendrick.dahlin/ `
-hdfs dfs -put 2Cluster4D.csv /user/kendrick.dahlin/
+hdfs dfs -put Test.csv /user/kendrick.dahlin/
 hdfs dfs -put 4Cluster2D.csv /user/kendrick.dahlin/
 Verify file is in hdfs system:
 

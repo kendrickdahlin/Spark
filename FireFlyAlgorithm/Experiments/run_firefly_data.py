@@ -4,22 +4,23 @@ from pyspark.sql import SparkSession
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder, StandardScaler
-import matplotlib.pyplot as plt
-import matplotlib.cm as cm
 import time
 import csv
 
 spark = SparkSession.builder.appName("Firefly Algorithm with Spark").getOrCreate()
 sc = spark.sparkContext
-    
+
 #define objective function
 def objective_function(firefly, X,y):
-    pred = predict(firefly,X)
+    pred = predict(firefly, X)
     mse = np.mean(np.subtract(y,pred)**2)
     return mse
 
 #define firefly algorithm
 def firefly(X,y, n_fireflies):
+    #print message in each node
+    print(f"Data: {X}")
+    
     #set up params
     n_fireflies = n_fireflies
     max_iter = 100
@@ -33,6 +34,7 @@ def firefly(X,y, n_fireflies):
     fireflies = np.random.uniform(lb,ub,(n_fireflies,dim))
     fitness = np.apply_along_axis(objective_function, 1, fireflies, X,y)
     
+    #set global best
     gbest_firefly = fireflies[np.argmin(fitness)]
     gbest_fitness = np.min(fitness)
     
@@ -56,12 +58,12 @@ def firefly(X,y, n_fireflies):
                 gbest_firefly = fireflies[i]
    
     return gbest_firefly
-     
+
+
 #classifies input
 def predict(model, X):
     pred = (np.dot(X,model[:-1])+model[-1]>=0).astype(int)
     return pred
-
 
 def run(TestNum, FilePath, NumParticles, StartTime, TestList):
     #read data
@@ -76,7 +78,6 @@ def run(TestNum, FilePath, NumParticles, StartTime, TestList):
     # Scale features
     scaler = StandardScaler()
     X = scaler.fit_transform(X)
-
    
  
     #Create an RDD of (feature, label) pairs
@@ -92,7 +93,6 @@ def run(TestNum, FilePath, NumParticles, StartTime, TestList):
         y_partition = np.array(y_partition)
         return [firefly(X_partition, y_partition, NumParticles)]
 
-    # Apply Firefly algorithm to each partition and collect results
     weights = data_rdd.mapPartitions(firefly_partition).collect()
     model = [sum(x) / len(weights) for x in zip(*weights)]
 
@@ -105,8 +105,8 @@ def run(TestNum, FilePath, NumParticles, StartTime, TestList):
     TestList.append((TestNum, FilePath, NumParticles, accuracy, precision, recall, f1, (time.time()-StartTime)))
         
     return TestList
-
-
+        
+    
 def repeat_csv(output_file, repetitions):
     input_file = 'Behavior.csv'
     with open(input_file, mode='r', newline='') as infile:
