@@ -7,7 +7,7 @@ from sklearn.preprocessing import LabelEncoder, StandardScaler
 import time
 import csv
 
-spark = SparkSession.builder.appName("Firefly Algorithm with Spark").getOrCreate()
+spark = SparkSession.builder.appName("FA Split Data").getOrCreate()
 sc = spark.sparkContext
 
 #define objective function
@@ -102,37 +102,28 @@ def run(TestNum, FilePath, NumParticles, StartTime, TestList):
     recall = recall_score(y,y_pred)
     f1 = f1_score(y,y_pred)
     
-    TestList.append((TestNum, FilePath, NumParticles, accuracy, precision, recall, f1, (time.time()-StartTime)))
+    output =(TestNum, FilePath, NumParticles, accuracy, precision, recall, f1, (time.time()-StartTime))
         
-    return TestList
+    return output
         
-    
-def repeat_csv(output_file, repetitions):
-    input_file = 'Behavior.csv'
-    with open(input_file, mode='r', newline='') as infile:
-        reader = csv.reader(infile)
-        header = next(reader)  # Read the header
-        rows = list(reader)    # Read the rest of the rows
-
-    # Write to the output file
-    with open(output_file, mode='w', newline='') as outfile:
+def save_results(result):
+    with open("results_56.csv", mode = 'a', newline='') as outfile:
         writer = csv.writer(outfile)
-        writer.writerow(header)  # Write the header once
-        
-        for _ in range(repetitions):
-            writer.writerows(rows)  # Write the rows repeatedly
-            
+        writer.writerow(result)
 
-TestList= [ ]
 
-FilePath = 'Test.csv'
-TestNum = 1
-NumParticles = 50 
-NumOfFold = 56
-StartTime = time.time()
+TestList= []
 
-repeat_csv(FilePath,NumOfFold)
-run(TestNum,FilePath,NumParticles,StartTime,TestList)
+NumParticles = 56 
+
+for i in range (1000,2100,100):
+    FilePath = f"Behavior{i}.csv"
+    StartTime = time.time()
+    output = run(i,FilePath,NumParticles,StartTime,TestList)
+    print(f"FINISHED {i}")
+    print("----")
+    print(output)
+    save_results(output)
+    TestList.append(output)
 print(TestList)
-
 spark.stop()

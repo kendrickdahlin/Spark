@@ -59,3 +59,9 @@ hdfs dfs -put 4Cluster2D.csv /user/kendrick.dahlin/
 Verify file is in hdfs system:
 
 `hdfs dfs -ls /user/kendrick.dahlin/`
+
+## Java
+create a new maven project
+`mvn package` to create a jar file
+move jar file to spark directory
+spark-submit --class <class-name> <application-jar> [arguments]
